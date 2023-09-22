@@ -1,0 +1,9 @@
+Task Distribution - Team 3
+
+Adam Howard: Glossary
+Ethan Busby: Use case descriptions
+Hariaksha Gunda: two generic security user stories, CSS file
+James White: Short introduction paragraph, submitter
+Ryan Mcculley: Use case descriptions
+Robert Read: Use case descriptions
+Tyler Cruise: Base HTML file, matrix
