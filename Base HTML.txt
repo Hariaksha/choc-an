@@ -1,51 +1,39 @@
 <!DOCTYPE html>
 
-
-
 <html>
 	<head>
 		<meta charset = "utf-8">
-		<title>CS 200 Team 3 - Project 1: Base File</title>  
+        <link rel="stylesheet" href="styles.css" />
+        <title>CS 200 Team 3 - Project 1: Base File</title>  
 	</head>
 
 	<body>
-	<center>
-		<p>
 		<h1><strong>CS 200 Team 3 - Project 1</strong></h1>
-		</p>
 
+        <p>
+            <img src="HourTable.png" Width="1200" Height="300">
+        </p>
 
-	<p>
-		<img src = "HourTable.png" Width = "1200" Height = "300"
-	</p>
+        <p>
+            <img src="TaskDistributionTable.png" Width="1200" Height="300">
+        </p>
 
-	<p>
-		<img src = "TaskDistributionTable.png" Width = "1200" Height = "300"
-	</p>
+        <p>
+            <h3><strong>Bitbucket Statistics</strong></h3>
+        </p>
 
-	<p>
-		<h3><strong>Bitbucket Statistics</strong></h3>
-	</p>
+        <p>
+            <img src="BitbucketStats.png" Width="1200" Height="300">
+        </p>
+        
+        <h3><strong>Glossary</strong></h3>
+        <p>
+            <img src="Glossary.png" Width="1200" Height="300">
+        </p>
 
-	<p>
-		<img src = "BitbucketStats.png" Width = "1200" Height = "300"
-	</p>
-	
-	<p>
-	<h3><strong>Glossary</strong></h3>
-	</p>
-	<p>
-		<img src = "Glossary.png" Width = "1200" Height = "300"
-	</p>
-
-	<p>
-	<h3><strong>Use Case Diagram</strong></h3>
-	</p>
-	<p>
-		<img src = "_Final Use Case Diaram_.png" Width = "1200" Height = "700"
-	</p>
-	
-	</center>
+        <h3><strong>Use Case Diagram</strong></h3>
+        <p>
+            <img src="_Final Use Case Diaram_.png" Width="1200" Height="700">
+        </p>
 	</body>
-
 </html>
