@@ -33,7 +33,7 @@
 
         <h3><strong>Use Case Diagram</strong></h3>
         <p>
-            <img src="_Final Use Case Diaram_.png" Width="1200" Height="700">
+            <img src="_Final Use Case Diagram_.png" Width="1200" Height="700">
         </p>
 	</body>
 </html>
