@@ -11,11 +11,11 @@
 		<h1><strong>CS 200 Team 3 - Project 1</strong></h1>
 
         <p>
-            <img src="HourTable.png" Width="1200" Height="300">
+            <img src="HourTable.png">
         </p>
 
         <p>
-            <img src="TaskDistributionTable.png" Width="1200" Height="300">
+            <img src="TaskDistributionTable.png">
         </p>
 
         <p>
@@ -23,17 +23,17 @@
         </p>
 
         <p>
-            <img src="BitbucketStats.png" Width="1200" Height="300">
+            <img src="BitbucketStats.png">
         </p>
         
         <h3><strong>Glossary</strong></h3>
         <p>
-            <img src="Glossary.png" Width="1200" Height="300">
+            <img src="Glossary.png">
         </p>
 
         <h3><strong>Use Case Diagram</strong></h3>
         <p>
-            <img src="_Final Use Case Diagram_.png" Width="1200" Height="700">
+            <img id="diagram" src="_Final Use Case Diagram_.png">
         </p>
 	</body>
 </html>

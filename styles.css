@@ -1,0 +1,17 @@
+body {
+    background: linear-gradient(#12C2E9, #F64F59);
+    text-align: center;
+}
+
+img {
+    width: 1200;
+    height: 300;
+    margin: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#diagram {
+    width: 1200;
+    height: 700;  
+}
