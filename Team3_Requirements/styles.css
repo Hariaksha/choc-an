@@ -1,12 +1,14 @@
 body {
 /*    background: linear-gradient(#12C2E9, #F64F59); */
     text-align: center;
-    margin: 20px 100px;
+	margin: 20px 100px;
 }
 
 table {
 	margin-bottom: 25px;
 	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 table, th, td {
@@ -29,4 +31,6 @@ img {
 #diagram {
     width: 1200;
     height: 700;
+	margin-left: auto;
+	margin-right: auto;
 }
