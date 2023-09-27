@@ -263,6 +263,11 @@ display: flex;
 justify-content: center;
 }
 
+.security {
+	border: 1px solid black;
+    border-collapse: collapse;
+}
+
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 .column {
   float: left;
