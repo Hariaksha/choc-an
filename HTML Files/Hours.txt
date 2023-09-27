@@ -1,9 +1,9 @@
 Team 3 Hours Logging
 -------------
-James White - 4
-Adam Howard - 2.5
-Ethan Busby - 5.5
-Hariaksha Gunda - 3.5
+James White - 4.5
+Adam Howard - 3
+Ethan Busby - 6
+Hariaksha Gunda - 4
 Ryan Mcculley - 3
-Robert Read - 5.5
-Tyler Cruise - 3.5
+Robert Read - 6
+Tyler Cruise - 4
