@@ -47,6 +47,10 @@ Our timesheet kept track of work-hours contributed by each group member. This da
 <link rel="stylesheet" href="styles.css">
 <link rel="alternate" type="application/atom+xml" href="/en.atom">
 <link rel="shortcut icon" type="image/x-icon" href="icon.png">
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://JamesWhite0811@bitbucket.org/tklocklear/fall2023team3.git
 </head>
 <body id="article">
 <main>
@@ -104,7 +108,7 @@ Our timesheet kept track of work-hours contributed by each group member. This da
     jwwhite7@crimson.ua.edu
   </div>
   <div class="column">
-    4.5
+    6
   </div>
 </div>
 <!-- ADAM HOWARD -->
@@ -149,7 +153,7 @@ Our timesheet kept track of work-hours contributed by each group member. This da
     hgunda@crimson.ua.edu
   </div>
   <div class="column">
-    4.5
+    5
   </div>
 </div>
 <!-- RYAN McCULLEY -->
@@ -318,13 +322,124 @@ Our timesheet kept track of work-hours contributed by each group member. This da
 <br><hr/>
 
 <h3 id="ucdescriptions">Use Case Descriptions</h3>
-<p>Click here to view our <a href="ucdescriptions.pdf"><font color="blue">use case descriptions pdf</font></a>.</p>
+<p>Click here to view our <a href="ucdescriptions.pdf" target="_blank"><font color="blue">use case descriptions pdf</font></a>.</p>
 <br><hr/>
 
 <h3 id="matrix">Story Selection Matrix</h3>
 <img src="Matrix.png"</img>
 <br><hr/>
         
+<<<<<<< HEAD
+=======
+        <h3>Glossary</h3>
+        <table class="security">
+        	<tr>
+        		<th class="security">ChocAn Data Center</th>
+        		<td class="security">Centralized data center that stores member and provider's data.</td>
+        	</tr>
+        	<tr>
+        		<th class="security">Chocoholics Anonymous (ChocAn)</th>
+        		<td class="security">An organization dedicated to helping people addicted to chocolate in all its glorious forms.</td>
+        	</tr>
+        	<tr>
+        		<th class="security">Member</th>
+        		<td class="security">Person signed up to use ChocAn services.</td>
+        	</tr>
+        	<tr>
+        		<th class="security">Member ID Card</th>
+        		<td class="security">Card used to access ChocAn services. Also, stores member's information need to provide service.</td>
+        	</tr>
+        	<tr>
+        		<th class="security">Member ID Number</th>
+        		<td class="security">Nine digit number used to identify member in ChocAn.</td>
+        	</tr>
+        	<tr>
+        		<th class="security">Member Report</th>
+        		<td class="security">Weekly report given to member which displays the list of consultations provided and total fee for that week.</td>
+        	</tr>
+    		<tr>
+        		<th class="security">Provider</th>
+        		<td class="security">Health care professional who provides services to help ChocAn members (Ex: dietitians, internists, exercise experts).</td>
+        	</tr>
+    		<tr>
+        		<th class="security">Provider Directory</th>
+        		<td class="security">Stores service codes corresponding to different services offered by ChocAn providers.</td>
+        	</tr>
+    		<tr>
+        		<th class="security">Provider Number</th>
+        		<td class="security">Pin used to identify provider in ChocAn.</ttd>
+        	<tr>
+        		<th class="security">Provider Report</th>
+        		<td class="security">Weekly report given to provider which displays the lis tof consultations provided that week for each member. </td>
+        	</tr>
+			<tr>
+        		<th class="security">Provider Terminal</th>
+        		<td class="security">Computer directly linked to ChocAn Data Center. Used by providers to scan and verify member ID card.</td>
+        	</tr>
+    		<tr>
+        		<th class="security">Service Code</th>
+        		<td class="security">Six digit code used by provider to tell what specific service was provided and how much to charge member.</td>
+        	</tr>
+        	
+        </table>
+        
+        <h3>Generic Security User Stories</h3>
+        <table class="security">
+			<tr>
+				<caption>
+					Account lifestyle
+				<caption>
+			</tr>
+        	<tr>
+        		<th class="security">As</th>
+        		<td class="security">a person accountable for privacy (data protection)</td>
+        	</tr>
+        	<tr>
+        		<th class="security">I want</th>
+        		<td class="security">that user accounts have a well-defined lifecycle with all the necessary account states</td>
+        	</tr>
+        	<tr>
+        		<th class="security">so that</th>
+        		<td class="security">we can manage users' personal data properly.</td>
+        	</tr>
+        	<tr>
+        		<th class="security">Description</th>
+        		<td class="security">User accounts need to have a well-defined lifecycle. For example, accounts need to be created; old accounts’ data may need to be purged (personal data handling requirements); accounts may need to be flagged or locked because of technical issues or misuse; new accounts may need to go through specific validation steps to be fully enabled (for example, require valid email address to be able to use all features).</td>
+        	</tr>
+        	<tr>
+        		<th class="security">Our solution</th>
+        		<td class="security">Data protection is an important goal for both our providers and our clients. The lifecycle of our accounts is indefinite and only deactivated with user choice or missed payments. First, any new account may always be added to our Data Center; however, one email address can only be linked to one account. Additionally, accounts must be verified upon creation, and users can choose to activate 2-factor authentification. User accounts that miss one monthly payment will be flagged and locked from services of providers. User accounts will be deleted from the Data Center after 3 missed monthly payments to protect user data. Users can also choose to unsubscribe or delete their accounts at any time. Providers also have accounts that they can choose to delete at any time, should they stop collaborating with Chocoholics Anonymous.</ttd>
+        	</tr>
+        </table>
+        
+        <table class="security">
+			<tr>
+				<caption>
+					Accessible privacy policy
+				</caption>
+			</tr>
+        	<tr>
+        		<th class="security">As</th>
+        		<td class="security">a user</td>
+        	</tr>
+        	<tr>
+        		<th class="security">I want</th>
+        		<td class="security">that our products communicate the up-to-date company privacy policy in an accessible way.</th>
+        	</tr>
+        	<tr>
+        		<th class="security">so that</th>
+        		<td class="security">I can understand how our personal data is used.</td>
+        	</tr>
+        	<tr>
+        		<th class="security">Description</th>
+        		<td class="security">The privacy policy describes the private (personal) information that is collected from the user, and how it is used and protected, and the contact point for more information. It also fulfils the other legal requirements for informing the user. Companies often have a standard privacy policy that may be used. The accessibility of privacy policy means that the language of the privacy policy should be simple enough to be understood by the user, and that it is communicated before the user commits to the use of the service, and at any time afterwards at a request of the user. </th>
+        	</tr>
+        	<tr>
+        		<th class="security">Our solution</th>
+        		<td class="security">User and provider awareness is an important goal for us. We provide the PDF of our Terms and Conditions and Privacy Policy, which is agreed to upon creation of an account. Both providers and users receive email notifications whenever the Terms and Conditions or Privacy Policy is updated. These documents are also always available to view on the company website and app. Lastly, the documents avoid difficult jargon and make the policies easy for users and providers to understand.</td>
+        	</tr>
+        </table>
+>>>>>>> branch 'master' of https://JamesWhite0811@bitbucket.org/tklocklear/fall2023team3.git
 
 <h3 id="gensec">Generic Security User Stories</h3>
 <strong><em><center>Account Lifestyle</center></em></strong> 
