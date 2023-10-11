@@ -1,9 +1,9 @@
 Team 3 Project 2 Hours Logging
 -------------
-James White - 2
-Adam Howard - 1.5
-Ethan Busby - 
-Hariaksha Gunda - 2
-Ryan Mcculley - 
+James White - 4
+Adam Howard - 3.5
+Ethan Busby - 5
+Hariaksha Gunda - 4
+Ryan Mcculley - 3
 Robert Read - 3
-Tyler Cruise - 2
+Tyler Cruise - 4
