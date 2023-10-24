@@ -1,8 +1,0 @@
-Activity Diagrams:
-Tyler - Request individual report and EFT report
-Hari- Request Provider directory and verify member
-James- Run main accounting procedure and summary report
-Adam- edit provider and edit member
-Ethan- Bill ChocAn and Add
-Robert- Member report and provider report
-Ryan- Delete and Update records
