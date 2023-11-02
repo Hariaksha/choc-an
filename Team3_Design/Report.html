@@ -284,7 +284,34 @@
 </ul>
 
 <h3 id="architecture">Software Architecture Description</h3>
-<p>Start</p>
+<p>For this project, we kept our coupling, or degree to which classes connect to each other, 
+	to a minimum. We could not completely eliminate it; however, each class only interacts 
+	with the necessary classes. Moreover, each separate entity does not interact with other 
+	entities, further limiting coupling. This low level of coupling reduces difficulty of 
+	implementing, testing, and maintaining our software. We kept our cohesion, or 
+	“single-mindedness” of each component, as high as we could. Each class only has attributes 
+	and methods that are related to its class. This high level of cohesion makes our software 
+	relatively easy to implement, test, and maintain.
+</p>
+<p>
+	For this project, we are implementing a layered system architecture. In this architecture type, 
+	each component layer provides services to the layer above it and serves as a client to the 
+	layer below it. This architecture style is commonly used in communication protocols, database 
+	systems, and operating systems. It does not fit all software, for not all systems are easily 
+	structured in a layered fashion; however, this fits our task because each class only interacts 
+	with the class above and below it. This is seen in our class diagram, which clearly shows a 
+	hierarchy with different layers of classes, with the menu at the top and the service list at 
+	the bottom.
+</p>
+<p>	
+	The first advantage of a layered system architecture is supporting design based on increasing 
+	levels of abstraction, which allows developers to partition a complex problem into incremental 
+	steps. It additionally supports enhancement because each layer interacts with at a maximum of 
+	two other layers. Lastly, it supports reuse because layers can be modified and reimplemented in 
+	adjacent layers to serve similar purposes. This is seen in our class diagram with the 
+	implementation of terminals for providers, operators, and managers; each one is similar but 
+	found in different adjacent layers.
+</p>
 
 <br>
 <hr/>
