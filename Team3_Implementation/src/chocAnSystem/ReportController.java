@@ -31,10 +31,12 @@ public class ReportController {
 	
 	/** Called by Timer, runs all compilers.*/
 	public void runAccountingProcedure(){
+		System.out.println("Running Accounting Procedure");
 		providerReport();
 		memberReport();
 		summaryReport();
 		eftReport();
+		System.out.println("Accounting Procedure Completed");
 	}
 	
 	/** Called my Manager; Runs desired report compiler after an input.*/
