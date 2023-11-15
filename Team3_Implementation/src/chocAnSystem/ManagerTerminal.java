@@ -20,10 +20,15 @@ public class ManagerTerminal {
   /** This class will let the manager choose an action. */
   public void chooseAction() {
 	  Scanner sc = new Scanner(System.in);
+<<<<<<< HEAD
 	  String response = " "
 	  ReportController rc = new ReportController();
 			  
 			  
+=======
+	  String response = " ";
+	  
+>>>>>>> branch 'master' of https://Hariaksha@bitbucket.org/tklocklear/fall2023team3.git
 	  while (!response.equals("Y") && !response.equals("N")) {
 		  System.out.println("Would you like to request a report? Type 'Y' for Yes and 'N' for No");
 		  response = sc.nextLine();
