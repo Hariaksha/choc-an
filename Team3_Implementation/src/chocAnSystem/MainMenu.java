@@ -21,8 +21,6 @@ public class MainMenu {
       System.out.println("You entered " + loginNumber + " as your login ID number.");
       if (loginNumber >= 0 && loginNumber < 100) {
         System.out.println("You are a Provider. You will be directed to the Provider Terminal");
-        ProviderTerminal pt = new ProviderTerminal();
-        pt.chooseAction();
       } 
       else if (loginNumber >= 100 && loginNumber < 200) {
         System.out.println("You are an Operator. You will be directed to the Operator Terminal");
