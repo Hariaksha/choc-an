@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-
+package chocAnSystem; 
 public class Provider
 { 
     String name; 
