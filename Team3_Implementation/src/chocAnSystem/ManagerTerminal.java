@@ -55,6 +55,7 @@ public class ManagerTerminal {
 			  System.out.println("You have entered an invalid input. You will be redirected to the question.");
 		  }
 	  }    
+	  sc.close();
 	  return;
   }
 
