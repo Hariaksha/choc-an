@@ -53,6 +53,15 @@ public class ReportController {
 		else if(input == 2) {
 			System.out.println("Compiling Member Report");
 			memberReport();
+			System.out.println("Would you like to request another report? Type '1' for yes and any other integer for no");
+			int nextInput = sc.nextInt();
+			if (nextInput == 1) {
+				System.out.println("You have chosen to request another report");
+				requestReports();
+			}
+			else {
+				System.out.println("You have chosen not to request another report");
+			}
 		}
 		else if(input == 3) {
 			System.out.println("Compiling Summary Report");
@@ -64,6 +73,7 @@ public class ReportController {
 		}
 		else {
 			System.out.println("Invalid Input");
+			requestReports();
 		}
 		sc.close();
 	}
