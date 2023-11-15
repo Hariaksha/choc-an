@@ -1,3 +1,4 @@
+package chocAnSystem;
 import java.util.Scanner;
 
 public class ManagerTerminal {
@@ -18,7 +19,14 @@ public class ManagerTerminal {
 
   /** This class will let the manager choose an action. */
   public void chooseAction() {
-    return;
+	  Scanner sc = new Scanner(System.in);
+	  String response = " "
+	  System.out.println("Would you like to request a report? Type 'Y' for Yes and 'N' for No");
+	  while response.
+	  response = sc.nextLine();
+	  
+    
+	  return;
   }
 
   public void managerLogin() {
@@ -34,5 +42,6 @@ public class ManagerTerminal {
           System.out.println("Invalid username or password.");
     }
     sc.close();
+    return
   }
 }
