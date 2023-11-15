@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 public class Provider
 { 
@@ -32,3 +33,10 @@ class UpdateProvider
         System.out.println("Enter Member ID Number: ");
     } 
 } 
+=======
+package chocAnSystem;
+
+public class UpdateProvider {
+
+}
+>>>>>>> branch 'master' of https://alhoward3@bitbucket.org/tklocklear/fall2023team3.git
