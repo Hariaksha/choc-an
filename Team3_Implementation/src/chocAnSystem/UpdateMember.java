@@ -99,11 +99,3 @@ class UpdateMember
     }
 
 } 
-
-=======
-package chocAnSystem;
-
-public class UpdateMember {
-
-}
->>>>>>> branch 'master' of https://alhoward3@bitbucket.org/tklocklear/fall2023team3.git
