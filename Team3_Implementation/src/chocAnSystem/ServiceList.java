@@ -1,3 +1,5 @@
+/** Code by: Tyler Cruise.*/
+
 package chocAnSystem;
 
 public class ServiceList {
@@ -6,6 +8,7 @@ public class ServiceList {
 	int size;
 	int amount;
 	
+	/** Constructor.*/
 	public ServiceList() {
 		size = 50;
 		comments = new String[50];
@@ -13,6 +16,7 @@ public class ServiceList {
 		amount = 0;
 	}
 	
+	/** Called when Array is full.*/
 	private void increaseSize() {
 		String[] tempCom = new String[size];
 		String[] tempDat = new String[size];
@@ -35,6 +39,7 @@ public class ServiceList {
 		return;
 	}
 	
+	/** Adds new service info to list.*/
 	public void addServiceInfo(String note, String date) {
 		if(size == amount) {
 			increaseSize();
@@ -45,6 +50,7 @@ public class ServiceList {
 		return;
 	}
 	
+	/** Stand-in for service info output.*/
 	public void getServiceInfo() {
 		System.out.println("Got Service Info");
 	}
