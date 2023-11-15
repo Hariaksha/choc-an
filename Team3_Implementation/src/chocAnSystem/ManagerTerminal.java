@@ -21,7 +21,9 @@ public class ManagerTerminal {
   public void chooseAction() {
 	  Scanner sc = new Scanner(System.in);
 	  String response = " "
-	  
+	  ReportController rc = new ReportController();
+			  
+			  
 	  while (!response.equals("Y") && !response.equals("N")) {
 		  System.out.println("Would you like to request a report? Type 'Y' for Yes and 'N' for No");
 		  response = sc.nextLine();
