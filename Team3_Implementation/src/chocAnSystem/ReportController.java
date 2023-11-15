@@ -20,7 +20,7 @@ public class ReportController {
 	public void memberReport(){		
 		System.out.println("Compiled Member Report");
 }
-	}
+	
 	
 	/** Stand-in for Provider Report Compiler.*/
 	public void providerReport(){
@@ -29,10 +29,12 @@ public class ReportController {
 	
 	/** Called by Timer, runs all compilers.*/
 	public void runAccountingProcedure(){
+		System.out.println("Running Accounting Procedure");
 		providerReport();
 		memberReport();
 		summaryReport();
 		eftReport();
+		System.out.println("Accounting Procedure Completed");
 	}
 	
 	/** Called my Manager; Runs desired report compiler after an input.*/
@@ -75,4 +77,5 @@ public class ReportController {
 			System.out.println(e);
 		
 	}
+   }
 }
