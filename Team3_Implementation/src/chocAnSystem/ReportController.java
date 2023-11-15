@@ -4,9 +4,7 @@ import java.io.FileWriter;
 
 public class ReportController {
 	/** Constructor.*/
-	public ReportController() {
-		
-	}
+	public ReportController() {}
 	
 	/** Stand-in for EFT Report Compiler.*/
 	public void eftReport(){		
@@ -57,7 +55,7 @@ public class ReportController {
 			summaryReport();
 		}
 		else if(input == 4) {
-			System.out.println("Compiled EFT Report");
+			System.out.println("Compiling EFT Report");
 			eftReport();
 		}
 		else {
