@@ -20,10 +20,9 @@ public class ManagerTerminal {
   /** This class will let the manager choose an action. */
   public void chooseAction() {
 	  Scanner sc = new Scanner(System.in);
-
-	  String response = " "
+	  String response = " ";
 	  ReportController rc = new ReportController();
-			  
+
 	  while (!response.equals("Y") && !response.equals("N")) {
 		  System.out.println("Would you like to request a report? Type 'Y' for Yes and 'N' for No");
 		  response = sc.nextLine();
@@ -73,6 +72,6 @@ public class ManagerTerminal {
           System.out.println("Invalid username or password.");
     }
     sc.close();
-    return
+    return;
   }
 }
