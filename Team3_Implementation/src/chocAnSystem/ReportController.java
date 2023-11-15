@@ -18,7 +18,9 @@ public class ReportController {
 		System.out.println("Compiled Summary Report");
 	}
 	
-
+	public void memberReport() {
+		
+	}
 	
 	/** Stand-in for Provider Report Compiler.*/
 	public void providerReport(){
