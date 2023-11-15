@@ -35,16 +35,16 @@ public class ManagerTerminal {
 			  String reportResponse = " ";
 			  reportResponse = sc.nextLine();
 			  System.out.println("You entered: " + reportResponse);
-			  if reportResponse.equals("M") {
+			  if (reportResponse.equals("M")) {
 				  rc.memberReport();
 			  }
-			  else if reportResponse.equals("P") {
+			  else if (reportResponse.equals("P")) {
 				  rc.providerReport();
 			  }
-			  else if reportResponse.equals("S") {
+			  else if (reportResponse.equals("S")) {
 				  rc.summaryReport();
 			  }
-			  else if reportResponse.equals("E") {
+			  else if (reportResponse.equals("E")) {
 				  rc.eftReport();
 			  }
 			  else {
