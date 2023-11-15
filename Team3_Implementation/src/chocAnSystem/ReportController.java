@@ -21,7 +21,26 @@ public class ReportController {
 	/** Stand-in for Member Report Compiler.*/
 	public void memberReport(){		
 		System.out.println("Compiled Member Report");
-}
+		
+		try {
+			FileWriter fw = new FileWriter("src/chocAnSystem/memberReport.html");
+			fw.write("<!DOCTYPE html>\r\n"
+					+ "<html>\r\n"
+					+ "<head>\r\n"
+					+ "<title>Page Title</title>\r\n"
+					+ "</head>\r\n"
+					+ "<body>\r\n"
+					+ "\r\n"
+					+ "<h1>This is a Heading</h1>\r\n"
+					+ "<p>This is a paragraph.</p>\r\n"
+					+ "\r\n"
+					+ "</body>\r\n"
+					+ "</html>");
+			fw.close();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
 	}
 	
 	/** Stand-in for Provider Report Compiler.*/
@@ -66,15 +85,6 @@ public class ReportController {
 		sc.close();
 	}
 	
-	
-	private void formatReport(String fileName) {
-		try {
-			FileWriter fw = new FileWriter("src/chocAnSystem/" + fileName + ".txt");
-			fw.write("This is a test");
-			fw.close();
-		}
-		catch(Exception e){
-			System.out.println(e);
+
 		
-	}
 }
