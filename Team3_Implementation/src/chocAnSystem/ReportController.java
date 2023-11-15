@@ -18,9 +18,11 @@ public class ReportController {
 		System.out.println("Compiled Summary Report");
 	}
 	
-	public void memberReport() {
-		
-	}
+	/** Stand-in for Member Report Compiler.*/
+	public void memberReport(){		
+		System.out.println("Compiled Member Report");
+}
+	
 	
 	/** Stand-in for Provider Report Compiler.*/
 	public void providerReport(){
@@ -66,5 +68,16 @@ public class ReportController {
 		sc.close();
 	}
 	
-
+	
+	private void formatReport(String fileName) {
+		try {
+			FileWriter fw = new FileWriter("src/chocAnSystem/" + fileName + ".txt");
+			fw.write("This is a test");
+			fw.close();
+		}
+		catch(Exception e){
+			System.out.println(e);
+		
+	}
+   }
 }
