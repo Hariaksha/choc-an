@@ -20,7 +20,7 @@ public class ManagerTerminal {
   /** This class will let the manager choose an action. */
   public void chooseAction() {
 	  Scanner sc = new Scanner(System.in);
-	  String response = " "
+	  String response = " ";
 	  
 	  while (!response.equals("Y") && !response.equals("N")) {
 		  System.out.println("Would you like to request a report? Type 'Y' for Yes and 'N' for No");
