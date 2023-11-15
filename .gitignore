@@ -7,8 +7,7 @@
 node_modules/
 dist/
 
-# Compiled Java class files
-*.class
+
 
 # Compiled Python bytecode
 *.py[cod]
@@ -16,11 +15,6 @@ dist/
 # Log files
 *.log
 
-# Package files
-*.jar
-
-# Java Files
-*.java
 
 # Maven
 target/
