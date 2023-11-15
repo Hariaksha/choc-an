@@ -12,7 +12,7 @@ public class ManagerTerminal {
   }
 
   /** This is the Primary Constructor that is recommended for use. */
-  public Manager(String pass, String name) {
+  public ManagerTerminal(String pass, String name) {
     managerUserame = name;
     managerPassword = pass;
     }
