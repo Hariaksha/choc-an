@@ -2,43 +2,60 @@ package chocAnSystem;
 
 public class Provider {
 
-	public int providerNumber;
-    public string providerName;
-    public string providerAddress;
-    public string providerCity;
-    public string providerState;
-    public int providerZip;
+	int providerNumber;
+    String providerName;
+    String providerAddress;
+    String providerCity;
+    String providerState;
+    int providerZip;
 
-
-    public int getProviderNumber(){
-        int meow = Provider.providerNumber;
+    //Gets the Provider number
+    public int getProviderNumber(Provider pClass){
+        int meow = pClass.providerNumber;
         return meow;
     }
-
-    public string getProviderName(){
-        string meow = Provider.providerName;
+    //Gets the Provider Name
+    public String getProviderName(Provider pClass){
+    	String meow = pClass.providerName;
         return meow;
     }
-
-    public string getProviderAddress(){
-        string meow = Provider.providerAddress;
+    //Gets the Provider Address
+    public String getProviderAddress(Provider pClass){
+    	String meow = pClass.providerAddress;
         return meow;
     }
-
-    public string getProviderCity(){
-        string meow = Provider.providerCity;
+    //Gets the Provider City
+    public String getProviderCity(Provider pClass){
+    	String meow = pClass.providerCity;
         return meow;
     }
-
-    public string getProviderState(){
-        string meow = Provider.providerState;
+    //Gets the Provider State
+    public String getProviderState(Provider pClass){
+    	String meow = pClass.providerState;
         return meow;
     }
-
-    public int getProviderZip(){
-        string meow = Provider.providerZip;
+    //Gets the Provider Zip 
+    public int getProviderZip(Provider pClass){
+    	int meow = pClass.providerZip;
         return meow;
     }
-
+    
+    //creates a new provider with all the inputs
+    public Provider createProvider(int pNum, String pName, String pAdd, String pCity, String pState, int pZip) {
+    	Provider meow = new Provider();
+    	meow.providerNumber = pNum;
+    	meow.providerName = pName;
+    	meow.providerAddress = pAdd;
+    	meow.providerCity = pCity;
+    	meow.providerState = pState;
+    	meow.providerZip = pZip;
+    	return meow;
+    }
+    
+    //basic Provider constructor
+    public Provider createProvider() {
+    	Provider meow = new Provider();
+    	return meow;
+    }
 
 }

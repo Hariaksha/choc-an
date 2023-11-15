@@ -4,9 +4,7 @@ import java.io.FileWriter;
 
 public class ReportController {
 	/** Constructor.*/
-	public ReportController() {
-		
-	}
+	public ReportController() {}
 	
 	/** Stand-in for EFT Report Compiler.*/
 	public void eftReport(){		
@@ -18,30 +16,7 @@ public class ReportController {
 		System.out.println("Compiled Summary Report");
 	}
 	
-	/** Stand-in for Member Report Compiler.*/
-	public void memberReport(){		
-		System.out.println("Compiled Member Report");
-		
-		try {
-			FileWriter fw = new FileWriter("src/chocAnSystem/memberReport.html");
-			fw.write("<!DOCTYPE html>\r\n"
-					+ "<html>\r\n"
-					+ "<head>\r\n"
-					+ "<title>Page Title</title>\r\n"
-					+ "</head>\r\n"
-					+ "<body>\r\n"
-					+ "\r\n"
-					+ "<h1>This is a Heading</h1>\r\n"
-					+ "<p>This is a paragraph.</p>\r\n"
-					+ "\r\n"
-					+ "</body>\r\n"
-					+ "</html>");
-			fw.close();
-		}
-		catch(Exception e){
-			System.out.println(e);
-		}
-	}
+
 	
 	/** Stand-in for Provider Report Compiler.*/
 	public void providerReport(){
@@ -50,10 +25,12 @@ public class ReportController {
 	
 	/** Called by Timer, runs all compilers.*/
 	public void runAccountingProcedure(){
+		System.out.println("Running Accounting Procedure");
 		providerReport();
 		memberReport();
 		summaryReport();
 		eftReport();
+		System.out.println("Accounting Procedure Completed");
 	}
 	
 	/** Called my Manager; Runs desired report compiler after an input.*/
@@ -76,7 +53,7 @@ public class ReportController {
 			summaryReport();
 		}
 		else if(input == 4) {
-			System.out.println("Compiled EFT Report");
+			System.out.println("Compiling EFT Report");
 			eftReport();
 		}
 		else {
@@ -86,5 +63,4 @@ public class ReportController {
 	}
 	
 
-		
 }

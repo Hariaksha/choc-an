@@ -14,6 +14,7 @@ class Member
     int number; 
     String street; 
     String city; 
+    String state; 
     String zip; 
     
 }
@@ -38,6 +39,10 @@ class UpdateMember
 
         newMember.city = myObj.nextLine(); 
 
+        System.out.print("Enter State: "); 
+
+        newMember.state = myObj.nextLine();
+
         System.out.print("Enter Zip: "); 
 
         newMember.zip = myObj.nextLine(); 
@@ -51,13 +56,14 @@ class UpdateMember
 /////////////////////////////////////////////////////////////////////////////////  
     public void deleteMember() 
     { 
+        /* 
         System.out.println("Enter Member ID Number: ");
         Scanner input = new Scanner(System.in);  
         String id = input; 
 
         try {
             Scanner scan = new Scanner(new File("MemberList.txt"));
-            PrintWriter writer = new PrintWriter(new FileWriter("tempList.txt")))
+            PrintWriter writer = new PrintWriter(new FileWriter("tempList.txt"));
             scan.nextLine();
 
             while(scan.hasNextLine())
@@ -67,7 +73,7 @@ class UpdateMember
         } catch (IOException e) {
            e.printStackTrace();
         }
-        
+        */
     }
 //////////////////////////////////////////////////////////////////////////////////////
     public void updateMemberRecords() 
@@ -80,7 +86,7 @@ class UpdateMember
         try{
             FileWriter reader = new FileWriter("MemberList.txt", true);
             BufferedWriter writer = new BufferedWriter(reader);
-            writer.write(member.name + " / " + member.number + " / " + member.street + " / " + member.city + " / " + member.zip);
+            writer.write(member.name + " / " + member.number + " / " + member.street + " / " + member.city + " / " + member.state + " / " + member.zip);
             writer.newLine();
             writer.close();
             reader.close();
@@ -90,12 +96,38 @@ class UpdateMember
         }
     }
 ////////////////////////////////////////////////////////////////////////////////////////
-    public static void main(String args[])
-    {
-        Member member = new Member();
-        UpdateMember update = new UpdateMember();
-        update.addMember(); 
-        update.addMember(); 
-    }
 
+    public void start()
+    { 
+        System.out.println("To add member type add"); 
+        System.out.println("To delete member type delete"); 
+        System.out.println("To update member records type update"); 
+        Boolean vaild = false;
+        Scanner scan  = new Scanner(System.in); 
+        while(!vaild)
+        {
+            String input =  scan.nextLine(); 
+            if(input.equals("add"))
+            { 
+                vaild = true;
+                addMember(); 
+            }
+            else if(input.equals("delete"))
+            { 
+                vaild = true; 
+                deleteMember();
+            }
+            else if(input.equals("update"))
+            { 
+                vaild = true; 
+                Member newMember = new Member(); 
+                updateMemberList(newMember);
+            }
+            else 
+            { 
+                System.out.println("Enter valid function");
+            }
+        } 
+    }
 } 
+
