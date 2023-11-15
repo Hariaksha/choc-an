@@ -12,9 +12,6 @@ public class MainMenu {
   }
 
   public void login() {
-    // Print first message to give context to user
-    System.out.println("Enter your login ID number.");
-
     // Use scanner to take login number
     Scanner myObj = new Scanner(System.in);
     int loginNumber = -1;
