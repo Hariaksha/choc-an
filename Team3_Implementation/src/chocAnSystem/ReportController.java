@@ -22,7 +22,7 @@ public class ReportController {
 	public void memberReport(){		
 		System.out.println("Compiled Member Report");
 }
-	}
+	
 	
 	/** Stand-in for Provider Report Compiler.*/
 	public void providerReport(){
@@ -77,4 +77,5 @@ public class ReportController {
 			System.out.println(e);
 		
 	}
+   }
 }
