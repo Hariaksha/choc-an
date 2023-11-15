@@ -1,3 +1,5 @@
+/** Code by: Tyler Cruise.*/
+
 package chocAnSystem;
 import java.util.Scanner;
 import java.io.FileWriter;
