@@ -36,16 +36,16 @@ public class ManagerTerminal {
 			  reportResponse = sc.nextLine();
 			  System.out.println("You entered: " + reportResponse);
 			  if reportResponse.equals("M") {
-				  memberReport();
+				  rc.memberReport();
 			  }
 			  else if reportResponse.equals("P") {
-				  providerReport();
+				  rc.providerReport();
 			  }
 			  else if reportResponse.equals("S") {
-				  summaryReport();
+				  rc.summaryReport();
 			  }
 			  else if reportResponse.equals("E") {
-				  eftReport();
+				  rc.eftReport();
 			  }
 			  else {
 				  System.out.println("You have entered an invalid input. You will be redirected to the question.");
