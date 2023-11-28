@@ -48,7 +48,7 @@ public class ManagerTerminal {
     String username = sc.nextLine();
     System.out.println("Enter password and click Enter: ");
     String password = sc.nextLine();
-    if (username.equals(managerUserame) && password.equals(managerPassword)) {
+    if (username.equals(managerUsername) && password.equals(managerPassword)) {
       System.out.println("Welcome, " + managerUserame + "!");
     }
         else {
