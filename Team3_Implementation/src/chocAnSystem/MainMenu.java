@@ -28,6 +28,7 @@ public class MainMenu {
       else if (loginNumber >= 200 && loginNumber < 300) {
         System.out.println("You are a Manager. You will be directed to the Manager Terminal");
         ManagerTerminal mt = new ManagerTerminal();
+        mt.managerLogin();
         mt.chooseAction();
       } 
       else {

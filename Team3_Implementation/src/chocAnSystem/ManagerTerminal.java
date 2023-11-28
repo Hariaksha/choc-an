@@ -4,10 +4,12 @@ import java.util.Scanner;
 public class ManagerTerminal {
   private String managerUsername;
   private String managerPassword;
+  private String passwordArr[] = {"password123", "password321"};
+  private String usernameArr[] = {"Ethan", "Bobby"};
 
   /** This is a Default Constructor that will be used in case arguments are accidentally not passed. */
   public ManagerTerminal() {
-    managerUsername = "Bobby Brady";
+    managerUsername = "Bobby";
     managerPassword = "Password";
   }
 
@@ -56,5 +58,21 @@ public class ManagerTerminal {
     }
     sc.close();
     return;
+  }
+  
+  public int isStrInUsernameArr(String str) {
+	  for (int i = 0; i < usernameArr.length; i++) {
+		  if (str.equals(usernameArr[i])) {
+			  return i;
+		  }
+	  }
+	  return -1;
+  }
+  
+  public boolean isPasswordRight(String str, int index) {
+	  if (str.equals(passwordArr[index])) {
+		  return true;
+	  }
+	  return false;
   }
 }
