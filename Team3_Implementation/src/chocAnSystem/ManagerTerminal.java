@@ -25,6 +25,7 @@ public class ManagerTerminal {
 	  ReportController rc = new ReportController();
 	  System.out.println("Would you like to request a report? Type 'Y' for Yes and 'N' for No");
 	  String response = sc.nextLine();
+	  sc.close();
 	  System.out.println("You entered: " + response);
 	  if (response.equals("N")) {
 		  System.out.println("You have chosen not to request a report. Have a nice day!");
@@ -35,46 +36,32 @@ public class ManagerTerminal {
 	  else {
 		  System.out.println("You have entered an invalid input.");
 	  }
-	  sc.close();
-//	  while (!(response.equals("Y") || response.equals("N"))) {
-//		  System.out.println("Would you like to request a report? Type 'Y' for Yes and 'N' for No");
-//		  response = sc.nextLine();
-//		  System.out.println("You entered: " + response);
-//		  if (response.equals("N")) {
-//			  System.out.println("You have chosen not to request a report. Have a nice day!");
-//		  }
-//		  else if (response.equals("Y")) {
-//			  rc.requestReports();
-//		  }
-//		  else {
-//			  System.out.println("You have entered an invalid input. You will be redirected to the question.");
-//		  }
-//	  }    
-	  sc.close();
 	  return;
   }
 
   /** This class allows a manager to enter login credentials to securely log into the system. */
-  public void managerLogin() {
+  public boolean managerLogin() {
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter username and click Enter: ");
     String username = sc.nextLine();
     System.out.println("Enter password and click Enter: ");
     String password = sc.nextLine();
+    sc.close();
     int isUsernameValid = isStrInUsernameArr(username);
     if (isUsernameValid == -1) {
-    	System.out.println("Username is not valid.");
+      System.out.println("Username is not valid.");
+      return false;
     }
     else {
     	if (!isPasswordRight(password, isUsernameValid)) {
     		System.out.println("Password is incorrect.");
+    		return false;
     	}
     	else {
     		System.out.println("Welcome, user.");
+    		return true;
     	}
     }
-    sc.close();
-    return;
   }
   
   public int isStrInUsernameArr(String str) {
