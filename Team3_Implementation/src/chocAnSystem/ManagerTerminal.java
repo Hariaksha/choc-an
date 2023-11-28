@@ -21,11 +21,10 @@ public class ManagerTerminal {
 
   /** This class will let the manager choose an action. */
   public void chooseAction() {
-	  Scanner sc = new Scanner(System.in);
+	  Scanner sc2 = new Scanner(System.in);
 	  ReportController rc = new ReportController();
 	  System.out.println("Would you like to request a report? Type 'Y' for Yes and 'N' for No");
-	  String response = sc.nextLine();
-	  sc.close();
+	  String response = sc2.nextLine();
 	  System.out.println("You entered: " + response);
 	  if (response.equals("N")) {
 		  System.out.println("You have chosen not to request a report. Have a nice day!");
@@ -36,6 +35,7 @@ public class ManagerTerminal {
 	  else {
 		  System.out.println("You have entered an invalid input.");
 	  }
+	  sc2.close();
 	  return;
   }
 
