@@ -50,11 +50,17 @@ public class ManagerTerminal {
     String username = sc.nextLine();
     System.out.println("Enter password and click Enter: ");
     String password = sc.nextLine();
-    if (username.equals(managerUsername) && password.equals(managerPassword)) {
-      System.out.println("Welcome, " + managerUsername + "!");
+    int isUsernameValid = isStrInUsernameArr(username);
+    if (isUsernameValid == -1) {
+    	System.out.println("Username is not valid.");
     }
-        else {
-          System.out.println("Invalid username or password.");
+    else {
+    	if (!isPasswordRight(password, isUsernameValid)) {
+    		System.out.println("Password is incorrect.");
+    	}
+    	else {
+    		System.out.println("Welcome, user.");
+    	}
     }
     sc.close();
     return;
