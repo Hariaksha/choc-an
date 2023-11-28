@@ -4,7 +4,16 @@ public class ProviderController {
 	public ProviderController() {
 	}
 	
-	//bill chocAn
-	//verify member
-	//request directory
+	void buildChocAn() {
+		
+	}
+	
+	boolean verifyMember() {
+		
+		return true;
+	}
+	
+	void requestDirectory() {
+		
+	}
 }
