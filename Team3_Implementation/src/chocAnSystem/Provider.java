@@ -1,12 +1,14 @@
 package chocAnSystem;
 
+import java.util.Scanner;
+
 public class Provider {
 
-	int providerNumber;
-    String providerName;
-    String providerAddress;
-    String providerCity;
-    String providerState;
+	public int providerNumber;
+    public String providerName;
+    public String providerAddress;
+    public String providerCity;
+    public String providerState;
     int providerZip;
 
     //Gets the Provider number
@@ -57,5 +59,7 @@ public class Provider {
     	Provider meow = new Provider();
     	return meow;
     }
+     
+    
 
 }
