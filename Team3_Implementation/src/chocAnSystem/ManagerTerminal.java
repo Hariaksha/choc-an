@@ -22,23 +22,34 @@ public class ManagerTerminal {
   /** This class will let the manager choose an action. */
   public void chooseAction() {
 	  Scanner sc = new Scanner(System.in);
-	  String response = " ";
 	  ReportController rc = new ReportController();
-
-	  while (!response.equals("Y") && !response.equals("N")) {
-		  System.out.println("Would you like to request a report? Type 'Y' for Yes and 'N' for No");
-		  response = sc.nextLine();
-		  System.out.println("You entered: " + response);
-		  if (response.equals("N")) {
-			  System.out.println("You have chosen not to request a report. Have a nice day!");
-		  }
-		  else if (response.equals("Y")) {
-			  rc.requestReports();
-		  }
-		  else {
-			  System.out.println("You have entered an invalid input. You will be redirected to the question.");
-		  }
-	  }    
+	  System.out.println("Would you like to request a report? Type 'Y' for Yes and 'N' for No");
+	  String response = sc.nextLine();
+	  System.out.println("You entered: " + response);
+	  if (response.equals("N")) {
+		  System.out.println("You have chosen not to request a report. Have a nice day!");
+	  }
+	  else if (response.equals("Y")) {
+		  rc.requestReports();
+	  }
+	  else {
+		  System.out.println("You have entered an invalid input.");
+	  }
+	  sc.close();
+//	  while (!(response.equals("Y") || response.equals("N"))) {
+//		  System.out.println("Would you like to request a report? Type 'Y' for Yes and 'N' for No");
+//		  response = sc.nextLine();
+//		  System.out.println("You entered: " + response);
+//		  if (response.equals("N")) {
+//			  System.out.println("You have chosen not to request a report. Have a nice day!");
+//		  }
+//		  else if (response.equals("Y")) {
+//			  rc.requestReports();
+//		  }
+//		  else {
+//			  System.out.println("You have entered an invalid input. You will be redirected to the question.");
+//		  }
+//	  }    
 	  sc.close();
 	  return;
   }
