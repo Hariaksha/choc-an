@@ -2,18 +2,18 @@ package chocAnSystem;
 import java.util.Scanner;
 
 public class ManagerTerminal {
-  private String managerUserame;
+  private String managerUsername;
   private String managerPassword;
 
   /** This is a Default Constructor that will be used in case arguments are accidentally not passed. */
   public ManagerTerminal() {
-    managerUserame = "Bobby Brady";
+    managerUsername = "Bobby Brady";
     managerPassword = "Password";
   }
 
   /** This is the Primary Constructor that is recommended for use. */
   public ManagerTerminal(String pass, String name) {
-    managerUserame = name;
+    managerUsername = name;
     managerPassword = pass;
     }
 
@@ -49,7 +49,7 @@ public class ManagerTerminal {
     System.out.println("Enter password and click Enter: ");
     String password = sc.nextLine();
     if (username.equals(managerUsername) && password.equals(managerPassword)) {
-      System.out.println("Welcome, " + managerUserame + "!");
+      System.out.println("Welcome, " + managerUsername + "!");
     }
         else {
           System.out.println("Invalid username or password.");
