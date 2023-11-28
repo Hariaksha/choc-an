@@ -32,34 +32,6 @@ public class ManagerTerminal {
 		  }
 		  else if (response.equals("Y")) {
 			  rc.requestReports();
-//			  System.out.println("Which report would you like to request? Type 'M' for Member Report, 'P' for Provider Report, 'S' for Summary Report, and 'E' for EFT Report.");
-//			  String reportResponse = " ";
-//			  reportResponse = sc.nextLine();
-//			  System.out.println("You entered: " + reportResponse);
-//			  if (reportResponse.equals("M")) {
-//				  rc.memberReport();
-//				  String quitResponse = " ";
-//				  while (quitResponse.equals("Q") && quitResponse.equals("R")) {
-//					  System.out.println("Enter 'Q' if you would like to exit the software. Enter 'R' if you would like to request another report"");
-//					  quitResponse = sc.nextLine();
-//					  if (quitResponse.equals("Q")) {
-//						  System.out.println("Have a nice day!");
-//					  }
-//					  else if (quitResponse.equals)
-//				  }
-//			  }
-//			  else if (reportResponse.equals("P")) {
-//				  rc.providerReport();
-//			  }
-//			  else if (reportResponse.equals("S")) {
-//				  rc.summaryReport();
-//			  }
-//			  else if (reportResponse.equals("E")) {
-//				  rc.eftReport();
-//			  }
-//			  else {
-//				  System.out.println("You have entered an invalid input. You will be redirected to the question.");
-//			  }
 		  }
 		  else {
 			  System.out.println("You have entered an invalid input. You will be redirected to the question.");
