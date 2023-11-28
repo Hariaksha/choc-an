@@ -7,9 +7,6 @@ public class Main {
 		MainMenu menu = new MainMenu();
         menu.display();
         menu.login();
-        
-        ReportController rc = new ReportController();
-        
-        rc.memberReport();
+       
 	}
 }
