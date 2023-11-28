@@ -3,17 +3,19 @@ package chocAnSystem;
 public class ProviderController {
 	public ProviderController() {
 	}
+	boolean memberExists = true;
 	
-	void buildChocAn() {
-		
+	void billChocAn() {
+		System.out.println("billed chocAn");
 	}
 	
 	boolean verifyMember() {
 		
-		return true;
+		if (memberExists) return true;
+		else return false;
 	}
 	
 	void requestDirectory() {
-		
+		System.out.println("gimme directory");
 	}
 }
