@@ -3,10 +3,10 @@
 package chocAnSystem;
 
 public class ServiceList {
-	String[] comments;
-	String[] dates;
-	int size;
-	int amount;
+	public String[] comments;
+	public String[] dates;
+	public int size;
+	public int amount;
 	
 	/** Constructor.*/
 	public ServiceList() {
@@ -21,7 +21,7 @@ public class ServiceList {
 		String[] tempCom = new String[size];
 		String[] tempDat = new String[size];
 		
-		for(int i = 0; i <= size; i++) {
+		for(int i = 0; i < size; i++) {
 			tempCom[i] = comments[i];
 			tempDat[i] = dates[i];
 		}
@@ -30,7 +30,7 @@ public class ServiceList {
 		String[] dates = new String[size + 50];
 		String[] comments = new String[size + 50];
 		
-		for(int i = 0; i <= size; i++) {
+		for(int i = 0; i < size; i++) {
 			comments[i] = tempCom[i];
 			dates[i] = tempDat[i];
 		}
