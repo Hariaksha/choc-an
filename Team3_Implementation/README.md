@@ -1,0 +1,5 @@
+This file is a README markdown file, which contains information about the entire repository.
+
+This repository holds code and reports simulating the software development lifecycle (SDLC). It is organized into four folders, which represent our progress through different stages of the SDLC. The software that we implemented was created to serve a customer company named Chocoholics Anonymous. This company helps people break their addictions to chocolate. This project was created by 7 Computer Science undergraduate students named Ethan Busby, Adam Howard, Hariaksha Gunda, Ryan McCulley, Robert Read, Tyler Cruise, and James White. Each report contains a timesheet indicating how much time each member contributed to the then current project, a task distribution table indicating what tasks each member completed, and a BitBucket screenshot showing member pushes to the repository.
+
+The Project 1 folder 

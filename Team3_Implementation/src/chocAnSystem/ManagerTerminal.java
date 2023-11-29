@@ -1,6 +1,7 @@
 package chocAnSystem;
 import java.util.Scanner;
 
+/** This declares the class attributes. */
 public class ManagerTerminal {
   private String managerUsername;
   private String managerPassword;
@@ -19,7 +20,7 @@ public class ManagerTerminal {
     managerPassword = pass;
     }
 
-  /** This class allows a manager to enter login credentials to securely log into the system. */
+  /** This class allows a manager to enter login credentials to securely log into the system, and then choose an action. */
   public void managerLoginAndChooseAction() {
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter username and click Enter: ");
@@ -48,16 +49,32 @@ public class ManagerTerminal {
     ReportController rc = new ReportController();
 	System.out.println("Would you like to request a report? Type 'Y' for Yes and 'N' for No");
 	String response = sc.nextLine();
-	System.out.println("You entered: " + response);
+	
+	while (!(response.equals("Y") || response.equals("N"))) {
+		System.out.println("You entered: " + response);
+		if (!(response.equals("Y") || response.equals("N"))) {
+			System.out.println("You have entered an invalid input. Please try again");
+			response = sc.nextLine();
+		}
+	}
+	
 	if (response.equals("N")) {
 		System.out.println("You have chosen not to request a report. Have a nice day!");
 	}
 	else if (response.equals("Y")) {
 		rc.requestReports();
 	}
-	else {
-		System.out.println("You have entered an invalid input.");
-	}
+	
+//	System.out.println("You entered: " + response);
+//	if (response.equals("N")) {
+//		System.out.println("You have chosen not to request a report. Have a nice day!");
+//	}
+//	else if (response.equals("Y")) {
+//		rc.requestReports();
+//	}
+//	else {
+//		System.out.println("You have entered an invalid input.");
+//	}
 	sc.close();
 	return;
   }
