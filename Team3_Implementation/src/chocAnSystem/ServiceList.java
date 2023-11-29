@@ -2,51 +2,26 @@
 
 package chocAnSystem;
 
+import java.util.ArrayList;
+
 public class ServiceList {
-	public String[] comments;
-	public String[] dates;
-	public int size;
+	public ArrayList<String> comments;
+	public ArrayList<String> dates;
 	public int amount;
 	
 	/** Constructor.*/
 	public ServiceList() {
-		size = 50;
-		comments = new String[50];
-		dates = new String[50];
+		comments = new ArrayList<String>();
+		dates = new ArrayList<String>();
 		amount = 0;
 	}
-	
-	/** Called when Array is full.*/
-	private void increaseSize() {
-		String[] tempCom = new String[size];
-		String[] tempDat = new String[size];
-		
-		for(int i = 0; i < size; i++) {
-			tempCom[i] = comments[i];
-			tempDat[i] = dates[i];
-		}
-		
-		
-		String[] dates = new String[size + 50];
-		String[] comments = new String[size + 50];
-		
-		for(int i = 0; i < size; i++) {
-			comments[i] = tempCom[i];
-			dates[i] = tempDat[i];
-		}
-		
-		size = size + 50;
-		return;
-	}
-	
+
 	/** Adds new service info to list.*/
 	public void addServiceInfo(String note, String date) {
-		if(size == amount) {
-			increaseSize();
-		}
-		comments[amount] = note;
-		dates[amount] = date;
-		amount++;
+
+		comments.add(note);
+		dates.add(date);
+		amount++;						//Tracks amount of values
 		return;
 	}
 	
