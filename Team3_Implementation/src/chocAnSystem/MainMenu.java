@@ -24,6 +24,9 @@ public class MainMenu {
       } 
       else if (loginNumber >= 100 && loginNumber < 200) {
         System.out.println("You are an Operator. You will be directed to the Operator Terminal");
+        OperatorTerminal ot = new OperatorTerminal();
+        ot.operatorLoginAndChooseAction();
+        //oops
       } 
       else if (loginNumber >= 200 && loginNumber < 300) {
         System.out.println("You are a Manager. You will be directed to the Manager Terminal");

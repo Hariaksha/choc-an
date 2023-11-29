@@ -46,6 +46,7 @@ public class ManagerTerminal {
     	}
     }
     if (!loggedIn) {
+    	sc.close();
     	return;
     }
     ReportController rc = new ReportController();
