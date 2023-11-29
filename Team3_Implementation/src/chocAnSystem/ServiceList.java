@@ -21,7 +21,7 @@ public class ServiceList {
 
 		comments.add(note);
 		dates.add(date);
-		amount++;
+		amount++;						//Tracks amount of values
 		return;
 	}
 	
