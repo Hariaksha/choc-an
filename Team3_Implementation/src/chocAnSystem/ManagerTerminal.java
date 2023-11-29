@@ -28,6 +28,8 @@ public class ManagerTerminal {
     System.out.println("Enter password and click Enter: ");
     String password = sc.nextLine();
     int isUsernameValid = isStrInUsernameArr(username);
+    
+    
     boolean loggedIn;
     if (isUsernameValid == -1) {
       System.out.println("Username is not valid.");
