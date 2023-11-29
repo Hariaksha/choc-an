@@ -2,4 +2,6 @@ This file is a README markdown file, which contains information about the entire
 
 This repository holds code and reports simulating the software development lifecycle (SDLC). It is organized into four folders, which represent our progress through different stages of the SDLC. The software that we implemented was created to serve a customer company named Chocoholics Anonymous. This company helps people break their addictions to chocolate. This project was created by 7 Computer Science undergraduate students named Ethan Busby, Adam Howard, Hariaksha Gunda, Ryan McCulley, Robert Read, Tyler Cruise, and James White. Each report contains a timesheet indicating how much time each member contributed to the then current project, a task distribution table indicating what tasks each member completed, and a BitBucket Statistics screenshot showing member pushes to the repository.
 
-The Project 1 folder contains our requirements analysis for the project. It includes an introduction to the project end goal, a glossary containing important relevant terms relating to Chocoholics Anonymous. 
+The Project 1 folder contains our requirements analysis for the project. It includes an introduction to the project end goal, a glossary containing important relevant terms relating to Chocoholics Anonymous, a use case diagram for the software system, use case descriptions, a story selection matrix, and two general security user stories. 
+
+The Project 2 folder contains our systems operation paragraph, in which we determine  
