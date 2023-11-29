@@ -7,16 +7,20 @@ public class OperatorTerminal {
 	private String passwordArr[] = {"password999", "password888"};
 	private String usernameArr[] = {"Hari", "James"};
 	
+	/** This is a Default Constructor that will be used in case arguments are accidentally not passed. */
 	public OperatorTerminal() {
 	    operatorUsername = "random username";
 	    operatorPassword = "Password";
 	  }
 	
+	/** This is the Primary Constructor. This recommended for use. */
 	public OperatorTerminal(String pass, String name) {
 	    operatorUsername = name;
 	    operatorPassword = pass;
 	    }
 	
+	/** Here is where an operator can login the operator terminal. After they log in, they
+	  want to edit a member or provider. */
 	public void operatorLoginAndChooseAction() {
 		Scanner sc = new Scanner(System.in);
 		String response = "";
@@ -66,6 +70,8 @@ public class OperatorTerminal {
 		sc.close();
 	}
 	
+	/** This determines where a valid username is in the array. It also saves the index
+	 that the username is at in the array.*/
 	public int isStrInUsernameArr(String str) {
 		  for (int i = 0; i < usernameArr.length; i++) {
 			  if (str.equals(usernameArr[i])) {
@@ -74,7 +80,7 @@ public class OperatorTerminal {
 		  }
 		  return -1;
 	  }
-	  
+	  /** This checks to make sure the password matches up with the correct username. */
 	  public boolean isPasswordRight(String str, int index) {
 		  if (str.equals(passwordArr[index])) {
 			  return true;
