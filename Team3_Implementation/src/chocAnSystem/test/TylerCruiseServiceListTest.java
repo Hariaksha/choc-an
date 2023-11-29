@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import chocAnSystem.ServiceList;
 
-class ServiceListTest {
+class TylerCruiseServiceListTest {
 	
 	ServiceList t;
 
