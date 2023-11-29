@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import chocAnSystem.ReportController;
 
-class ReportControllerTest {
+class TylerCruiseReportControllerTest {
 	ReportController t;
 	private final PrintStream standardOut = System.out;
 	private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
