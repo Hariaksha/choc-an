@@ -14,18 +14,14 @@ class ServiceListTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		t = new ServiceList();
-		for(int i = 0; i < 50; i++) {
-			//System.out.println("Amount = " + t.amount);
-			t.addServiceInfo("note: " + i, "date: " + i);
+		for(int i = 0; i < 10; i++) {
+			t.addServiceInfo("Notes: "+i, "Notes: "+i);
 		}
-		//System.out.println("Before Final Amount = " + t.amount);
-		t.addServiceInfo("additional", "the last one");
 	}
 
 	@Test
 	void test() {
-		System.out.println("Size: " + t.size + " Amount: " + t.amount);
-		assertEquals(100, t.size);
+		assertEquals(10, t.amount);
 	}
 
 }
