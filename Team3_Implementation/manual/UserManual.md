@@ -17,14 +17,21 @@ On Bitbucket, find the correct URL for the repository. The correct one for this 
 
 Next, go to Eclipse and click "File," "Import," "Projects from Git," and "Clone URI." Here, you will input the copied command from Bitbucket as well as your Bitbucket username and App Password. From this point on, you may continue clicking "Next" and keep the default settings. However, if you wish, you may choose where in your file directory system your repository will be stored. At the end, click "Finish" to finally import the project. 
 
+Section 3: Build the Java archive (JAR) file
+In Eclipse, right-click on the Main.java Java source file. This can be found in the "src" folder within the "Team3_Implementation" folder. Click "Export" from the menu of options, and click on "Runnable JAR file" under "Java." Choose the desired settings and the export destination folder, and then click on "Finish."
 
+Section 4: Run the Program
+start
 
-Section 4: Running Tests
+Section 5: Testing Features
+start
+
+Section 6: Running Tests
 To run tests for the ChocAn program, follow these steps:
 
-In Eclipse, right-click on the project and select "Run As" > "JUnit Test."
+1. In Eclipse, right-click on the project and select "Run As" > "JUnit Test."
 
-This will execute any unit tests that are available in the project. Review the test results in the JUnit tab in Eclipse to ensure the program functions correctly.
+2. This will execute any unit tests that are available in the project. Review the test results in the JUnit tab in Eclipse to ensure the program functions correctly.
 
-Section 5: Conclusion
+Section 7: Conclusion
 You have successfully learned how to run and test the ChocAn program. If you encounter any issues or have questions about the program's functionality, refer to the program's documentation or seek assistance from your development team or instructor. Happy testing!
