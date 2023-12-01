@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class MainMenu {
   // Constructor
   public MainMenu() {
-
   }
 
   public void display() {
