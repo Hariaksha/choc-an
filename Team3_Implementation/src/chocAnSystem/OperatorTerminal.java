@@ -6,6 +6,7 @@ public class OperatorTerminal {
 	public String operatorUsername;
 	private String passwordArr[] = {"password999", "password888"};
 	private String usernameArr[] = {"Hari", "James"};
+	public Scanner sc = new Scanner(System.in);
 	
 	/** This is a Default Constructor that will be used in case arguments are accidentally not passed. */
 	public OperatorTerminal() {
@@ -21,9 +22,9 @@ public class OperatorTerminal {
 	
 	/** Here is where an operator can login the operator terminal. After they log in, they
 	  want to edit a member or provider. */
-	public void operatorLoginAndChooseAction() {
-		Scanner sc = new Scanner(System.in);
-		String response = "";
+	public void login() {
+		//Scanner sc1 = new Scanner(System.in);
+		//String response1 = "";
 		
 		System.out.println("Enter username and click Enter: ");
 	    String username = sc.nextLine();
@@ -61,6 +62,12 @@ public class OperatorTerminal {
 	    password = sc.nextLine();
 	    isUsernameValid = isStrInUsernameArr(username);
 	  }
+	   //sc.close();
+	}
+	
+	public void chooseAction() {
+		Scanner sc = new Scanner(System.in);
+		String response = "";
 	
 		System.out.println("Would you like to edit a member or a provider? Type M for member and P for provider.");
 		response = sc.nextLine();
