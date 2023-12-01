@@ -343,11 +343,6 @@ class UpdateMember
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////
-    public static void main(String args[])
-    {
-        UpdateMember update = new UpdateMember();  
-        update.startMemberUpdate(); 
-    }
 
 } 
 

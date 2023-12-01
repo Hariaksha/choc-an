@@ -343,11 +343,6 @@ class UpdateProvider
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////
-    public static void main(String args[])
-    {
-        UpdatePrvider update = new UpdateProvider(); 
-        update.startProviderUpdate(); 
-    }
 
 } 
 
