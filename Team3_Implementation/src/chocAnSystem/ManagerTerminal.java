@@ -8,6 +8,7 @@ public class ManagerTerminal {
   private String managerPassword;
   private String passwordArr[] = {"password123", "password321"}; // This variable and the next one are parallel arrays storing matching username and password pairs.
   private String usernameArr[] = {"Ethan", "Hari"};
+  public Scanner sc = new Scanner(System.in);
 
   /** This is a Default Constructor that will be used in case arguments are accidentally not passed. */
   public ManagerTerminal() {
@@ -21,33 +22,43 @@ public class ManagerTerminal {
     managerPassword = pass;
     }
 
-  /** This class allows a manager to enter login credentials to securely log into the system, and then choose an action. */
-  public void managerLoginAndChooseAction() {
-    Scanner sc = new Scanner(System.in); // Create scanner object to take input from user
-    System.out.println("Enter username and click Enter: "); // Prompt user to input username
-    String username = sc.nextLine();
-    System.out.println("Enter password and click Enter: "); // Prompt user to input password
-    String password = sc.nextLine();
-    int isUsernameValid = isStrInUsernameArr(username);    // Check that username is valid
-    boolean loggedIn; // Create boolean variable to see later if login is successful
-    if (isUsernameValid == -1) {
-      System.out.println("Username is not valid."); // Print this when username is not valid
-      loggedIn = false; // Set loggedIn to false
-    }
-    else {
-    	if (!isPasswordRight(password, isUsernameValid)) {
-    		System.out.println("Password is incorrect.");
-    		loggedIn = false; // Set loggedIn to false
-    	}
-    	else {
-    		System.out.println("Welcome, user.");// Happens when login succeeds
-    		loggedIn = true; // Set loggedIn to true
-    	}
-    }
-    if (!loggedIn) {
-    	sc.close(); // Close the scanner before returning
-    	return; // Returning because login failed, and we will not choose an action
-    }
+  /** This method allows the manager to login. */
+  public void login() {
+	  System.out.println("Enter username and click Enter: ");
+	  String username = sc.nextLine();
+	  System.out.println("Enter password and click Enter: ");
+	  String password = sc.nextLine();
+	  int isUsernameValid = isStrInUsernameArr(username);
+	  boolean loggedIn;
+	  while(true) {
+	  if (isUsernameValid == -1) {
+	    loggedIn = false;
+	  }
+	  else {
+	  	if (!isPasswordRight(password, isUsernameValid)) {
+	  		loggedIn = false;
+	  	}
+	  	else {
+	  		loggedIn = true;
+	  	}
+	  }
+	  if (!loggedIn) {
+	  	System.out.println("Invalid credentials. Please try again");
+	  }
+	  else if(loggedIn) {
+	  	System.out.println("Successful login.");
+	  	break;
+	  }
+	  System.out.println("Enter username and click Enter: ");
+	  username = sc.nextLine();
+	  System.out.println("Enter password and click Enter: ");
+	  password = sc.nextLine();
+	  isUsernameValid = isStrInUsernameArr(username);
+	}
+  }
+  
+  /** This method allows a manager to enter login credentials to securely log into the system, and then choose an action. */
+  public void chooseAction() {
     ReportController rc = new ReportController(); // Create ReportController object
 	System.out.println("Would you like to request a report? Type 'Y' for Yes and 'N' for No"); // Prompt user to choose to request a report
 	String response = sc.nextLine();
@@ -66,7 +77,6 @@ public class ManagerTerminal {
 	else if (response.equals("Y")) {
 		rc.requestReports(); // Request reports using report controller objects
 	}
-	sc.close(); // Close scanner object before returning
 	return;
   }
   
