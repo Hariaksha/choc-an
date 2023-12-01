@@ -1,3 +1,5 @@
+/** Author: Ethan Busby*/
+
 package chocAnSystem;
 import java.util.Scanner;
 
@@ -6,6 +8,7 @@ public class OperatorTerminal {
 	public String operatorUsername;
 	private String passwordArr[] = {"password999", "password888"};
 	private String usernameArr[] = {"Hari", "James"};
+	public Scanner sc = new Scanner(System.in);
 	
 	/** This is a Default Constructor that will be used in case arguments are accidentally not passed. */
 	public OperatorTerminal() {
@@ -19,14 +22,14 @@ public class OperatorTerminal {
 	    operatorPassword = pass;
 	    }
 	
-	/** Here is where an operator can login the operator terminal. After they log in, they
-	  want to edit a member or provider. */
-	public void operatorLoginAndChooseAction() {
-		Scanner sc = new Scanner(System.in);
-		String response = "";
+	/** Here is where an operator can login the operator terminal. If there are
+	 invalid credentials, then they can try again. */
+	public void login() {
+		//Scanner sc1 = new Scanner(System.in);
+		//String response1 = "";
 		
 		System.out.println("Enter username and click Enter: ");
-	    String username = sc.nextLine();
+		String username = sc.nextLine();
 	    System.out.println("Enter password and click Enter: ");
 	    String password = sc.nextLine();
 	    int isUsernameValid = isStrInUsernameArr(username);
@@ -61,12 +64,20 @@ public class OperatorTerminal {
 	    password = sc.nextLine();
 	    isUsernameValid = isStrInUsernameArr(username);
 	  }
+	   //sc.close();
+
+	
+	}
+	/** This is where a operator chooses whether they want toe edit a member or provider.*/
+	public void chooseAction() {
+		//Scanner sc = new Scanner(System.in);
+		String response = "";
 	
 		System.out.println("Would you like to edit a member or a provider? Type M for member and P for provider.");
 		response = sc.nextLine();
 		while(!response.equals("M") && !response.equals("P")) {
 		if(!response.equals("M") && !response.equals("P")) {
-			System.out.println("You entered an invalid response. Please try again" + response);
+			System.out.println("You entered an invalid response. Please try again");
 			response = sc.nextLine();
 			}
 		}
@@ -74,7 +85,7 @@ public class OperatorTerminal {
 			System.out.println("You have decided to edit a member.");
 			UpdateMember updateMember = new UpdateMember();
 			//System.out.println("Would you like to add, delete, or update  member? \n A - add \n D - delete \n U - update");
-			updateMember.start();
+			updateMember.startMemberUpdate();
 		}
 //		else if(response.equals("P")) {
 //			System.out.println("You have decided to edit a provider.");
