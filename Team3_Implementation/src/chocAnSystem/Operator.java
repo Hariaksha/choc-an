@@ -1,8 +1,6 @@
 package chocAnSystem;
 
 public class Operator {
-	public String operatorName;
-	public int operatorNumber;
 	
 	/** This shows that an operator can perform the actions on the operator terminal. */
 	public void action() {
