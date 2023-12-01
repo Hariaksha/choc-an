@@ -41,12 +41,12 @@ class UpdateMember
     public void readMemberList()
     { 
         try{
-            File  file = new File("MemberList.txt"); 
+            File  file = new File("memberData.txt"); 
             BufferedReader reader = new BufferedReader(new FileReader(file)); 
             String line;
             while ((line = reader.readLine()) != null)
             { 
-                String [] parts = line.split(" / " ); 
+                String [] parts = line.split(" , " ); 
                 if(parts.length == 6) 
                 { 
                     String name = parts[0]; 
@@ -264,11 +264,11 @@ class UpdateMember
     public void updateMemberList() 
     {
         try{
-            FileWriter reader = new FileWriter("MemberList.txt");
+            FileWriter reader = new FileWriter("memberData.txt");
             BufferedWriter writer = new BufferedWriter(reader);
             for(int i = 0; i < memberList.size(); i++)
             {
-                writer.write(memberList.get(i).name + " / " + memberList.get(i).number + " / " + memberList.get(i).street + " / " + memberList.get(i).city + " / " + memberList.get(i).state + " / " + memberList.get(i).zip + "\n");
+                writer.write(memberList.get(i).name + " , " + memberList.get(i).number + " , " + memberList.get(i).street + " , " + memberList.get(i).city + " , " + memberList.get(i).state + " , " + memberList.get(i).zip + "\n");
             }
 
             writer.newLine();
