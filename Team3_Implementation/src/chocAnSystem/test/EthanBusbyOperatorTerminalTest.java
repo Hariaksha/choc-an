@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 
 import chocAnSystem.OperatorTerminal;
 
-class EthanBusbyOperatorTerminalFailTest {
+class EthanBusbyOperatorTerminalTest {
 
     private OperatorTerminal t;
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
@@ -33,14 +33,9 @@ class EthanBusbyOperatorTerminalFailTest {
 
     @Test
     void test() {
-        // Redirect System.in to provide input
         ByteArrayInputStream inContent = new ByteArrayInputStream("InvalidUser\nInvalidPassword\n".getBytes());
         System.setIn(inContent);
-
-        // Call the login method
         t.login();
-
-        // Adjust assertions based on the expected behavior
         assertTrue(outputStreamCaptor.toString().contains("Enter username and click Enter: "));
         assertTrue(outputStreamCaptor.toString().contains("Enter password and click Enter: "));
         assertTrue(outputStreamCaptor.toString().contains("Successful login."));
