@@ -74,7 +74,7 @@ public class OperatorTerminal {
 		response = sc.nextLine();
 		while(!response.equals("M") && !response.equals("P")) {
 		if(!response.equals("M") && !response.equals("P")) {
-			System.out.println("You entered an invalid response. Please try again" + response);
+			System.out.println("You entered an invalid response. Please try again");
 			response = sc.nextLine();
 			}
 		}
