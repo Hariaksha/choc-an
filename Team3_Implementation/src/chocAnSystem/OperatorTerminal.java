@@ -20,8 +20,8 @@ public class OperatorTerminal {
 	    operatorPassword = pass;
 	    }
 	
-	/** Here is where an operator can login the operator terminal. After they log in, they
-	  want to edit a member or provider. */
+	/** Here is where an operator can login the operator terminal. If there are
+	 invalid credentials, then they can try again. */
 	public void login() {
 		//Scanner sc1 = new Scanner(System.in);
 		//String response1 = "";
@@ -65,6 +65,7 @@ public class OperatorTerminal {
 	   //sc.close();
 	}
 	
+	/** This is where a operator chooses whether they want toe edit a member or provider.*/
 	public void chooseAction() {
 		Scanner sc = new Scanner(System.in);
 		String response = "";
