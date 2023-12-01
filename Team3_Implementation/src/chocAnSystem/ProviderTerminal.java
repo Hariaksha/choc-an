@@ -59,15 +59,13 @@ public class ProviderTerminal{
         return false;
     }
 
-    public void verifyProvider(){
-        boolean meow;
-        meow = providerLogin();
+    public String verifyProvider(boolean meow){
         if(meow == true){
-             
+        	return "Logging in";
         }
-        return;
+        return "Invalid Log In";
+        
     }
-
 
 
 }

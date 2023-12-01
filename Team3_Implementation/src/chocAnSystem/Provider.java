@@ -1,7 +1,5 @@
 package chocAnSystem;
 
-import java.util.Scanner;
-
 public class Provider {
 
 	public int providerNumber;
@@ -43,7 +41,7 @@ public class Provider {
     }
     
     //creates a new provider with all the inputs
-    public Provider createProvider(int pNum, String pName, String pAdd, String pCity, String pState, int pZip) {
+    public Provider (int pNum, String pName, String pAdd, String pCity, String pState, int pZip) {
     	Provider meow = new Provider();
     	meow.providerNumber = pNum;
     	meow.providerName = pName;
@@ -51,15 +49,12 @@ public class Provider {
     	meow.providerCity = pCity;
     	meow.providerState = pState;
     	meow.providerZip = pZip;
-    	return meow;
     }
     
     //basic Provider constructor
-    public Provider createProvider() {
-    	Provider meow = new Provider();
-    	return meow;
+    public Provider() {
+    
     }
      
-    
 
 }
