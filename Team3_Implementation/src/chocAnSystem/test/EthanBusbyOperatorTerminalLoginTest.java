@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 
 import chocAnSystem.OperatorTerminal;
 
-class EthanBusbyOperatorTerminalTest {
+class EthanBusbyOperatorTerminalLoginTest {
 
     private OperatorTerminal t;
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
