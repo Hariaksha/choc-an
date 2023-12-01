@@ -27,7 +27,7 @@ public class OperatorTerminal {
 		//String response1 = "";
 		
 		System.out.println("Enter username and click Enter: ");
-	    String username = sc.nextLine();
+		String username = sc.nextLine();
 	    System.out.println("Enter password and click Enter: ");
 	    String password = sc.nextLine();
 	    int isUsernameValid = isStrInUsernameArr(username);
@@ -63,8 +63,9 @@ public class OperatorTerminal {
 	    isUsernameValid = isStrInUsernameArr(username);
 	  }
 	   //sc.close();
-	}
+
 	
+	}
 	/** This is where a operator chooses whether they want toe edit a member or provider.*/
 	public void chooseAction() {
 		//Scanner sc = new Scanner(System.in);
@@ -82,7 +83,7 @@ public class OperatorTerminal {
 			System.out.println("You have decided to edit a member.");
 			UpdateMember updateMember = new UpdateMember();
 			//System.out.println("Would you like to add, delete, or update  member? \n A - add \n D - delete \n U - update");
-			updateMember.start();
+			updateMember.startMemberUpdate();
 		}
 //		else if(response.equals("P")) {
 //			System.out.println("You have decided to edit a provider.");
