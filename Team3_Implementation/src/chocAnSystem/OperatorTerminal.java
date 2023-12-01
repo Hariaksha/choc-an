@@ -87,12 +87,12 @@ public class OperatorTerminal {
 			//System.out.println("Would you like to add, delete, or update  member? \n A - add \n D - delete \n U - update");
 			updateMember.startMemberUpdate();
 		}
-//		else if(response.equals("P")) {
-//			System.out.println("You have decided to edit a provider.");
-//			UpdateProvider updateProvider = new UpdateProvider();
-//			System.out.println("Would you like to add, delete, or update  member? \n A - add \n D - delete \n U - update");
-//			updateProvider.start();
-//		}
+		else if(response.equals("P")) {
+			System.out.println("You have decided to edit a provider.");
+			UpdateProvider updateProvider = new UpdateProvider();
+			System.out.println("Would you like to add, delete, or update  member? \n A - add \n D - delete \n U - update");
+			updateProvider.startProviderUpdate();
+		}
 		sc.close();
 	}
 	
