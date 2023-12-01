@@ -67,7 +67,7 @@ public class OperatorTerminal {
 	
 	/** This is where a operator chooses whether they want toe edit a member or provider.*/
 	public void chooseAction() {
-		Scanner sc = new Scanner(System.in);
+		//Scanner sc = new Scanner(System.in);
 		String response = "";
 	
 		System.out.println("Would you like to edit a member or a provider? Type M for member and P for provider.");
