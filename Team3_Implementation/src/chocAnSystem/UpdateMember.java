@@ -33,7 +33,6 @@ class Member
     public Member(){}
 }
 
-//////////////////////////////////////////////////////////////////////////
 class UpdateMember
 { 
     ArrayList <Member> memberList = new ArrayList<>();

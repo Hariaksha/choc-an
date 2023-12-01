@@ -1,3 +1,5 @@
+/** Author: Ethan Busby*/
+
 package chocAnSystem;
 import java.util.Scanner;
 
