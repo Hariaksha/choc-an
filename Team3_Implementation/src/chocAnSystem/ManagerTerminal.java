@@ -24,37 +24,42 @@ public class ManagerTerminal {
 
   /** This method allows the manager to login. */
   public void login() {
+	  // Prompt user for username
 	  System.out.println("Enter username and click Enter: ");
 	  String username = sc.nextLine();
+	  // Prompt user for password
 	  System.out.println("Enter password and click Enter: ");
 	  String password = sc.nextLine();
+	  // Check if username is valid and return its index in username array. Return -1 if not found
 	  int isUsernameValid = isStrInUsernameArr(username);
-	  boolean loggedIn;
+	  boolean loggedIn; // Create loggedIn boolean variable to continue prompting user for login info through while loop
 	  while(true) {
-	  if (isUsernameValid == -1) {
-	    loggedIn = false;
+		  if (isUsernameValid == -1) { // If username is wrong, user is not logged in
+			  loggedIn = false;
+		  }
+		  else {
+			  if (!isPasswordRight(password, isUsernameValid)) { // if password is wrong, user is not logged in
+				  loggedIn = false;
+			  }
+			  else { // user is logged in if username and password is correct
+				  loggedIn = true;
+			  }
+		  }
+		  // Tell user if login credentials worked
+		  if (!loggedIn) {
+			  System.out.println("Invalid credentials. Please try again");
+		  }
+		  else if(loggedIn) {
+			  System.out.println("Successful login.");
+			  break;
+		  }
+		  // Reprompt user for login credentials if loop does not break
+		  System.out.println("Enter username and click Enter: ");
+		  username = sc.nextLine();
+		  System.out.println("Enter password and click Enter: ");
+		  password = sc.nextLine();
+		  isUsernameValid = isStrInUsernameArr(username);
 	  }
-	  else {
-	  	if (!isPasswordRight(password, isUsernameValid)) {
-	  		loggedIn = false;
-	  	}
-	  	else {
-	  		loggedIn = true;
-	  	}
-	  }
-	  if (!loggedIn) {
-	  	System.out.println("Invalid credentials. Please try again");
-	  }
-	  else if(loggedIn) {
-	  	System.out.println("Successful login.");
-	  	break;
-	  }
-	  System.out.println("Enter username and click Enter: ");
-	  username = sc.nextLine();
-	  System.out.println("Enter password and click Enter: ");
-	  password = sc.nextLine();
-	  isUsernameValid = isStrInUsernameArr(username);
-	}
   }
   
   /** This method allows a manager to enter login credentials to securely log into the system, and then choose an action. */
@@ -72,7 +77,7 @@ public class ManagerTerminal {
 	}
 	
 	if (response.equals("N")) {
-		System.out.println("You have chosen not to request a report. Have a nice day!");
+		System.out.println("You have chosen not to request a report. Have a nice day!"); // Say goodbye to user
 	}
 	else if (response.equals("Y")) {
 		rc.requestReports(); // Request reports using report controller objects
@@ -82,19 +87,19 @@ public class ManagerTerminal {
   
   /**This method checks to see if the username entered is a valid username. It returns -1 if not valid and the index of the username in the username array if it is valid.*/
   public int isStrInUsernameArr(String str) {
-	  for (int i = 0; i < usernameArr.length; i++) {
-		  if (str.equals(usernameArr[i])) {
-			  return i;
+	  for (int i = 0; i < usernameArr.length; i++) { // Use for loop to iterate through string
+		  if (str.equals(usernameArr[i])) { // If entered username equals current element in array
+			  return i; // Return index found
 		  }
 	  }
-	  return -1;
+	  return -1; // Return -1 if username does not exist.
   }
   
   /**This method checks to see if the password is correct. It is only called if the username is valid, and it checks that the password entered is the password found at the index of the correct username in the password array.*/
   public boolean isPasswordRight(String str, int index) {
-	  if (str.equals(passwordArr[index])) {
-		  return true;
+	  if (str.equals(passwordArr[index])) { // Use str.equals() method to see if password matches username
+		  return true; // Return true if password is right
 	  }
-	  return false;
+	  return false; // Return false if password is wrong
   }
 }
