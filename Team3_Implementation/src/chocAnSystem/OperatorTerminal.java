@@ -31,24 +31,36 @@ public class OperatorTerminal {
 	    String password = sc.nextLine();
 	    int isUsernameValid = isStrInUsernameArr(username);
 	    boolean loggedIn;
+	    while(true) {
 	    if (isUsernameValid == -1) {
-	      System.out.println("Username is not valid.");
+	      //System.out.println("Username is not valid.");
 	      loggedIn = false;
 	    }
 	    else {
 	    	if (!isPasswordRight(password, isUsernameValid)) {
-	    		System.out.println("Password is incorrect.");
+	    		//System.out.println("Password is incorrect.");
 	    		loggedIn = false;
 	    	}
 	    	else {
-	    		System.out.println("Welcome, user.");
+	    		//System.out.println("Welcome, user.");
 	    		loggedIn = true;
 	    	}
 	    }
 	    if (!loggedIn) {
-	    	sc.close();
-	    	return;
+	    	System.out.println("Invalid credentials. Please try again");
+//	    	sc.close();
+//	    	return;
 	    }
+	    else if(loggedIn) {
+	    	System.out.println("Successful login.");
+	    	break;
+	    }
+	    System.out.println("Enter username and click Enter: ");
+	    username = sc.nextLine();
+	    System.out.println("Enter password and click Enter: ");
+	    password = sc.nextLine();
+	    isUsernameValid = isStrInUsernameArr(username);
+	  }
 	
 		System.out.println("Would you like to edit a member or a provider? Type M for member and P for provider.");
 		response = sc.nextLine();
@@ -64,8 +76,11 @@ public class OperatorTerminal {
 			//System.out.println("Would you like to add, delete, or update  member? \n A - add \n D - delete \n U - update");
 			updateMember.start();
 		}
-//		else if() {
-//			
+//		else if(response.equals("P")) {
+//			System.out.println("You have decided to edit a provider.");
+//			UpdateProvider updateProvider = new UpdateProvider();
+//			System.out.println("Would you like to add, delete, or update  member? \n A - add \n D - delete \n U - update");
+//			updateProvider.start();
 //		}
 		sc.close();
 	}
@@ -88,5 +103,5 @@ public class OperatorTerminal {
 		  return false;
 	  }
 }
-	//oops
+	//oopsssss
 	
