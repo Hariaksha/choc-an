@@ -1,3 +1,0 @@
-Service Code	Service Name	Service Price
-598470	dietitianAppt	125
-883948	aerobicsSession	143

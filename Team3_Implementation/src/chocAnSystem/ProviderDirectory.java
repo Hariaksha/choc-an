@@ -9,7 +9,7 @@ public class ProviderDirectory {
 	
 	private static String serviceCodes[] = {"598470", "883948"};
 	private static String serviceNames[] = {"dietitianAppt", "aerobicsSession"};
-	private static int servicePrices[] = {125, 143};
+	private static double servicePrices[] = {125.73, 143.89};
 	
 	public static String getService(String code) {
 		for(int i = 0; i < serviceCodes.length; i++) {
@@ -22,7 +22,7 @@ public class ProviderDirectory {
 	}
 	
 	
-	public static int getPrice(String code) {
+	public static double getPrice(String code) {
 		for(int i = 0; i < serviceCodes.length; i++) {
 			if(code.equals(serviceCodes[i])) {
 				return servicePrices[i];

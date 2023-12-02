@@ -53,7 +53,7 @@ class RobertReadProviderControllerTest {
 	void testBillChocAn() {
 		//System.out.println(systemOutRule.getLog());
 		ProviderController.billChocAn();
-		systemInMock.provideLines("494330105","07-14-2023","598470","y","test service");
+		//systemInMock.provideLines("494330105","07-14-2023","598470","y","test service");
 		assertEquals(0, 0);
 	}
 

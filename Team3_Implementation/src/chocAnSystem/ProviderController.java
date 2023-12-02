@@ -26,7 +26,7 @@ public class ProviderController {
 		String memberID = getInput();
 		String userInput;
 		String curTime, serviceTime, providerID, serviceCode, comments;
-		int servicePrice;
+		double servicePrice;
 		
 		
 		providerID = "3";
@@ -93,8 +93,11 @@ public class ProviderController {
 		    Date date = new Date();  
 		    curTime = formatter.format(date);  
 		    debug("Attempting to write to file");
+		    String filename = serviceTime + "_" + serviceCode + "_" + memberID + ".txt";
 			try {
-				FileWriter fw = new FileWriter(curTime + "_" + providerID + ".txt");
+				debug("filename: " + filename);
+				FileWriter fw = new FileWriter(filename);
+				debug("File created.");
 				fw.write("Current Time: " + curTime + 
 						 "\nDate of Service: " + serviceTime + 
 						 "\nProvider ID: " + providerID + 
