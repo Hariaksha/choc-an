@@ -1,7 +1,5 @@
-Trina,494330105,1421888888,Midlo,VA,232222
-Adam,834861601,14444 test,test,test,test
-Ethan,342733656,Busby,Tuscaloosa,AL,35401
-Tyler,516926270,134444,Tusca,AL,234445
-Joseph,890341740,144556,Tusca,AL,245654
-
-
+Trina, 494330105, 1421888888, Midlo, VA, 232222
+Adam, 834861601, 14444 test, test, test, test
+Ethan, 342733656, Busby, Tuscaloosa, AL, 35401
+Tyler, 516926270, 134444, Tusca, AL, 234445
+Joseph, 890341740, 144556, Tusca, AL, 245654
