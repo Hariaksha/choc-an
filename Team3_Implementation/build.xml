@@ -45,13 +45,14 @@
             </fileset>
         </copy>
     </target>
-  	<target name="jar">
+  	<target name="createJar">
   		<mkdir dir="release" /> 
-  	    <jar destfile="release/adapter.jar" />
+  	    <jar destfile="release/adapter.jar" >
   			<fileset dir="bin/" includes="**/*.class"></fileset>
-  			<manifest file="release">
-  				<attribute name="Main-Class" value="edu.ua.cs.cs200.Team3_Implementation.release"/>
+  			<manifest>
+  				<attribute name="Main-Class" value="chocAnSystem.Main"/>
   			</manifest>
+  		</jar>
   	</target>
 
     <target name="clean">
