@@ -1,3 +1,4 @@
+/** This class was written by all team members.*/
 package chocAnSystem;
 import java.util.Scanner;
 
