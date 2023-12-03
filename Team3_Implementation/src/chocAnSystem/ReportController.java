@@ -2,7 +2,11 @@
 
 package chocAnSystem;
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
+
 
 public class ReportController {
 	/** Constructor.*/
@@ -18,19 +22,34 @@ public class ReportController {
 		System.out.println("Compiled Summary Report");
 	}
 	
-	/** Stand-in for Member Report Compiler.*/
-	public void memberReport(){		
-		System.out.println("Compiled Member Report");
+	/** Reads data from text file and prints it to Console.*/
+	public void memberReport()throws IOException{		
+		//System.out.println("Compiled Member Report");
+		try {
+			BufferedReader r = new BufferedReader( new FileReader("memberData.txt") );
+			String s = "", line = null;
+			while ((line = r.readLine()) != null) {
+				s += line;
+			}
+			System.out.print(s);
+			r.close();
+		}
+		
+        catch (IOException e) 
+        { 
+            e.printStackTrace();
+        }
+		
 }
 	
 	
 	/** Stand-in for Provider Report Compiler.*/
 	public void providerReport(){
-		System.out.println("Compiled Provider Report");
+		//System.out.println("Compiled Provider Report");
 	}
 	
 	/** Called by Timer, runs all compilers.*/
-	public void runAccountingProcedure(){
+	public void runAccountingProcedure()throws IOException{
 		System.out.println("Running Accounting Procedure");
 		providerReport();
 		memberReport();
@@ -40,7 +59,7 @@ public class ReportController {
 	}
 	
 	/** Called my Manager; Runs desired report compiler after an input.*/
-	public void requestReports(){
+	public void requestReports()throws IOException{
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Desired Report Value: \n 1: Provider Report \n 2: Member Report \n 3: Summary Report \n 4: EFT Report");

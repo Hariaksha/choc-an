@@ -1,5 +1,6 @@
 /** @author all team members: Ethan Busby, Adam Howard, Hariaksha Gunda, Ryan McCulley, Robert Read, Tyler Cruise, and James White*/
 package chocAnSystem;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MainMenu {
@@ -13,7 +14,7 @@ public class MainMenu {
   }
 
   /** This method takes input to lead the user to the right terminal or run the main accounting procedure. It returns nothing.*/
-  public void login() {
+  public void login() throws IOException{
     // Use scanner to take login number
     Scanner myObj = new Scanner(System.in);
     int loginNumber = -1;
@@ -42,6 +43,9 @@ public class MainMenu {
       } 
       else if (loginNumber == 3) {
     	  System.out.println("You are a Provider. You will be directed to the Provider Terminal.");
+    	  ProviderTerminal pt = new ProviderTerminal();
+    	  pt.providerLogin();
+    	  pt.chooseAction();
       }
       else {
         System.out.println("You have entered an invalid login. Please try again.");
