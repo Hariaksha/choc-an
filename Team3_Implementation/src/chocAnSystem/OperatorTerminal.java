@@ -34,7 +34,12 @@ public class OperatorTerminal {
 	    String password = sc.nextLine();
 	    int isUsernameValid = isStrInUsernameArr(username);
 	    boolean loggedIn;
+	    int tries = 0;
 	    while(true) {
+	    	if(tries > 3) {
+				   System.out.println("Failed too many times. You will be logged out.");
+				   System.exit(0);
+			   }
 	    if (isUsernameValid == -1) {
 	      //System.out.println("Username is not valid.");
 	      loggedIn = false;
@@ -51,6 +56,7 @@ public class OperatorTerminal {
 	    }
 	    if (!loggedIn) {
 	    	System.out.println("Invalid credentials. Please try again");
+	    	tries++;
 //	    	sc.close();
 //	    	return;
 	    }
@@ -58,6 +64,7 @@ public class OperatorTerminal {
 	    	System.out.println("Successful login.");
 	    	break;
 	    }
+	 
 	    System.out.println("Enter username and click Enter: ");
 	    username = sc.nextLine();
 	    System.out.println("Enter password and click Enter: ");
