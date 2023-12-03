@@ -1,4 +1,5 @@
 /** Author: Ethan Busby*/
+/** This class calls the update member and provider classes so the operator can perform different tasks.*/
 
 package chocAnSystem;
 import java.util.Scanner;
