@@ -1,5 +1,6 @@
 /** @author Ryan McCulley*/
 package chocAnSystem;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,8 +9,8 @@ import java.io.FileNotFoundException;
 public class ProviderTerminal {
   private String providerUsername;
   private String providerPassword;
-  private String passwordArr[];
-  private String usernameArr[];
+  ArrayList<String> usernames = new ArrayList<String>();
+  ArrayList<String> passwords = new ArrayList<String>();
   public Scanner sc = new Scanner(System.in);
   public String pID;
   int counter = 0;
@@ -107,7 +108,6 @@ public class ProviderTerminal {
 		  String data = "";
 		  String lines;
 		  counter = 0;
-		  int meow = 0;
 		  
 		  while(reader.hasNextLine()) {
 			  
@@ -118,8 +118,7 @@ public class ProviderTerminal {
 				  
 			  }
 			  
-			  usernameArr[meow] = data;
-			  meow++;
+			  usernames.add(data);
 			  data = "";
 			  counter = 0;
 			  
@@ -132,8 +131,8 @@ public class ProviderTerminal {
 		}
 	  
 	  
-	  for (int i = 0; i < usernameArr.length; i++) { // Use for loop to iterate through string
-		  if (str.equals(usernameArr[i])) { // If entered username equals current element in array
+	  for (int i = 0; i < usernames.size(); i++) { // Use for loop to iterate through string
+		  if (str.equals(usernames.get(i))) { // If entered username equals current element in array
 			  return i; // Return index found
 		  }
 	  }
@@ -162,7 +161,7 @@ public class ProviderTerminal {
 			  while(lines.charAt(counter) != ',') {
 				  counter++;
 			  }
-			  passwordArr[meow] = data;
+			  passwords.add(data);
 			  meow++;
 			  data = "";
 			  counter = 0;	  
@@ -175,7 +174,7 @@ public class ProviderTerminal {
 		}
 
 	  
-	  if (str.equals(passwordArr[index])) { // Use str.equals() method to see if password matches username
+	  if (str.equals(passwords.get(index))) { // Use str.equals() method to see if password matches username
 		  return true; // Return true if password is right
 	  }
 	  return false; // Return false if password is wrong
