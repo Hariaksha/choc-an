@@ -33,7 +33,7 @@ public class ManagerTerminal {
 	  // Check if username is valid and return its index in username array. Return -1 if not found
 	  int isUsernameValid = isStrInUsernameArr(username);
 	  boolean loggedIn; // Create loggedIn boolean variable to continue prompting user for login info through while loop
-	  int tries = 0;
+	  int tries = 0; // To create limited try count
 	  while(tries <= 3) {
 		  if (isUsernameValid == -1) { // If username is wrong, user is not logged in
 			  loggedIn = false;
