@@ -52,13 +52,14 @@ public class ReportController {
 		        
 		        String curID = data.substring(data.indexOf(',') + 2, data.indexOf(',', data.indexOf(',') + 1));
 		        
-		        File memFile = new File("MemberReports/" + curID + "_Report");
+		        //File memFile = new File();
+		        FileWriter memFile = new FileWriter("MemberReports/" + curID + "_Report.txt");
 		        
 		        String memFileText = curID + "\nAll services provided:\n";
 		        
 		        for(int i = 0; i < listOfFiles.length; i++) {
 		        	if (listOfFiles[i].getName().contains(curID)) {
-		        		Scanner curFile = new Scanner(memberData);
+		        		Scanner curFile = new Scanner(listOfFiles[i]);
 		        		 while (curFile.hasNextLine()) {
 		        			 String curData = reader.nextLine();
 		        			 if (curData.contains("Date of Service:") || curData.contains("Provider Name:") || curData.contains("Service Name:")) {
@@ -67,7 +68,12 @@ public class ReportController {
 		        		 }
 		        		 curFile.close();
 		        	  }
+		        	
 		        }
+		        memFile.write(memFileText);
+		        memFile.close();
+		        
+		        
 		      }
 		      reader.close();
 
