@@ -42,7 +42,7 @@ public class ReportController {
 		      debug("Connected. Verifying member...");
 		      Scanner reader = new Scanner(memberData);
 		      
-		      File folder = new File("System_Logs/");
+		      File folder = new File("Service_Logs/");
 		      File[] listOfFiles = folder.listFiles();
 		      
 		      while (reader.hasNextLine()) {
@@ -61,7 +61,7 @@ public class ReportController {
 		        	if (listOfFiles[i].getName().contains(curID)) {
 		        		Scanner curFile = new Scanner(listOfFiles[i]);
 		        		 while (curFile.hasNextLine()) {
-		        			 String curData = reader.nextLine();
+		        			 String curData = curFile.nextLine();
 		        			 if (curData.contains("Date of Service:") || curData.contains("Provider Name:") || curData.contains("Service Name:")) {
 		        				 memFileText += curData + "\n";
 		        			 }

@@ -3,6 +3,7 @@ package chocAnSystem.test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
 
@@ -27,6 +28,7 @@ class TylerCruiseReportControllerTest {
 
 	@Test
 	void test() throws IOException {
+		File input = new File("memberData.txt");
 		t.memberReport();
 		assertEquals("Compiled Member Report", outputStreamCaptor.toString().trim());
 	}
