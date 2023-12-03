@@ -3,14 +3,16 @@ package chocAnSystem;
 import java.util.Scanner;
 
 public class MainMenu {
-  // Constructor
+	/** This constructor creates an instance of the class*/
   public MainMenu() {
   }
 
+  /** This method prints to the console, indicating that the user is in the main menu. It returns nothing.*/
   public void display() {
     System.out.println("You are in the main menu.");
   }
 
+  /** This method takes input to lead the user to the right terminal or run the main accounting procedure. It returns nothing.*/
   public void login() {
     // Use scanner to take login number
     Scanner myObj = new Scanner(System.in);
