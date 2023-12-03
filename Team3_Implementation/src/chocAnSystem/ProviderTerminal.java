@@ -41,10 +41,20 @@ public class ProviderTerminal {
 	  while(true) {
 		  if (isUsernameValid == -1) { // If username is wrong, user is not logged in
 			  loggedIn = false;
+			  int meow = usernames.size()-1;
+			  while(usernames.size()>0) {
+				  usernames.remove(meow);
+				  meow--;
+			  }
 		  }
 		  else {
 			  if (!isPasswordRight(password, isUsernameValid)) { // if password is wrong, user is not logged in
 				  loggedIn = false;
+				  int meow = passwords.size()-1;
+				  while(passwords.size()>0) {
+					  passwords.remove(meow);
+					  meow--;
+				  }
 			  }
 			  else { // user is logged in if username and password is correct
 				  loggedIn = true;
@@ -53,11 +63,13 @@ public class ProviderTerminal {
 		  // Tell user if login credentials worked
 		  if (!loggedIn) {
 			  System.out.println("Invalid credentials. Please try again");
+			  
 		  }
 		  else if(loggedIn) {
 			  System.out.println("Successful login.");
 			  break;
 		  }
+		  
 		  // Reprompt user for login credentials if loop does not break
 		  System.out.println("Enter username and click Enter: ");
 		  username = sc.nextLine();
@@ -130,7 +142,6 @@ public class ProviderTerminal {
 			e.printStackTrace();
 		}
 	  
-	  System.out.println(usernames);
 	  
 	  for (int i = 0; i < usernames.size(); i++) { // Use for loop to iterate through string
 		  if (str.equals(usernames.get(i))) { // If entered username equals current element in array
@@ -173,7 +184,6 @@ public class ProviderTerminal {
 			e.printStackTrace();
 		}
 	  
-	  System.out.println(passwords);
 
 	  
 	  if (str.equals(passwords.get(index))) { // Use str.equals() method to see if password matches username
