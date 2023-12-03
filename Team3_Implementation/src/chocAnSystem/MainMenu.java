@@ -42,6 +42,9 @@ public class MainMenu {
       } 
       else if (loginNumber == 3) {
     	  System.out.println("You are a Provider. You will be directed to the Provider Terminal.");
+    	  ProviderTerminal pt = new ProviderTerminal();
+    	  pt.providerLogin();
+    	  pt.chooseAction();
       }
       else {
         System.out.println("You have entered an invalid login. Please try again.");
