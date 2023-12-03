@@ -7,8 +7,8 @@ import java.io.FileNotFoundException;
 
 /** This declares the class attributes. */
 public class ProviderTerminal {
-  private String providerUsername;
-  private String providerPassword;
+  private static String providerUsername;
+  private static String providerPassword;
   ArrayList<String> usernames = new ArrayList<String>();
   ArrayList<String> passwords = new ArrayList<String>();
   public Scanner sc = new Scanner(System.in);
@@ -67,6 +67,7 @@ public class ProviderTerminal {
 		  }
 		  else if(loggedIn) {
 			  System.out.println("Successful login.");
+			  providerPassword = password;
 			  break;
 		  }
 		  
@@ -78,6 +79,10 @@ public class ProviderTerminal {
 		  isUsernameValid = isStrInUsernameArr(username);
 	  }
   }
+  
+ public static String getPID() {
+	 return providerPassword;
+ }
   
   // This method allows a provider to choose an action. */
   public void chooseAction() {
@@ -97,10 +102,10 @@ public class ProviderTerminal {
 		pc.billChocAn(); // Runs Bill Choc An
 	}
 	else if (response.equals("Verify Member")) {
-		System.out.println("Enter Provider ID: ");
+		System.out.println("Enter Member ID: ");
 		pID = sc.nextLine();
 		while(pID.length() != 9) {
-			System.out.println("You entered: " + pID + ", please enter a valid Provider ID:");
+			System.out.println("You entered: " + pID + ", please enter a valid Member ID:");
 			pID = sc.nextLine();
 		}
 		pc.verifyMember(pID); // Runs Verify Member
