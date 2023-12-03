@@ -1,3 +1,4 @@
+/** @author Robert Read*/
 package chocAnSystem;
 
 import java.util.Scanner;
