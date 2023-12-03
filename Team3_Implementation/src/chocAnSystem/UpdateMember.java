@@ -95,8 +95,9 @@ class UpdateMember
         Random random = new Random(); 
         int n = 100000000 + random.nextInt(900000000);
         newMember.number = n; 
-
+        
         memberList.add(newMember);  
+        System.out.println(newMember.name + "was successfully added." ); 
 
         System.out.println("You you like to continue to add another member? YES or NO"); 
         boolean cont  = false; 
@@ -140,7 +141,7 @@ class UpdateMember
         if(!found)
         { 
             System.out.println("Member not found");
-            deleteMember();
+            deleteMember(); 
             return; 
         }
 
@@ -189,7 +190,7 @@ class UpdateMember
         if(!found)
         { 
             System.out.println("Member not found");
-            deleteMember();
+            updateMemberRecords();
             return; 
         }
 
@@ -227,8 +228,9 @@ class UpdateMember
                 System.out.println("To update member address type ADDRESS"); 
             }
         }
-
-
+        
+        System.out.println(idNum + "was successfully updated");
+        
         System.out.println("You you like to continue to update other member records? YES or NO"); 
         boolean cont  = false; 
         String input;
