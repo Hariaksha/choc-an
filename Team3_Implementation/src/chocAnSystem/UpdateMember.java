@@ -337,5 +337,3 @@ class UpdateMember
     }
 
 } 
-
-//oops
