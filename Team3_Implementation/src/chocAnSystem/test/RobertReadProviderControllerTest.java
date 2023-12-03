@@ -32,7 +32,7 @@ class RobertReadProviderControllerTest {
 		ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
 		System.setIn(in);
 		ProviderController.billChocAn();
-		assertEquals(0, 0);
+		//assertEquals(0, 0);
 		System.setIn(System.in);
 	}
 	
