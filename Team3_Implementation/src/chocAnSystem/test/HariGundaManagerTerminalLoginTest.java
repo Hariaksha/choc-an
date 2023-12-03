@@ -10,7 +10,7 @@ import java.io.PrintStream;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import chocAnSystem.OperatorTerminal;
+import chocAnSystem.ManagerTerminal;
 
 /** */
 class HariGundaManagerTerminalLoginTest {

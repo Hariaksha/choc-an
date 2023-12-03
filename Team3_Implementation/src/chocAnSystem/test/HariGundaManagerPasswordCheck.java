@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import chocAnSystem.OperatorTerminal;
+import chocAnSystem.ManagerTerminal;
 
 
-class HariGundaOperatorPasswordCheck {
+class HariGundaManagerPasswordCheck {
 	private ManagerTerminal t;
 	
 	@BeforeEach
