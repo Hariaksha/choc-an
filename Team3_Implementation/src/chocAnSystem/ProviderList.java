@@ -6,11 +6,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+/** Generates a provider list with each providers information.*/
 public class ProviderList {
 	public static void main(String[] args) {
         saveProviderData();
     }
-
+	
+	/** Saves all the provider data.*/
     public static void saveProviderData() {
     	// Open scanner
         Scanner scanner = new Scanner(System.in);
@@ -50,6 +52,7 @@ public class ProviderList {
         }
     }
 
+    /** This checks to make sure that any input given doesn't exceed the maximum length.*/
     private static String readInputWithMaxLength(Scanner scanner, int maxLength) {
         String input;
         do {

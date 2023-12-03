@@ -11,7 +11,7 @@ public class MemberList {
 	public static void main(String[] args) {
         saveMemberData();
     }
-/** This method saves the memeber data the has been entered.*/
+/** This method saves the member data the has been entered.*/
     public static void saveMemberData() {
     	// Open scanner
         Scanner scanner = new Scanner(System.in);
