@@ -1,3 +1,4 @@
+/** @author Robert Read*/
 package chocAnSystem;
 
 import java.util.Scanner;
@@ -12,13 +13,17 @@ public class ProviderController {
 	public ProviderController() {
 	}
 	
-
+	private static Scanner sc = new Scanner(System.in);
 	
-	
+	//Replacement for system.out.println because I'm lazy.
 	private static void debug(String text) {
 		System.out.println(text);
 	}
 	
+	/**
+	 * This is the method for when the provider wants to bill ChocAn. It prompts the provider for all of the relevant info,
+	 * does all of the verification steps, etc.
+	 */
 	public static void billChocAn() {
 
 		
@@ -137,6 +142,7 @@ public class ProviderController {
 		        	reader.close();
 		        	return true;
 		        }
+		        debug("check");
 		      }
 		      reader.close();
 		      debug("Invalid member ID");
@@ -203,10 +209,10 @@ public class ProviderController {
 	
 	
 	public static String getInput() {
-        Scanner sc = new Scanner(System.in);
         String out = sc.nextLine();
+        debug(out);
         return out;
-    }
+    }	
 	
 
 }

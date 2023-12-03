@@ -1,3 +1,4 @@
+/** @author James White*/
 package chocAnSystem;
 
 import java.io.BufferedWriter;
