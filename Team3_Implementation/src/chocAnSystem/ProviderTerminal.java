@@ -130,6 +130,7 @@ public class ProviderTerminal {
 			e.printStackTrace();
 		}
 	  
+	  System.out.println(usernames);
 	  
 	  for (int i = 0; i < usernames.size(); i++) { // Use for loop to iterate through string
 		  if (str.equals(usernames.get(i))) { // If entered username equals current element in array
@@ -149,7 +150,6 @@ public class ProviderTerminal {
 		  String data = "";
 		  String lines;
 		  counter = 0;
-		  int meow = 0;
 		  
 		  while(reader.hasNextLine()) {
 			  
@@ -162,7 +162,6 @@ public class ProviderTerminal {
 				  counter++;
 			  }
 			  passwords.add(data);
-			  meow++;
 			  data = "";
 			  counter = 0;	  
 		  }
@@ -172,6 +171,8 @@ public class ProviderTerminal {
 	  } catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+	  
+	  System.out.println(passwords);
 
 	  
 	  if (str.equals(passwords.get(index))) { // Use str.equals() method to see if password matches username
