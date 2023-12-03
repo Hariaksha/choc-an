@@ -8,13 +8,14 @@ import java.io.FileWriter;
 import java.util.*;
 import java.text.SimpleDateFormat;
 
+/** This performs all the actions that a Provider can do. */
 public class ProviderController {
 	public ProviderController() {
 	}
 	
 	private static Scanner sc = new Scanner(System.in);
 	
-	//Replacement for system.out.println because I'm lazy.
+	/** A print statement called multiple time.*/
 	private static void debug(String text) {
 		System.out.println(text);
 	}
@@ -88,6 +89,7 @@ public class ProviderController {
 			comments = userInput;
 			
 			servicePrice = ProviderDirectory.getPrice(serviceCode);
+			String serviceName = ProviderDirectory.getName(serviceCode);
 			debug("Price of service: " + servicePrice);
 			
 			
@@ -106,6 +108,7 @@ public class ProviderController {
 						 "\nProvider ID: " + providerID + 
 						 "\nMember ID: " + memberID + 
 						 "\nService Code: " + serviceCode + 
+						 "\nService Name: " + serviceName + 
 						 "\nPrice: " + servicePrice + 
 						 "\nComments: " + comments);
 				fw.close();

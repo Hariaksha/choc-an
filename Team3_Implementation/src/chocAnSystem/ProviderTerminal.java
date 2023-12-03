@@ -85,10 +85,10 @@ public class ProviderTerminal {
 		pc.billChocAn(); // Runs Bill Choc An
 	}
 	else if (response.equals("Verify Member")) {
-		System.out.println("Enter Member ID: ");
+		System.out.println("Enter Provider ID: ");
 		pID = sc.nextLine();
 		while(pID.length() != 9) {
-			System.out.println("You entered: " + pID + ", please enter a valid Member ID:");
+			System.out.println("You entered: " + pID + ", please enter a valid Provider ID:");
 			pID = sc.nextLine();
 		}
 		pc.verifyMember(pID); // Runs Verify Member
@@ -157,9 +157,8 @@ public class ProviderTerminal {
 			  while(lines.charAt(counter) != ',') {
 				  counter++;
 			  }
-			  counter += 2;
+			  //counter++;
 			  while(lines.charAt(counter) != ',') {
-				  data = data + lines.charAt(counter);
 				  counter++;
 			  }
 			  passwords.add(data);

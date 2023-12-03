@@ -1,7 +1,8 @@
-//Author: Ryan McCulley
+/** @author Ryan Mcculley*/
 
 package chocAnSystem;
 
+/** The Provider class illustrates how the provider interacts with the provider terminal.*/
 public class Provider {
     
 	public String name;
