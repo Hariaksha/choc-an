@@ -138,6 +138,7 @@ public class ProviderController {
 		      Scanner reader = new Scanner(file);
 		      while (reader.hasNextLine()) {
 		        String data = reader.nextLine();
+		        if (data.equals("")) continue;
 		        String curID = data.substring(data.indexOf(',') + 2, data.indexOf(',', data.indexOf(',') + 1));
 		        if(testID.equals(curID)) {
 		        	debug("Member validated!");

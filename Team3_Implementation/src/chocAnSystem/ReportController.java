@@ -30,6 +30,7 @@ public class ReportController {
 			String s = "", line = null;
 			while ((line = r.readLine()) != null) {
 				s += line;
+				s += "\n";
 			}
 			System.out.print(s);
 			r.close();
@@ -39,17 +40,31 @@ public class ReportController {
         { 
             e.printStackTrace();
         }
-		
-}
+	}
 	
 	
 	/** Stand-in for Provider Report Compiler.*/
 	public void providerReport(){
 		//System.out.println("Compiled Provider Report");
+		try {
+			BufferedReader r = new BufferedReader( new FileReader("providerData.txt") );
+			String s = "", line = null;
+			while ((line = r.readLine()) != null) {
+				s += line;
+				s += "\n";
+			}
+			System.out.print(s);
+			r.close();
+		}
+		
+        catch (IOException e) 
+        { 
+            e.printStackTrace();
+        }
 	}
 	
 	/** Called by Timer, runs all compilers.*/
-	public void runAccountingProcedure(){
+	public void runAccountingProcedure()throws IOException{
 		System.out.println("Running Accounting Procedure");
 		providerReport();
 		memberReport();
@@ -59,7 +74,7 @@ public class ReportController {
 	}
 	
 	/** Called my Manager; Runs desired report compiler after an input.*/
-	public void requestReports(){
+	public void requestReports()throws IOException{
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Desired Report Value: \n 1: Provider Report \n 2: Member Report \n 3: Summary Report \n 4: EFT Report");

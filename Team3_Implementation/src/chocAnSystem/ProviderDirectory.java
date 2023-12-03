@@ -33,10 +33,7 @@ public class ProviderDirectory {
 		
 	}
 	
-	public static String getBuff() {
-		return buff;
-	}
-	
+
 	private static String buff;
 	
 	
