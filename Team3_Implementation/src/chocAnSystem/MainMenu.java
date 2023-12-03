@@ -3,6 +3,7 @@ package chocAnSystem;
 import java.io.IOException;
 import java.util.Scanner;
 
+/** This class is where a operator, manager, or provider is directed to their terminal. It can also run the Main Accounting Procedure.*/
 public class MainMenu {
 	/** This constructor creates an instance of the class*/
   public MainMenu() {
@@ -26,6 +27,7 @@ public class MainMenu {
         System.out.println("You are running the Main Accounting Procedure.");
         ReportController rc = new ReportController();
         rc.runAccountingProcedure();
+        System.out.println("You were logged out. Start the program again to complete another task.");
       } 
       else if (loginNumber == 1) {
     	  Operator operator = new Operator();

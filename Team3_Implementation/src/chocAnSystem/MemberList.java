@@ -6,11 +6,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+/** This class holds member data used for member reports.*/
 public class MemberList {
 	public static void main(String[] args) {
         saveMemberData();
     }
-
+/** This method saves the memeber data the has been entered.*/
     public static void saveMemberData() {
     	// Open scanner
         Scanner scanner = new Scanner(System.in);
@@ -50,6 +51,7 @@ public class MemberList {
         }
     }
 
+    /** This checks to make sure that any input given doesn't exceed the maximum length.*/
     private static String readInputWithMaxLength(Scanner scanner, int maxLength) {
         String input;
         do {
