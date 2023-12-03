@@ -8,14 +8,14 @@ import java.io.FileWriter;
 import java.util.*;
 import java.text.SimpleDateFormat;
 
-/** */
+/** This performs all the actions that a Provider can do. */
 public class ProviderController {
 	public ProviderController() {
 	}
 	
 	private static Scanner sc = new Scanner(System.in);
 	
-	//Replacement for system.out.println because I'm lazy.
+	/** A print statement called multiple time.*/
 	private static void debug(String text) {
 		System.out.println(text);
 	}
