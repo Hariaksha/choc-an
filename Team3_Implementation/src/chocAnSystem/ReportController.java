@@ -25,13 +25,20 @@ public class ReportController {
 	/** Reads data from text file and prints it to Console.*/
 	public void memberReport()throws IOException{		
 		//System.out.println("Compiled Member Report");
-		BufferedReader r = new BufferedReader( new FileReader("memberData.txt") );
-		String s = "", line = null;
-		while ((line = r.readLine()) != null) {
-		    s += line;
+		try {
+			BufferedReader r = new BufferedReader( new FileReader("memberData.txt") );
+			String s = "", line = null;
+			while ((line = r.readLine()) != null) {
+				s += line;
+			}
+			System.out.print(s);
+			r.close();
 		}
-		System.out.print(s);
-		r.close();
+		
+        catch (IOException e) 
+        { 
+            e.printStackTrace();
+        }
 		
 }
 	
