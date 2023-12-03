@@ -1,4 +1,4 @@
-//Author Ryan McCulley
+//Author: Ryan McCulley
 package chocAnSystem;
 
 public class Provider {
