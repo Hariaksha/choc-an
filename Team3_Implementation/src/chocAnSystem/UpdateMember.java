@@ -30,7 +30,7 @@ class Member
     public Member(){}
 }
 
-class UpdateMember
+public class UpdateMember
 { 
     ArrayList <Member> memberList = new ArrayList<>();
     Scanner scan = new Scanner(System.in); 

@@ -31,7 +31,7 @@ class Provider
 }
 
 //////////////////////////////////////////////////////////////////////////
-class UpdateProvider
+public class UpdateProvider
 { 
     ArrayList <Provider> providerList = new ArrayList<>();
     Scanner scan = new Scanner(System.in); 
