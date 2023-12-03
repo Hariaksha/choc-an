@@ -1,9 +1,9 @@
-/** @author Ethan Busby*/
-/** This class calls the update member and provider classes so the operator can perform different tasks.*/
+/** @author Owner Ethan Busby*/
 
 package chocAnSystem;
 import java.util.Scanner;
 
+/** This class calls the update member and provider classes so the operator can perform different tasks.*/
 public class OperatorTerminal {
 	public String operatorPassword;
 	public String operatorUsername;
@@ -11,7 +11,7 @@ public class OperatorTerminal {
 	private String usernameArr[] = {"Hari", "James"};
 	public Scanner sc = new Scanner(System.in);
 	
-	/** This is a Default Constructor that will be used in case arguments are accidentally not passed. */
+	/** This is a Default Constructor that will be used in case arguments are accidentally not passed.*/
 	public OperatorTerminal() {
 	    operatorUsername = "random username";
 	    operatorPassword = "Password";
@@ -76,7 +76,7 @@ public class OperatorTerminal {
 
 	
 	}
-	/** This is where a operator chooses whether they want toe edit a member or provider.*/
+	/** This is where a operator chooses whether they want to edit a member or provider.*/
 	public void chooseAction() {
 		//Scanner sc = new Scanner(System.in);
 		String response = "";
@@ -94,12 +94,42 @@ public class OperatorTerminal {
 			UpdateMember updateMember = new UpdateMember();
 			//System.out.println("Would you like to add, delete, or update  member? \n A - add \n D - delete \n U - update");
 			updateMember.startMemberUpdate();
+			System.out.println("Would you like to update a provider. Y for yes and N for no.");
+			response = sc.nextLine();
+			while(true) {
+			if(response.equals("Y")) {
+				UpdateProvider updateProvider = new UpdateProvider();
+				updateProvider.startProviderUpdate();
+			}
+			else if(response.equals("N")) {
+				return;
+			}
+			else {
+			System.out.println("Invalid response. Please try again");
+			response = sc.nextLine();
+			} 
+		  }
 		}
 		else if(response.equals("P")) {
 			System.out.println("You have decided to edit a provider.");
 			UpdateProvider updateProvider = new UpdateProvider();
 			//System.out.println("Would you like to add, delete, or update  member? \n A - add \n D - delete \n U - update");
 			updateProvider.startProviderUpdate();
+			System.out.println("Would you like to update a member. Y for yes and N for no.");
+			response = sc.nextLine();
+			while(true) {
+				if(response.equals("Y")) {
+					UpdateMember updateMember = new UpdateMember();
+					updateMember.startMemberUpdate();
+				}
+				else if(response.equals("N")) {
+					return;
+				}
+				else {
+				System.out.println("Invalid response. Please try again");
+				response = sc.nextLine();
+				} 
+			  }
 		}
 		sc.close();
 	}
