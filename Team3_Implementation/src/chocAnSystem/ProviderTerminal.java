@@ -1,4 +1,4 @@
-// Author: Ryan McCulley
+/** @author Ryan McCulley*/
 package chocAnSystem;
 import java.util.Scanner;
 

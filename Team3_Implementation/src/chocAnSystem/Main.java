@@ -1,4 +1,4 @@
-/** This file was written by all team members.*/
+/** @author all team members: Ethan Busby, Adam Howard, Hariaksha Gunda, Ryan McCulley, Robert Read, Tyler Cruise, and James White*/
 package chocAnSystem;
 
 /** This Main class is where the Main Menu class and its functions are used.*/

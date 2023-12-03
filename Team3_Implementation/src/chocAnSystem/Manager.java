@@ -1,4 +1,4 @@
-// Author: Hariaksha Gunda
+/** @author Hari Gunda*/
 package chocAnSystem;
 
 public class Manager {
