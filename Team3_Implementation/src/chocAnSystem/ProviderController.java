@@ -89,6 +89,7 @@ public class ProviderController {
 			comments = userInput;
 			
 			servicePrice = ProviderDirectory.getPrice(serviceCode);
+			String serviceName = ProviderDirectory.getName(serviceCode);
 			debug("Price of service: " + servicePrice);
 			
 			
@@ -107,6 +108,7 @@ public class ProviderController {
 						 "\nProvider ID: " + providerID + 
 						 "\nMember ID: " + memberID + 
 						 "\nService Code: " + serviceCode + 
+						 "\nService Name: " + serviceName + 
 						 "\nPrice: " + servicePrice + 
 						 "\nComments: " + comments);
 				fw.close();

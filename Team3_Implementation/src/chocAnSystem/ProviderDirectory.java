@@ -33,6 +33,16 @@ public class ProviderDirectory {
 		
 	}
 	
+	public static String getName(String code) {
+		for(int i = 0; i < serviceCodes.length; i++) {
+			if(code.equals(serviceCodes[i])) {
+				return serviceNames[i];
+			}
+		}
+		return "";
+		
+	}
+	
 
 	private static String buff;
 	
