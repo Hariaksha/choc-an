@@ -92,7 +92,7 @@ public class UpdateProvider
             }
             else 
             { 
-                System.out.println("Enter valid function");
+                error(); 
                 System.out.println("You you like to continue to update Provider list? YES or NO"); 
             }
         } 
@@ -109,7 +109,7 @@ public class UpdateProvider
         { 
             if(providerList.get(i).number == idNum)
             { 
-                found = true; 
+                found = true;  
                 providerList.remove(i);
                 System.out.println("Provider with ID " + idNum + " deleted successfully.");
             }
@@ -117,7 +117,7 @@ public class UpdateProvider
 
         if(!found)
         { 
-            System.out.println("Provider not found");
+            providerNotFound(); 
             deleteProvider();
             return; 
         }
@@ -138,7 +138,7 @@ public class UpdateProvider
             }
             else 
             { 
-                System.out.println("Enter valid function");
+                error(); 
                 System.out.println("You you like to continue to update Provider list? YES or NO"); 
             }
         } 
@@ -165,7 +165,7 @@ public class UpdateProvider
 
         if(!found)
         { 
-            System.out.println("Provider not found");
+        	providerNotFound(); 
             updateProviderRecords();
             return; 
         }
@@ -178,7 +178,7 @@ public class UpdateProvider
 
             if(input.equalsIgnoreCase("NAME"))
             { 
-                vaild = true;
+                vaild = true; 
                 System.out.print("Enter Name: "); 
                 providerList.get(providerLocation).name = scan.nextLine();
             }
@@ -199,7 +199,7 @@ public class UpdateProvider
             }
             else 
             { 
-                System.out.println("Enter valid function");
+                error(); 
                 System.out.println("To update Provider name type NAME"); 
                 System.out.println("To update Provider address type ADDRESS"); 
             }
@@ -221,7 +221,7 @@ public class UpdateProvider
             }
             else 
             { 
-                System.out.println("Enter valid function");
+                error(); 
                 System.out.println("You you like to continue to update Provider list? YES or NO"); 
             }
         } 
@@ -262,7 +262,7 @@ public class UpdateProvider
             input =  scan.nextLine(); 
             if(input.equalsIgnoreCase("ADD"))
             { 
-                vaild = true;
+                vaild = true; 
                 addProvider(); 
             }
             else if(input.equalsIgnoreCase("DELETE"))
@@ -277,7 +277,7 @@ public class UpdateProvider
             }
             else 
             { 
-                System.out.println("Enter valid function");
+                error(); 
                 System.out.println("To add Provider type ADD"); 
                 System.out.println("To delete Provider type DELETE"); 
                 System.out.println("To update Provider records type UPDATE"); 
@@ -302,10 +302,22 @@ public class UpdateProvider
             }
             else 
             { 
-                System.out.println("Enter valid function");
+                error(); 
                 System.out.println("You you like to continue to update Provider list? YES or NO"); 
             }
         } 
+    }
+    
+    /** Print error message. */ 
+    public void error() 
+    { 
+    	System.out.println("Enter valid function");
+    }
+    
+    /** Prints if member is not found */
+    public void providerNotFound()  
+    { 
+    	System.out.println("Provider not found"); 
     }
 }
 
