@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 
 import chocAnSystem.OperatorTerminal;
 
+/** */
 class EthanBusbyOperatorTerminalLoginTest {
 
     private OperatorTerminal t;
