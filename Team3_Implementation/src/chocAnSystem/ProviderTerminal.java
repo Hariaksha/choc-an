@@ -9,6 +9,7 @@ public class ProviderTerminal {
   private String passwordArr[] = {"121925030", "password649"}; // This variable and the next one are parallel arrays storing matching username and password pairs.
   private String usernameArr[] = {"Ryan", "Busby"};
   public Scanner sc = new Scanner(System.in);
+  public String pID;
 
   // This is a Default Constructor
   public ProviderTerminal() {
@@ -80,7 +81,13 @@ public class ProviderTerminal {
 		pc.billChocAn(); // Runs Bill Choc An
 	}
 	else if (response.equals("Verify Member")) {
-		pc.verifyMember(); // Runs Verify Member
+		System.out.println("Enter Provider ID: ");
+		pID = sc.nextLine();
+		while(pID.length() != 9) {
+			System.out.println("You entered: " + pID + ", please enter a valid Provider ID:");
+			pID = sc.nextLine();
+		}
+		pc.verifyMember(pID); // Runs Verify Member
 	}
 	else if (response.equals("Request Directory")) {
 		pc.requestDirectory(); // Runs Request Directory
