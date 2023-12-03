@@ -10,7 +10,6 @@ public class ManagerTerminal {
   private String passwordArr[] = {"222222222", "333333333"}; // This variable and the next one are parallel arrays storing matching username and password pairs.
   private String usernameArr[] = {"Ethan", "Tyler"};
   public Scanner sc = new Scanner(System.in);
-  public static String errorCode;
 
   /** This is a Default Constructor that will be used in case arguments are accidentally not passed. */
   public ManagerTerminal() {

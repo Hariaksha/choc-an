@@ -97,7 +97,7 @@ public class ProviderController {
 		    Date date = new Date();  
 		    curTime = formatter.format(date);  
 		    debug("Attempting to write to file");
-		    String filename = serviceTime + "_" + serviceCode + "_" + memberID + ".txt";
+		    String filename = "Service_Logs/" + providerID + "_" + serviceTime + "_" + serviceCode + "_" + memberID + ".txt";
 			try {
 				debug("filename: " + filename);
 				FileWriter fw = new FileWriter(filename);

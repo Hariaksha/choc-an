@@ -25,6 +25,16 @@ public class ReportController {
 	/** Reads data from text file and prints it to Console.*/
 	public void memberReport()throws IOException{		
 		//System.out.println("Compiled Member Report");
+		
+		//loop thru each member.
+		//for each member, add their info to the doc
+		//check all files generated with the member's memberID in the name
+		//get relevant info from those files
+		
+		
+		
+		
+		
 		try {
 			BufferedReader r = new BufferedReader( new FileReader("memberData.txt") );
 			String s = "", line = null;
