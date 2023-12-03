@@ -46,7 +46,7 @@ class UpdateMember
             String line;
             while ((line = reader.readLine()) != null)
             { 
-                String [] parts = line.split(" , " ); 
+                String [] parts = line.split(", " ); 
                 if(parts.length == 6) 
                 { 
                     String name = parts[0]; 
@@ -58,9 +58,6 @@ class UpdateMember
 
                     Member member = new Member(name, number, street, city, state, zip); 
                     memberList.add(member); 
-                }
-                else{ 
-                    System.out.println("Invailid line format: " + line); 
                 }
             } 
         }
@@ -262,7 +259,7 @@ class UpdateMember
             BufferedWriter writer = new BufferedWriter(reader);
             for(int i = 0; i < memberList.size(); i++)
             {
-                writer.write(memberList.get(i).name + " , " + memberList.get(i).number + " , " + memberList.get(i).street + " , " + memberList.get(i).city + " , " + memberList.get(i).state + " , " + memberList.get(i).zip + "\n");
+                writer.write(memberList.get(i).name + ", " + memberList.get(i).number + ", " + memberList.get(i).street + ", " + memberList.get(i).city + ", " + memberList.get(i).state + ", " + memberList.get(i).zip + "\n");
             }
 
             writer.newLine();
