@@ -3,6 +3,8 @@
 package chocAnSystem;
 import java.util.Scanner;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -11,6 +13,10 @@ import java.io.IOException;
 public class ReportController {
 	/** Constructor.*/
 	public ReportController() {}
+	
+	private static void debug(String text) {
+		System.out.println(text);
+	}
 	
 	/** Stand-in for EFT Report Compiler.*/
 	public void eftReport(){		
@@ -31,25 +37,56 @@ public class ReportController {
 		//check all files generated with the member's memberID in the name
 		//get relevant info from those files
 		
-		
-		
-		
-		
 		try {
-			BufferedReader r = new BufferedReader( new FileReader("memberData.txt") );
-			String s = "", line = null;
-			while ((line = r.readLine()) != null) {
-				s += line;
-				s += "\n";
-			}
-			System.out.print(s);
-			r.close();
-		}
+		      File memberData = new File("memberData.txt");
+		      debug("Connected. Verifying member...");
+		      Scanner reader = new Scanner(memberData);
+		      
+		      File folder = new File("System_Logs/");
+		      File[] listOfFiles = folder.listFiles();
+		      
+		      while (reader.hasNextLine()) {
+		        String data = reader.nextLine();
+		        if (data.equals("")) continue;
+		        
+		        
+		        String curID = data.substring(data.indexOf(',') + 2, data.indexOf(',', data.indexOf(',') + 1));
+		        
+		        File memFile = new File("MemberReports/" + curID + "_Report");
+		        
+		        String memFileText = curID + "\nAll services provided:\n";
+		        
+		        for(int i = 0; i < listOfFiles.length; i++) {
+		        	if (listOfFiles[i].getName().contains(curID)) {
+		        	    
+		        	  }
+		        }
+		      }
+		      reader.close();
+
+		    } catch (FileNotFoundException e) {
+		      debug("Member database not found, please try again later.");
+		      e.printStackTrace();
+		    }
 		
-        catch (IOException e) 
-        { 
-            e.printStackTrace();
-        }
+		
+		
+		
+//		try {
+//			BufferedReader r = new BufferedReader( new FileReader("memberData.txt") );
+//			String s = "", line = null;
+//			while ((line = r.readLine()) != null) {
+//				s += line;
+//				s += "\n";
+//			}
+//			System.out.print(s);
+//			r.close();
+//		}
+//		
+//        catch (IOException e) 
+//        { 
+//            e.printStackTrace();
+//        }
 	}
 	
 	
