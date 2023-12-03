@@ -16,7 +16,7 @@ public class MainMenu {
     Scanner myObj = new Scanner(System.in);
     int loginNumber = -1;
     while (loginNumber < 0 || loginNumber >= 3) {
-      System.out.println("Enter login number. 0 will run the main accounting procedure, 1 will guide you to the Operator Terminal, 2 will guide you to the Manager Terminal, and 3 will guide you to the Provider Terminal.: ");
+      System.out.println("Enter login number.\n0 will run the main accounting procedure\n1 will guide you to the Operator Terminal\n2 will guide you to the Manager Terminal,\n3 will guide you to the Provider Terminal.");
       loginNumber = myObj.nextInt();
       System.out.println("You entered " + loginNumber + " as your login ID number.");
       if (loginNumber == 0) {
