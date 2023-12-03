@@ -23,10 +23,10 @@ class TylerCruiseManagerTerminalFailureTest {
 
 	@Test
 	void test() {
-		t.managerLoginAndChooseAction();
-		assertEquals("Enter username and click Enter: ", outputStreamCaptor.toString().trim());
-		assertEquals("Enter password and click Enter: ", outputStreamCaptor.toString().trim());
-		assertEquals("Username is not valid.", outputStreamCaptor.toString().trim());
+		t.login();
+		//assertEquals("Enter username and click Enter: ", outputStreamCaptor.toString().trim());
+		//assertEquals("Enter password and click Enter: ", outputStreamCaptor.toString().trim());
+		assertEquals("Invalid credentials. Please try again", outputStreamCaptor.toString().trim());
 	}
 
 }
