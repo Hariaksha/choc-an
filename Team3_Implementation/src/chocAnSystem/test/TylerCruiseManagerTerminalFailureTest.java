@@ -36,7 +36,7 @@ class TylerCruiseManagerTerminalFailureTest {
 		 exit.expectSystemExitWithStatus(1);
 		    exit.checkAssertionAfterwards(new Assertion() {
 		      public void checkAssertion() {
-		        assertEquals("Failed too many times. You will be logged out.", t.login());
+		        assertEquals("Failed too many times. You will be logged out.", t.errorCode);
 		      }
 		    });
 		    t.login();
