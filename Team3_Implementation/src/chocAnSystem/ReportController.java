@@ -2,7 +2,11 @@
 
 package chocAnSystem;
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
+
 
 public class ReportController {
 	/** Constructor.*/
@@ -18,15 +22,23 @@ public class ReportController {
 		System.out.println("Compiled Summary Report");
 	}
 	
-	/** Stand-in for Member Report Compiler.*/
-	public void memberReport(){		
-		System.out.println("Compiled Member Report");
+	/** Reads data from text file and prints it to Console.*/
+	public void memberReport()throws IOException{		
+		//System.out.println("Compiled Member Report");
+		BufferedReader r = new BufferedReader( new FileReader("memberData.txt") );
+		String s = "", line = null;
+		while ((line = r.readLine()) != null) {
+		    s += line;
+		}
+		System.out.print(s);
+		r.close();
+		
 }
 	
 	
 	/** Stand-in for Provider Report Compiler.*/
 	public void providerReport(){
-		System.out.println("Compiled Provider Report");
+		//System.out.println("Compiled Provider Report");
 	}
 	
 	/** Called by Timer, runs all compilers.*/
