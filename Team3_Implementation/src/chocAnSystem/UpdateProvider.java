@@ -10,6 +10,7 @@ import java.io.FileWriter;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 
+/** Performs the actions of adding, deleting, and updating providers.*/
 public class UpdateProvider
 { 
     ArrayList <Provider> providerList = new ArrayList<>();
@@ -44,7 +45,7 @@ public class UpdateProvider
         }
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /** Adds a provider to the provider list.*/
     public void addProvider() 
     { 
         Provider newProvider = new Provider(); 
@@ -97,7 +98,7 @@ public class UpdateProvider
         } 
     } 
 
-    /////////////////////////////////////////////////////////////////////////////////  
+    /** Deletes a provider from the provider list.*/
     public void deleteProvider() 
     { 
         System.out.println("Enter Provider ID Number: ");
@@ -143,7 +144,7 @@ public class UpdateProvider
         } 
     }
 
-    //////////////////////////////////////////////////////////////////////////////////////
+    /** This updates the member records of existing members.*/
     public void updateProviderRecords() 
     { 
         System.out.println("Enter Provider ID Number: "); 
@@ -226,7 +227,7 @@ public class UpdateProvider
         } 
     } 
 
-    //////////////////////////////////////////////////////////////////////////////////////
+    /** This updates the data in the provider list.*/
     public void updateProviderList() 
     {
         try{
@@ -246,7 +247,7 @@ public class UpdateProvider
         }
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////
+    /** This calls the other methods so that the operator can perform the necessary actions.*/
     public void startProviderUpdate()
     { 
         readProviderList();
