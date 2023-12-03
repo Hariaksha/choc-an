@@ -95,10 +95,10 @@ public class ProviderTerminal {
 		ProviderController.billChocAn(); // Runs Bill Choc An
 	}
 	else if (response.equals("Verify Member")) {
-		System.out.println("Enter Provider ID: ");
+		System.out.println("Enter member ID: ");
 		pID = sc.nextLine();
 		while(pID.length() != 9) {
-			System.out.println("You entered: " + pID + ", please enter a valid Provider ID:");
+			System.out.println("You entered: " + pID + ", please enter a valid member ID:");
 			pID = sc.nextLine();
 		}
 		ProviderController.verifyMember(pID); // Runs Verify Member
