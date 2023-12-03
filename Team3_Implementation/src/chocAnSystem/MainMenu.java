@@ -1,5 +1,6 @@
 /** @author all team members: Ethan Busby, Adam Howard, Hariaksha Gunda, Ryan McCulley, Robert Read, Tyler Cruise, and James White*/
 package chocAnSystem;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MainMenu {
@@ -13,7 +14,7 @@ public class MainMenu {
   }
 
   /** This method takes input to lead the user to the right terminal or run the main accounting procedure. It returns nothing.*/
-  public void login() {
+  public void login() throws IOException{
     // Use scanner to take login number
     Scanner myObj = new Scanner(System.in);
     int loginNumber = -1;
