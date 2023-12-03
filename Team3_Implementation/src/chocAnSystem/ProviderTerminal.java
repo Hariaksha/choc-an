@@ -159,6 +159,7 @@ public class ProviderTerminal {
 			  }
 			  counter++;
 			  while(lines.charAt(counter) != ',') {
+				  data = data + lines.charAt(counter);
 				  counter++;
 			  }
 			  passwords.add(data);
