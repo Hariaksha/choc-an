@@ -21,5 +21,5 @@ class EthanBusbyOperatorPasswordCheck {
 		t.isPasswordRight("password999", 1);
 		assertTrue(true);
 	}
-//oops
+//oop
 }
