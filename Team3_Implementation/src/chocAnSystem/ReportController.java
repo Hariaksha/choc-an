@@ -59,8 +59,10 @@ public class ReportController {
 		        for(int i = 0; i < listOfFiles.length; i++) {
 		        	if (listOfFiles[i].getName().contains(curID)) {
 		        		Scanner curFile = new Scanner(listOfFiles[i]);
+		        		String curData;
+		        		memFileText += "Service:\n";
 		        		 while (curFile.hasNextLine()) {
-		        			 String curData = curFile.nextLine();
+		        			 curData = curFile.nextLine();
 		        			 if (curData.contains("Date of Service:")) memFileText += curData + "\n";
 		        			 if (curData.contains("Provider Name:")) memFileText += curData + "\n";
 		        			 if (curData.contains("Service Name:")) memFileText += curData + "\n";

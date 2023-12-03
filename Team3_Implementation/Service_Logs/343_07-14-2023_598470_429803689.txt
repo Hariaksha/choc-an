@@ -1,0 +1,9 @@
+Current Time: 12/03/2023 17:11:25
+Date of Service: 07-14-2023
+Provider ID: 343
+Provider Name: Jon Doe
+Member ID: 429803689
+Service Code: 598470
+Service Name: dietitianAppt
+Price: 125.73
+Comments: test service

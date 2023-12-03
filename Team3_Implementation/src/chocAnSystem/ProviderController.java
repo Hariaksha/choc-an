@@ -24,6 +24,7 @@ public class ProviderController {
 	 * This is the method for when the provider wants to bill ChocAn. It prompts the provider for all of the relevant info,
 	 * does all of the verification steps, etc.
 	 */
+	
 	public static void billChocAn() {
 
 		
@@ -36,8 +37,10 @@ public class ProviderController {
 		double servicePrice;
 		
 		
-		providerID = ProviderTerminal.getPID();
-		providerName = ProviderTerminal.getPName();
+		//providerID = ProviderTerminal.getPID();
+		//providerName = ProviderTerminal.getPName();
+		providerID = "343";
+		providerName = "Jon Doe";
 		
 		
 		
