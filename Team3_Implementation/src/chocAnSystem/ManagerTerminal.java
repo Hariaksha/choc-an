@@ -1,5 +1,6 @@
 /** @author Hari Gunda*/
 package chocAnSystem;
+import java.io.IOException;
 import java.util.Scanner;
 
 /** This represents the terminal where managers can login and request reports. */
@@ -69,8 +70,9 @@ public class ManagerTerminal {
 	  }
   }
   
-  /** This method allows a manager to enter login credentials to securely log into the system, and then choose an action. */
-  public void chooseAction() {
+  /** This method allows a manager to enter login credentials to securely log into the system, and then choose an action. 
+ * @throws IOException */
+  public void chooseAction() throws IOException {
     ReportController rc = new ReportController(); // Create ReportController object
 	System.out.println("Would you like to request a report? Type 'Y' for Yes and 'N' for No"); // Prompt user to choose to request a report
 	String response = sc.nextLine();
