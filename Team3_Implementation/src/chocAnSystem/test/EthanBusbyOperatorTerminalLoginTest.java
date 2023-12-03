@@ -25,11 +25,6 @@ class EthanBusbyOperatorTerminalLoginTest {
         t = new OperatorTerminal();
     }
 
-    @AfterEach
-    void tearDown() {
-        System.setIn(originalSystemIn);
-        System.setOut(System.out);
-    }
 
     @Test
     void test() {
