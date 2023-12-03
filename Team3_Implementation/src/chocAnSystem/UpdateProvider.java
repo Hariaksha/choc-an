@@ -10,6 +10,7 @@ import java.io.FileWriter;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 
+/** Performs the actions of adding, deleting, and updating providers.*/
 public class UpdateProvider
 { 
     ArrayList <Provider> providerList = new ArrayList<>();

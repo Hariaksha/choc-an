@@ -9,7 +9,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
+/** Performs all the actions of the manager and runs the main accounting procedure.*/
 public class ReportController {
 	/** Constructor.*/
 	public ReportController() {}
