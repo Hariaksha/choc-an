@@ -58,7 +58,16 @@ public class ReportController {
 		        
 		        for(int i = 0; i < listOfFiles.length; i++) {
 		        	if (listOfFiles[i].getName().contains(curID)) {
-		        	    
+		        		Scanner curFile = new Scanner(memberData);
+		        		 while (curFile.hasNextLine()) {
+		        			 String curData = reader.nextLine();
+		        			 if (curData.contains("Date of Service:")) {
+		        				 memFileText += curData + "\n";
+		        			 }
+		        			 else if (curData.contains("Date of Service:") {
+		        				 
+		        			 }
+		        		 }
 		        	  }
 		        }
 		      }

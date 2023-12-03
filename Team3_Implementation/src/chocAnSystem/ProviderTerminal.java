@@ -69,7 +69,7 @@ public class ProviderTerminal {
   
   /** This method allows a provider to choose an action.*/
   public void chooseAction() {
-    ProviderController pc = new ProviderController(); // Creates a ProviderController
+    //ProviderController pc = new ProviderController(); // Creates a ProviderController
 	System.out.println("Choose Action: Bill Choc An, Verify Member, Request Directory"); // Prompt user to choose an action between bill chocAn, Verify Member, and Request Directory
 	String response = sc.nextLine();
 	
@@ -82,7 +82,7 @@ public class ProviderTerminal {
 	}
 	
 	if (response.equals("Bill Choc An")) {
-		pc.billChocAn(); // Runs Bill Choc An
+		ProviderController.billChocAn(); // Runs Bill Choc An
 	}
 	else if (response.equals("Verify Member")) {
 		System.out.println("Enter Provider ID: ");
@@ -91,10 +91,10 @@ public class ProviderTerminal {
 			System.out.println("You entered: " + pID + ", please enter a valid Provider ID:");
 			pID = sc.nextLine();
 		}
-		pc.verifyMember(pID); // Runs Verify Member
+		ProviderController.verifyMember(pID); // Runs Verify Member
 	}
 	else if (response.equals("Request Directory")) {
-		pc.requestDirectory(); // Runs Request Directory
+		ProviderController.requestDirectory(); // Runs Request Directory
 	}
 	return;
   }
