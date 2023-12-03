@@ -18,7 +18,7 @@ class EthanBusbyOperatorPasswordCheck {
 
 	@Test
 	void test() {
-		t.isPasswordRight("password999", 1);
+		t.isPasswordRight("000000000", 1);
 		assertTrue(true);
 	}
 //oop
