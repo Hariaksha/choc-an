@@ -30,7 +30,7 @@ public class ReportController {
 	
 	/** Reads data from text file and prints it to Console.*/
 	public void memberReport()throws IOException{		
-		//System.out.println("Compiled Member Report");
+		System.out.println("Compiling Member Report");
 		
 		//loop thru each member.
 		//for each member, add their info to the doc
@@ -92,7 +92,7 @@ public class ReportController {
 	
 	/** Stand-in for Provider Report Compiler.*/
 	public void providerReport(){
-		//System.out.println("Compiled Provider Report");
+		System.out.println("Compiling Provider Report");
 		try {
 			BufferedReader r = new BufferedReader( new FileReader("providerData.txt") );
 			String s = "", line = null;
