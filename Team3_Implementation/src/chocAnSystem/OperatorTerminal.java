@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class OperatorTerminal {
 	public String operatorPassword;
 	public String operatorUsername;
-	private String passwordArr[] = {"password999", "password888"};
+	private String passwordArr[] = {"000000000", "111111111"};
 	private String usernameArr[] = {"Hari", "James"};
 	public Scanner sc = new Scanner(System.in);
 	

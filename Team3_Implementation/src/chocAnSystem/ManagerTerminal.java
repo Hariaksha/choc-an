@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class ManagerTerminal {
   private String managerUsername;
   private String managerPassword;
-  private String passwordArr[] = {"password123", "password321"}; // This variable and the next one are parallel arrays storing matching username and password pairs.
+  private String passwordArr[] = {"222222222", "333333333"}; // This variable and the next one are parallel arrays storing matching username and password pairs.
   private String usernameArr[] = {"Ethan", "Tyler"};
   public Scanner sc = new Scanner(System.in);
   public static String errorCode;
