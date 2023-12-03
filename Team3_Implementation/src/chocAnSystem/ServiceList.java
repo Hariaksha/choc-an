@@ -4,6 +4,7 @@ package chocAnSystem;
 
 import java.util.ArrayList;
 
+/** Creates a service list containing comments and dates of services.*/
 public class ServiceList {
 	public ArrayList<String> comments;
 	public ArrayList<String> dates;
