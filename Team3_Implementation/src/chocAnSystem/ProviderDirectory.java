@@ -3,6 +3,7 @@ package chocAnSystem;
 
 import java.io.FileWriter;
 
+/** Holds all service codes, names, and prices. It also creates a text file.*/
 public class ProviderDirectory {
 	public ProviderDirectory() {
 		
@@ -12,6 +13,7 @@ public class ProviderDirectory {
 	private static String serviceNames[] = {"dietitianAppt", "aerobicsSession"};
 	private static double servicePrices[] = {125.73, 143.89};
 	
+	/** Provides a service based on the service code.*/
 	public static String getService(String code) {
 		for(int i = 0; i < serviceCodes.length; i++) {
 			if(code.equals(serviceCodes[i])) {
@@ -22,7 +24,7 @@ public class ProviderDirectory {
 	return "Service code not found.";
 	}
 	
-	
+	/** Provides a service price based on the service code.*/
 	public static double getPrice(String code) {
 		for(int i = 0; i < serviceCodes.length; i++) {
 			if(code.equals(serviceCodes[i])) {
@@ -46,7 +48,7 @@ public class ProviderDirectory {
 
 	private static String buff;
 	
-	
+	/** Creates a provider directory that holds all of the information.*/
 	public static void makeDirectory() {
 		
 		try {
