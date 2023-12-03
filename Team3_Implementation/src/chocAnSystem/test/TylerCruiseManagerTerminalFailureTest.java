@@ -30,7 +30,11 @@ class TylerCruiseManagerTerminalFailureTest {
         t.login();
         assertTrue(outputStreamCaptor.toString().contains("Enter username and click Enter: "));
         assertTrue(outputStreamCaptor.toString().contains("Enter password and click Enter: "));
-        assertTrue(outputStreamCaptor.toString().contains("Successful login."));
+        assertTrue(outputStreamCaptor.toString().contains("Enter username and click Enter: "));
+        assertTrue(outputStreamCaptor.toString().contains("Enter password and click Enter: "));
+        assertTrue(outputStreamCaptor.toString().contains("Enter username and click Enter: "));
+        assertTrue(outputStreamCaptor.toString().contains("Enter password and click Enter: "));
+        assertTrue(outputStreamCaptor.toString().contains("Failed too many times. You will be logged out."));
 	}
 
 }
