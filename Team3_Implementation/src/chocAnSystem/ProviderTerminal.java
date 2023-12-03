@@ -7,8 +7,8 @@ import java.io.FileNotFoundException;
 
 /** This class calls the ProviderController class so that a provider can perform different actions.*/
 public class ProviderTerminal {
-  private String providerUsername;
-  private String providerPassword;
+  private static String providerUsername;
+  private static String providerPassword;
   ArrayList<String> usernames = new ArrayList<String>();
   ArrayList<String> passwords = new ArrayList<String>();
   public Scanner sc = new Scanner(System.in);
@@ -56,11 +56,8 @@ public class ProviderTerminal {
 		  }
 		  else if(loggedIn) {
 			  System.out.println("Successful login.");
-<<<<<<< HEAD
 			  providerPassword = password;
 			  providerUsername = username;
-=======
->>>>>>> branch 'master' of https://rjread173@bitbucket.org/tklocklear/fall2023team3.git
 			  break;
 		  }
 		  // Reprompt user for login credentials if loop does not break
@@ -72,7 +69,6 @@ public class ProviderTerminal {
 	  }
   }
   
-<<<<<<< HEAD
  public static String getPID() {
 	 return providerPassword;
  }
@@ -82,9 +78,6 @@ public class ProviderTerminal {
  }
   
   // This method allows a provider to choose an action. */
-=======
-  /** This method allows a provider to choose an action.*/
->>>>>>> branch 'master' of https://rjread173@bitbucket.org/tklocklear/fall2023team3.git
   public void chooseAction() {
     //ProviderController pc = new ProviderController(); // Creates a ProviderController
 	System.out.println("Choose Action: Bill Choc An, Verify Member, Request Directory"); // Prompt user to choose an action between bill chocAn, Verify Member, and Request Directory
