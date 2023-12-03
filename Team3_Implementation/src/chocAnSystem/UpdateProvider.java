@@ -189,7 +189,7 @@ class UpdateProvider
         if(!found)
         { 
             System.out.println("Provider not found");
-            deleteProvider();
+            updateProviderRecords();
             return; 
         }
 
