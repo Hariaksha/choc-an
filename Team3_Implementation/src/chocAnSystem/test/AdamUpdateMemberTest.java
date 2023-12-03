@@ -38,4 +38,6 @@ class AdamUpdateMemberTest {
 
         assertTrue(outContent.toString().contains("Enter valid function"));
     }
+    
 }
+

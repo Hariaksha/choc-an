@@ -334,8 +334,10 @@ public class UpdateMember
         
     }
     
+    /** Print error message. */ 
     public void error() 
     { 
     	System.out.println("Enter valid function");
     }
+    
 }
