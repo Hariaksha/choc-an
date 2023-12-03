@@ -62,9 +62,9 @@ public class ReportController {
 		        		Scanner curFile = new Scanner(listOfFiles[i]);
 		        		 while (curFile.hasNextLine()) {
 		        			 String curData = curFile.nextLine();
-		        			 if (curData.contains("Date of Service:") || curData.contains("Provider Name:") || curData.contains("Service Name:")) {
-		        				 memFileText += curData + "\n";
-		        			 }
+		        			 if (curData.contains("Date of Service:")) memFileText += curData + "\n";
+		        			 if (curData.contains("Provider Name:")) memFileText += curData + "\n";
+		        			 if (curData.contains("Service Name:")) memFileText += curData + "\n";
 		        		 }
 		        		 curFile.close();
 		        	  }
