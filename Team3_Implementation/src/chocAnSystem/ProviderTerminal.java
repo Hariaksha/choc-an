@@ -1,15 +1,18 @@
-// Author: Ryan McCulley
+/** @author Ryan McCulley*/
 package chocAnSystem;
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 /** This declares the class attributes. */
 public class ProviderTerminal {
   private String providerUsername;
   private String providerPassword;
-  private String passwordArr[] = {"121925030", "password649"}; // This variable and the next one are parallel arrays storing matching username and password pairs.
-  private String usernameArr[] = {"Ryan", "Busby"};
+  private String passwordArr[];
+  private String usernameArr[];
   public Scanner sc = new Scanner(System.in);
   public String pID;
+  int counter = 0;
 
   // This is a Default Constructor
   public ProviderTerminal() {
@@ -28,7 +31,7 @@ public class ProviderTerminal {
 	  // Prompt user for username
 	  System.out.println("Enter username and click Enter: ");
 	  String username = sc.nextLine();
-	  // Prompt user for p	assword
+	  // Prompt user for password
 	  System.out.println("Enter password and click Enter: ");
 	  String password = sc.nextLine();
 	  // Check if username is valid and return its index in username array. Return -1 if not found
@@ -97,6 +100,38 @@ public class ProviderTerminal {
   
   //This method checks to see if the username entered is a valid username. It returns -1 if not valid and the index of the username in the username array if it is valid.
   public int isStrInUsernameArr(String str) {
+	  File pFile = new File("providerData.txt");
+	  try {
+		  Scanner reader = new Scanner(pFile);
+		  
+		  String data = "";
+		  String lines;
+		  counter = 0;
+		  int meow = 0;
+		  
+		  while(reader.hasNextLine()) {
+			  
+			  lines = reader.nextLine();
+			  while(lines.charAt(counter) != ',') {
+				  data = data + lines.charAt(counter);
+				  counter++;
+				  
+			  }
+			  
+			  usernameArr[meow] = data;
+			  meow++;
+			  data = "";
+			  counter = 0;
+			  
+		  }
+		
+		  reader.close();
+	  
+	  } catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	  
+	  
 	  for (int i = 0; i < usernameArr.length; i++) { // Use for loop to iterate through string
 		  if (str.equals(usernameArr[i])) { // If entered username equals current element in array
 			  return i; // Return index found
@@ -107,6 +142,39 @@ public class ProviderTerminal {
   
   /**This method checks to see if the password is correct. It is only called if the username is valid, and it checks that the password entered is the password found at the index of the correct username in the password array.*/
   public boolean isPasswordRight(String str, int index) {
+	  
+	  File pFile = new File("providerData.txt");
+	  try {
+		  Scanner reader = new Scanner(pFile);
+		  
+		  String data = "";
+		  String lines;
+		  counter = 0;
+		  int meow = 0;
+		  
+		  while(reader.hasNextLine()) {
+			  
+			  lines = reader.nextLine();
+			  while(lines.charAt(counter) != ',') {
+				  counter++;
+			  }
+			  counter++;
+			  while(lines.charAt(counter) != ',') {
+				  counter++;
+			  }
+			  passwordArr[meow] = data;
+			  meow++;
+			  data = "";
+			  counter = 0;	  
+		  }
+		
+		  reader.close();
+	  
+	  } catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	  
 	  if (str.equals(passwordArr[index])) { // Use str.equals() method to see if password matches username
 		  return true; // Return true if password is right
 	  }

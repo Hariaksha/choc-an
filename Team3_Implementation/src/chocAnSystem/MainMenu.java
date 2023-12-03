@@ -1,4 +1,4 @@
-/** This class was written by all team members.*/
+/** @author all team members: Ethan Busby, Adam Howard, Hariaksha Gunda, Ryan McCulley, Robert Read, Tyler Cruise, and James White*/
 package chocAnSystem;
 import java.util.Scanner;
 

@@ -1,3 +1,4 @@
+/** @author Adam Howard*/
 package chocAnSystem;
 import java.io.File;
 import java.io.FileReader;

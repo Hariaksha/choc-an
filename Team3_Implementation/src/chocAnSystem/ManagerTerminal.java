@@ -1,8 +1,8 @@
-// Author: Hariaksha Gunda
+/** @author Hari Gunda*/
 package chocAnSystem;
 import java.util.Scanner;
 
-/** This declares the class attributes. */
+/** This represents the terminal where managers can login and request reports. */
 public class ManagerTerminal {
   private String managerUsername;
   private String managerPassword;

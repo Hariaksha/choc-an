@@ -1,4 +1,4 @@
-/** Code by: Tyler Cruise.*/
+/** @author Tyler Cruise*/
 
 package chocAnSystem;
 import java.util.Scanner;
