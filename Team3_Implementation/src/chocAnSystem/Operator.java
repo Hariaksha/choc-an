@@ -3,6 +3,7 @@
 
 package chocAnSystem;
 
+/** The Operator class illustrates how the operator interacts with the operator terminal.*/
 public class Operator {
 	
 	/** This shows that an operator can perform the actions on the operator terminal. */

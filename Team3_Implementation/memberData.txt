@@ -6,4 +6,3 @@ Trina, 429803689, t, t, t, t
 Ethan, 515392091, Busby, Tusca, AL, 35401
 Ethan, 506312081, street, Tusca, AL, 5242
 Adam, 907857725, plpllplpl, Tuaca, AL, 4222
-
