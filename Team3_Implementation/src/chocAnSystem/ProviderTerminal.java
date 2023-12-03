@@ -140,6 +140,8 @@ public class ProviderTerminal {
 			  counter = 0;
 			  
 		  }
+		  
+		  System.out.println(usernames);
 		
 		  reader.close();
 	  
@@ -173,14 +175,17 @@ public class ProviderTerminal {
 			  while(lines.charAt(counter) != ',') {
 				  counter++;
 			  }
-			  //counter++;
+			  counter += 2;
 			  while(lines.charAt(counter) != ',') {
+				  data = data + lines.charAt(counter);
 				  counter++;
 			  }
 			  passwords.add(data);
 			  data = "";
 			  counter = 0;	  
 		  }
+		  
+		  System.out.println(passwords);
 		
 		  reader.close();
 	  
