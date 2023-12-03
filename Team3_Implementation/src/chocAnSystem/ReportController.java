@@ -39,7 +39,6 @@ public class ReportController {
 		
 		try {
 		      File memberData = new File("memberData.txt");
-		      debug("Connected. Verifying member...");
 		      Scanner reader = new Scanner(memberData);
 		      
 		      File folder = new File("Service_Logs/");
@@ -55,7 +54,7 @@ public class ReportController {
 		        //File memFile = new File();
 		        FileWriter memFile = new FileWriter("MemberReports/" + curID + "_Report.txt");
 		        
-		        String memFileText = curID + "\nAll services provided:\n";
+		        String memFileText = data + "\nAll services provided:\n";
 		        
 		        for(int i = 0; i < listOfFiles.length; i++) {
 		        	if (listOfFiles[i].getName().contains(curID)) {
