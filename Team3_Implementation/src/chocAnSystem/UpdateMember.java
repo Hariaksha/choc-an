@@ -99,7 +99,7 @@ class UpdateMember
         memberList.add(newMember);  
         System.out.println(newMember.name + "was successfully added." ); 
 
-        System.out.println("You you like to continue to add another member? YES or NO"); 
+        System.out.println("Would you like to continue to add another member? YES or NO"); 
         boolean cont  = false; 
         String input; 
         while(!cont)
@@ -116,7 +116,7 @@ class UpdateMember
             else 
             { 
                 System.out.println("Enter valid function");
-                System.out.println("You you like to continue to update member list? YES or NO"); 
+                System.out.println("Would you like to continue to update member list? YES or NO"); 
             }
         } 
     } 

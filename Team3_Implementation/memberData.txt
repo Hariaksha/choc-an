@@ -3,4 +3,7 @@ Adam, 868923019, t, t, t, t
 John, 755810165, t, t, t, t
 Matthew, 392109854, t, t, t, t
 Trina, 429803689, t, t, t, t
+Ethan, 515392091, Busby, Tusca, AL, 35401
+Ethan, 506312081, street, Tusca, AL, 5242
+Adam, 907857725, plpllplpl, Tuaca, AL, 4222
 
