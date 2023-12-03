@@ -35,6 +35,7 @@ public class ProviderDirectory {
 		
 	}
 	
+	/** Provides a service price based on the service code.*/
 	public static String getName(String code) {
 		for(int i = 0; i < serviceCodes.length; i++) {
 			if(code.equals(serviceCodes[i])) {

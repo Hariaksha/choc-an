@@ -9,7 +9,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
+/** Performs all the actions of the manager and runs the main accounting procedure.*/
 public class ReportController {
 	/** Constructor.*/
 	public ReportController() {}
@@ -39,10 +39,9 @@ public class ReportController {
 		
 		try {
 		      File memberData = new File("memberData.txt");
-		      debug("Connected. Verifying member...");
 		      Scanner reader = new Scanner(memberData);
 		      
-		      File folder = new File("System_Logs/");
+		      File folder = new File("Service_Logs/");
 		      File[] listOfFiles = folder.listFiles();
 		      
 		      while (reader.hasNextLine()) {
@@ -52,15 +51,30 @@ public class ReportController {
 		        
 		        String curID = data.substring(data.indexOf(',') + 2, data.indexOf(',', data.indexOf(',') + 1));
 		        
-		        File memFile = new File("MemberReports/" + curID + "_Report");
+		        //File memFile = new File();
+		        FileWriter memFile = new FileWriter("MemberReports/" + curID + "_Report.txt");
 		        
-		        String memFileText = curID + "\nAll services provided:\n";
+		        String memFileText = data + "\nAll services provided:\n";
 		        
 		        for(int i = 0; i < listOfFiles.length; i++) {
 		        	if (listOfFiles[i].getName().contains(curID)) {
-		        	    
+		        		Scanner curFile = new Scanner(listOfFiles[i]);
+		        		String curData;
+		        		memFileText += "Service:\n";
+		        		 while (curFile.hasNextLine()) {
+		        			 curData = curFile.nextLine();
+		        			 if (curData.contains("Date of Service:")) memFileText += curData + "\n";
+		        			 if (curData.contains("Provider Name:")) memFileText += curData + "\n";
+		        			 if (curData.contains("Service Name:")) memFileText += curData + "\n";
+		        		 }
+		        		 curFile.close();
 		        	  }
+		        	
 		        }
+		        memFile.write(memFileText);
+		        memFile.close();
+		        
+		        
 		      }
 		      reader.close();
 

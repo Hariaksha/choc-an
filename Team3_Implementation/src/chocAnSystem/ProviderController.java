@@ -1,4 +1,4 @@
-/** @author Robert Read*/
+/** @author Robert Read**/
 package chocAnSystem;
 
 import java.util.Scanner;
@@ -24,6 +24,7 @@ public class ProviderController {
 	 * This is the method for when the provider wants to bill ChocAn. It prompts the provider for all of the relevant info,
 	 * does all of the verification steps, etc.
 	 */
+	
 	public static void billChocAn() {
 
 		
@@ -32,11 +33,14 @@ public class ProviderController {
 		
 		//all relevant variables
 		String userInput;
-		String curTime, serviceTime, providerID, serviceCode, comments;
+		String curTime, serviceTime, providerID, serviceCode, comments, providerName;
 		double servicePrice;
 		
 		
-		providerID = "3";
+		//providerID = ProviderTerminal.getPID();
+		//providerName = ProviderTerminal.getPName();
+		providerID = "343";
+		providerName = "Jon Doe";
 		
 		
 		
@@ -106,6 +110,7 @@ public class ProviderController {
 				fw.write("Current Time: " + curTime + 
 						 "\nDate of Service: " + serviceTime + 
 						 "\nProvider ID: " + providerID + 
+						 "\nProvider Name: " + providerName +
 						 "\nMember ID: " + memberID + 
 						 "\nService Code: " + serviceCode + 
 						 "\nService Name: " + serviceName + 

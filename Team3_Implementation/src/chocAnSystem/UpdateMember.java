@@ -31,9 +31,10 @@ class Member
     public Member(){}
 }
 
+/** Performs the actions of adding, deleting, and updating members.*/
 public class UpdateMember
 { 
-    ArrayList <Member> memberList = new ArrayList<>();
+    public ArrayList <Member> memberList = new ArrayList<>();
     Scanner scan = new Scanner(System.in); 
 
     public void readMemberList()
@@ -65,7 +66,7 @@ public class UpdateMember
         }
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /** Adds a member to the member list.*/
     public void addMember() 
     { 
         Member newMember = new Member(); 
@@ -95,7 +96,7 @@ public class UpdateMember
         newMember.number = n; 
         
         memberList.add(newMember);  
-        System.out.println(newMember.name + "was successfully added." ); 
+        System.out.println(newMember.name + " was successfully added." ); 
 
         System.out.println("Would you like to continue to add another member? YES or NO"); 
         boolean cont  = false; 
@@ -119,7 +120,7 @@ public class UpdateMember
         } 
     } 
 
-    /////////////////////////////////////////////////////////////////////////////////  
+    /** Deletes a member from the member list.*/
     public void deleteMember() 
     { 
         System.out.println("Enter Member ID Number: ");
@@ -166,7 +167,7 @@ public class UpdateMember
         } 
     }
 
-    //////////////////////////////////////////////////////////////////////////////////////
+    /** This updates the member records of existing members.*/
     public void updateMemberRecords() 
     { 
         System.out.println("Enter Member ID Number: "); 
@@ -221,7 +222,7 @@ public class UpdateMember
             }
             else 
             { 
-                System.out.println("Enter valid function");
+                error(); 
                 System.out.println("To update member name type NAME"); 
                 System.out.println("To update member address type ADDRESS"); 
             }
@@ -245,13 +246,13 @@ public class UpdateMember
             }
             else 
             { 
-                System.out.println("Enter valid function");
+            	error(); 
                 System.out.println("You you like to continue to update member list? YES or NO"); 
             }
         } 
     } 
 
-    //////////////////////////////////////////////////////////////////////////////////////
+    /** This updates the data in the member list.*/
     public void updateMemberList() 
     {
         try{
@@ -271,7 +272,7 @@ public class UpdateMember
         }
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////
+    /** This calls the other methods so that the operator can perform the necessary actions.*/
     public void startMemberUpdate()
     { 
         readMemberList();
@@ -326,10 +327,17 @@ public class UpdateMember
             }
             else 
             { 
-                System.out.println("Enter valid function");
+                error(); 
                 System.out.println("You you like to continue to update member list? YES or NO"); 
             }
         } 
         
     }
+    
+    /** Print error message. */ 
+    public void error() 
+    { 
+    	System.out.println("Enter valid function");
+    }
+    
 }
