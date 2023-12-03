@@ -6,9 +6,10 @@ import java.util.Scanner;
 public class ManagerTerminal {
   private String managerUsername;
   private String managerPassword;
-  private String passwordArr[] = {"password123", "password321"}; // This variable and the next one are parallel arrays storing matching username and password pairs.
-  private String usernameArr[] = {"Ethan", "Hari"};
+  private String passwordArr[] = {"222222222", "333333333"}; // This variable and the next one are parallel arrays storing matching username and password pairs.
+  private String usernameArr[] = {"Ethan", "Tyler"};
   public Scanner sc = new Scanner(System.in);
+  public static String errorCode;
 
   /** This is a Default Constructor that will be used in case arguments are accidentally not passed. */
   public ManagerTerminal() {
@@ -33,7 +34,12 @@ public class ManagerTerminal {
 	  // Check if username is valid and return its index in username array. Return -1 if not found
 	  int isUsernameValid = isStrInUsernameArr(username);
 	  boolean loggedIn; // Create loggedIn boolean variable to continue prompting user for login info through while loop
+	  int tries = 1; // To create limited try count
 	  while(true) {
+		  if(tries > 3) {
+			  System.out.println("Failed too many times. You will be logged out.");
+			  throw new NumberFormatException("Failed too many times. You will be logged out.");
+		  }
 		  if (isUsernameValid == -1) { // If username is wrong, user is not logged in
 			  loggedIn = false;
 		  }
@@ -48,6 +54,7 @@ public class ManagerTerminal {
 		  // Tell user if login credentials worked
 		  if (!loggedIn) {
 			  System.out.println("Invalid credentials. Please try again");
+			  tries++;
 		  }
 		  else if(loggedIn) {
 			  System.out.println("Successful login.");

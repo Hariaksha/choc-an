@@ -1,11 +1,8 @@
 package chocAnSystem;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Scanner;
-import java.util.Vector;
 import java.util.ArrayList;
 import java.util.Random; 
 import java.io.FileWriter;
@@ -33,7 +30,7 @@ class Member
     public Member(){}
 }
 
-class UpdateMember
+public class UpdateMember
 { 
     ArrayList <Member> memberList = new ArrayList<>();
     Scanner scan = new Scanner(System.in); 
@@ -46,7 +43,7 @@ class UpdateMember
             String line;
             while ((line = reader.readLine()) != null)
             { 
-                String [] parts = line.split(" , " ); 
+                String [] parts = line.split(", " ); 
                 if(parts.length == 6) 
                 { 
                     String name = parts[0]; 
@@ -58,9 +55,6 @@ class UpdateMember
 
                     Member member = new Member(name, number, street, city, state, zip); 
                     memberList.add(member); 
-                }
-                else{ 
-                    System.out.println("Invailid line format: " + line); 
                 }
             } 
         }
@@ -98,9 +92,9 @@ class UpdateMember
         Random random = new Random(); 
         int n = 100000000 + random.nextInt(900000000);
         newMember.number = n; 
-
-        memberList.add(newMember); 
-        updateMemberList(); 
+        
+        memberList.add(newMember);  
+        System.out.println(newMember.name + "was successfully added." ); 
 
         System.out.println("You you like to continue to add another member? YES or NO"); 
         boolean cont  = false; 
@@ -111,7 +105,6 @@ class UpdateMember
             if(input.equalsIgnoreCase("YES"))
             { 
                 addMember();
-                return; 
             } 
             else if(input.equalsIgnoreCase("NO"))
             { 
@@ -145,11 +138,10 @@ class UpdateMember
         if(!found)
         { 
             System.out.println("Member not found");
-            deleteMember();
+            deleteMember(); 
             return; 
         }
 
-        updateMemberList();
 
         System.out.println("You you like to delete other members? YES or NO"); 
         boolean cont  = false; 
@@ -160,7 +152,6 @@ class UpdateMember
             if(input.equalsIgnoreCase("YES"))
             { 
                 deleteMember();
-                return; 
             } 
             else if(input.equalsIgnoreCase("NO"))
             { 
@@ -196,7 +187,7 @@ class UpdateMember
         if(!found)
         { 
             System.out.println("Member not found");
-            deleteMember();
+            updateMemberRecords();
             return; 
         }
 
@@ -234,9 +225,9 @@ class UpdateMember
                 System.out.println("To update member address type ADDRESS"); 
             }
         }
-
-        updateMemberList();
-
+        
+        System.out.println(idNum + "was successfully updated");
+        
         System.out.println("You you like to continue to update other member records? YES or NO"); 
         boolean cont  = false; 
         String input;
@@ -246,7 +237,6 @@ class UpdateMember
             if(input.equalsIgnoreCase("YES"))
             { 
                 updateMemberRecords();
-                return; 
             } 
             else if(input.equalsIgnoreCase("NO"))
             { 
@@ -268,7 +258,7 @@ class UpdateMember
             BufferedWriter writer = new BufferedWriter(reader);
             for(int i = 0; i < memberList.size(); i++)
             {
-                writer.write(memberList.get(i).name + " , " + memberList.get(i).number + " , " + memberList.get(i).street + " , " + memberList.get(i).city + " , " + memberList.get(i).state + " , " + memberList.get(i).zip + "\n");
+                writer.write(memberList.get(i).name + ", " + memberList.get(i).number + ", " + memberList.get(i).street + ", " + memberList.get(i).city + ", " + memberList.get(i).state + ", " + memberList.get(i).zip + "\n");
             }
 
             writer.newLine();
@@ -324,11 +314,13 @@ class UpdateMember
             input = scan.nextLine(); 
             if(input.equalsIgnoreCase("YES"))
             { 
-                startMemberUpdate();
-                return; 
+                updateMemberList(); 
+                memberList.clear(); 
+            	startMemberUpdate();
             } 
             else if(input.equalsIgnoreCase("NO"))
             { 
+            	updateMemberList(); 
                 return;  
             }
             else 
@@ -339,7 +331,4 @@ class UpdateMember
         } 
         
     }
-
-} 
-
-//oops
+}

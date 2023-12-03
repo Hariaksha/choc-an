@@ -1,4 +1,5 @@
 /** Author: Ethan Busby*/
+/** This class shows how the operator interacts with the operator terminal*/
 
 package chocAnSystem;
 

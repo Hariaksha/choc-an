@@ -1,4 +1,5 @@
 /** Author: Ethan Busby*/
+/** This class calls the update member and provider classes so the operator can perform different tasks.*/
 
 package chocAnSystem;
 import java.util.Scanner;
@@ -6,7 +7,7 @@ import java.util.Scanner;
 public class OperatorTerminal {
 	public String operatorPassword;
 	public String operatorUsername;
-	private String passwordArr[] = {"password999", "password888"};
+	private String passwordArr[] = {"000000000", "111111111"};
 	private String usernameArr[] = {"Hari", "James"};
 	public Scanner sc = new Scanner(System.in);
 	
@@ -34,7 +35,12 @@ public class OperatorTerminal {
 	    String password = sc.nextLine();
 	    int isUsernameValid = isStrInUsernameArr(username);
 	    boolean loggedIn;
+	    int tries = 0;
 	    while(true) {
+	    	if(tries > 3) {
+				   System.out.println("Failed too many times. You will be logged out.");
+				   System.exit(0);
+			   }
 	    if (isUsernameValid == -1) {
 	      //System.out.println("Username is not valid.");
 	      loggedIn = false;
@@ -51,6 +57,7 @@ public class OperatorTerminal {
 	    }
 	    if (!loggedIn) {
 	    	System.out.println("Invalid credentials. Please try again");
+	    	tries++;
 //	    	sc.close();
 //	    	return;
 	    }
@@ -58,6 +65,7 @@ public class OperatorTerminal {
 	    	System.out.println("Successful login.");
 	    	break;
 	    }
+	 
 	    System.out.println("Enter username and click Enter: ");
 	    username = sc.nextLine();
 	    System.out.println("Enter password and click Enter: ");
@@ -90,7 +98,7 @@ public class OperatorTerminal {
 		else if(response.equals("P")) {
 			System.out.println("You have decided to edit a provider.");
 			UpdateProvider updateProvider = new UpdateProvider();
-			System.out.println("Would you like to add, delete, or update  member? \n A - add \n D - delete \n U - update");
+			//System.out.println("Would you like to add, delete, or update  member? \n A - add \n D - delete \n U - update");
 			updateProvider.startProviderUpdate();
 		}
 		sc.close();

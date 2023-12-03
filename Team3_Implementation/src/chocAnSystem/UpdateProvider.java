@@ -1,11 +1,8 @@
 package chocAnSystem;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Scanner;
-import java.util.Vector;
 import java.util.ArrayList;
 import java.util.Random; 
 import java.io.FileWriter;
@@ -34,7 +31,7 @@ class Provider
 }
 
 //////////////////////////////////////////////////////////////////////////
-class UpdateProvider
+public class UpdateProvider
 { 
     ArrayList <Provider> providerList = new ArrayList<>();
     Scanner scan = new Scanner(System.in); 
@@ -42,12 +39,12 @@ class UpdateProvider
     public void readProviderList()
     { 
         try{
-            File  file = new File("ProviderList.txt"); 
+            File  file = new File("providerData.txt"); 
             BufferedReader reader = new BufferedReader(new FileReader(file)); 
             String line;
             while ((line = reader.readLine()) != null)
             { 
-                String [] parts = line.split(" / " ); 
+                String [] parts = line.split(", " ); 
                 if(parts.length == 6) 
                 { 
                     String name = parts[0]; 
@@ -59,9 +56,6 @@ class UpdateProvider
 
                     Provider provider = new Provider(name, number, street, city, state, zip); 
                     providerList.add(provider); 
-                }
-                else{ 
-                    System.out.println("Invailid line format: " + line); 
                 }
             } 
         }
@@ -100,10 +94,9 @@ class UpdateProvider
         int n = 100000000 + random.nextInt(900000000);
         newProvider.number = n; 
 
-        providerList.add(newProvider); 
-        updateProviderList(); 
+        providerList.add(newProvider);
 
-        System.out.println("You you like to continue to add another provider? YES or NO"); 
+        System.out.println("You you like to continue to add another Provider? YES or NO"); 
         boolean cont  = false; 
         String input; 
         while(!cont)
@@ -112,7 +105,6 @@ class UpdateProvider
             if(input.equalsIgnoreCase("YES"))
             { 
                 addProvider();
-                return; 
             } 
             else if(input.equalsIgnoreCase("NO"))
             { 
@@ -121,7 +113,7 @@ class UpdateProvider
             else 
             { 
                 System.out.println("Enter valid function");
-                System.out.println("You you like to continue to update provider list? YES or NO"); 
+                System.out.println("You you like to continue to update Provider list? YES or NO"); 
             }
         } 
     } 
@@ -150,9 +142,7 @@ class UpdateProvider
             return; 
         }
 
-        updateProviderList();
-
-        System.out.println("You you like to delete other providers? YES or NO"); 
+        System.out.println("You you like to delete other Providers? YES or NO"); 
         boolean cont  = false; 
         String input; 
         while(!cont)
@@ -161,7 +151,6 @@ class UpdateProvider
             if(input.equalsIgnoreCase("YES"))
             { 
                 deleteProvider();
-                return; 
             } 
             else if(input.equalsIgnoreCase("NO"))
             { 
@@ -170,7 +159,7 @@ class UpdateProvider
             else 
             { 
                 System.out.println("Enter valid function");
-                System.out.println("You you like to continue to update provider list? YES or NO"); 
+                System.out.println("You you like to continue to update Provider list? YES or NO"); 
             }
         } 
     }
@@ -197,7 +186,7 @@ class UpdateProvider
         if(!found)
         { 
             System.out.println("Provider not found");
-            deleteProvider();
+            updateProviderRecords();
             return; 
         }
 
@@ -236,9 +225,7 @@ class UpdateProvider
             }
         }
 
-        updateProviderList();
-
-        System.out.println("You you like to continue to update other provider records? YES or NO"); 
+        System.out.println("You you like to continue to update other Provider records? YES or NO"); 
         boolean cont  = false; 
         String input;
         while(!cont)
@@ -247,7 +234,6 @@ class UpdateProvider
             if(input.equalsIgnoreCase("YES"))
             { 
                 updateProviderRecords();
-                return; 
             } 
             else if(input.equalsIgnoreCase("NO"))
             { 
@@ -256,7 +242,7 @@ class UpdateProvider
             else 
             { 
                 System.out.println("Enter valid function");
-                System.out.println("You you like to continue to update Proivder list? YES or NO"); 
+                System.out.println("You you like to continue to update Provider list? YES or NO"); 
             }
         } 
     } 
@@ -265,11 +251,11 @@ class UpdateProvider
     public void updateProviderList() 
     {
         try{
-            FileWriter reader = new FileWriter("ProviderList.txt");
+            FileWriter reader = new FileWriter("providerData.txt");
             BufferedWriter writer = new BufferedWriter(reader);
             for(int i = 0; i < providerList.size(); i++)
             {
-                writer.write(providerList.get(i).name + " / " + providerList.get(i).number + " / " + memberList.get(i).street + " / " + memberList.get(i).city + " / " + memberList.get(i).state + " / " + memberList.get(i).zip + "\n");
+                writer.write(providerList.get(i).name + ", " + providerList.get(i).number + ", " + providerList.get(i).street + ", " + providerList.get(i).city + ", " + providerList.get(i).state + ", " + providerList.get(i).zip + "\n");
             }
 
             writer.newLine();
@@ -297,7 +283,7 @@ class UpdateProvider
             if(input.equalsIgnoreCase("ADD"))
             { 
                 vaild = true;
-                addProvider();
+                addProvider(); 
             }
             else if(input.equalsIgnoreCase("DELETE"))
             { 
@@ -317,19 +303,21 @@ class UpdateProvider
                 System.out.println("To update Provider records type UPDATE"); 
             }
         } 
-
-        System.out.println("You you like to continue to update provider list? YES or NO"); 
+        
+        System.out.println("You you like to continue to update Provider list? YES or NO"); 
         boolean cont  = false; 
         while(!cont)
         { 
             input = scan.nextLine(); 
             if(input.equalsIgnoreCase("YES"))
             { 
+            	updateProviderList(); 
+            	providerList.clear(); 
                 startProviderUpdate();
-                return; 
             } 
             else if(input.equalsIgnoreCase("NO"))
             { 
+            	updateProviderList();
                 return;  
             }
             else 
@@ -338,9 +326,6 @@ class UpdateProvider
                 System.out.println("You you like to continue to update Provider list? YES or NO"); 
             }
         } 
-        
-        updateProviderList();
     }
-
-} 
+}
 

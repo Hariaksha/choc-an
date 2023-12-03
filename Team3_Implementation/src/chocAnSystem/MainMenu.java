@@ -15,14 +15,16 @@ public class MainMenu {
     // Use scanner to take login number
     Scanner myObj = new Scanner(System.in);
     int loginNumber = -1;
-    while (loginNumber < 0 || loginNumber >= 300) {
-      System.out.println("Enter login number: ");
+    while (loginNumber < 0 || loginNumber >= 3) {
+      System.out.println("Enter login number.\n0 will run the main accounting procedure\n1 will guide you to the Operator Terminal\n2 will guide you to the Manager Terminal,\n3 will guide you to the Provider Terminal.");
       loginNumber = myObj.nextInt();
       System.out.println("You entered " + loginNumber + " as your login ID number.");
-      if (loginNumber >= 0 && loginNumber < 100) {
-        System.out.println("You are a Provider. You will be directed to the Provider Terminal");
+      if (loginNumber == 0) {
+        System.out.println("You are running the Main Accounting Procedure.");
+        ReportController rc = new ReportController();
+        rc.runAccountingProcedure();
       } 
-      else if (loginNumber >= 100 && loginNumber < 200) {
+      else if (loginNumber == 1) {
     	  Operator operator = new Operator();
     	  operator.action();
 //        System.out.println("You are an Operator. You will be directed to the Operator Terminal");
@@ -30,12 +32,15 @@ public class MainMenu {
 //        ot.operatorLoginAndChooseAction();
         //oops
       } 
-      else if (loginNumber >= 200 && loginNumber < 300) {
+      else if (loginNumber == 2) {
         System.out.println("You are a Manager. You will be directed to the Manager Terminal");
         ManagerTerminal mt = new ManagerTerminal();
         mt.login();
         mt.chooseAction();
       } 
+      else if (loginNumber == 3) {
+    	  System.out.println("You are a Provider. You will be directed to the Provider Terminal.");
+      }
       else {
         System.out.println("You have entered an invalid login. Please try again.");
       }
