@@ -12,7 +12,7 @@ class RobertReadProviderControllerTest {
 
 	@Test
 	void testVerifyMemberSuccess() {
-		boolean test = ProviderController.verifyMember("494330105");
+		boolean test = ProviderController.verifyMember("429803689");
 		assertTrue(test);
 		
 	}
@@ -25,23 +25,15 @@ class RobertReadProviderControllerTest {
 		
 	}
 	
-	
-	@AfterEach
-	void teardown() {
-		System.setIn(System.in);
-	}
-	
-	
-	//@Rule
-	//public final TextFromStandardInputStream systemInMock = emptyStandardInputStream();
-	//public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
-	
+
 	@Test
 	void testBillChocAn() {
-		ByteArrayInputStream in = new ByteArrayInputStream("494330105\n07-14-2023\n598470\ny\ntest service\n".getBytes());
+		String input = "429803689\n07-14-2023\n598470\ny\ntest_service\n";
+		ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
 		System.setIn(in);
 		ProviderController.billChocAn();
 		assertEquals(0, 0);
+		System.setIn(System.in);
 	}
 	
 

@@ -142,6 +142,7 @@ public class ProviderController {
 		        	reader.close();
 		        	return true;
 		        }
+		        debug("check");
 		      }
 		      reader.close();
 		      debug("Invalid member ID");
@@ -208,7 +209,7 @@ public class ProviderController {
 	
 	
 	public static String getInput() {
-        String out = sc.next();
+        String out = sc.nextLine();
         debug(out);
         return out;
     }	
