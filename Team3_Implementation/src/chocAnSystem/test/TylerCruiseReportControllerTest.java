@@ -3,6 +3,7 @@ package chocAnSystem.test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -25,7 +26,7 @@ class TylerCruiseReportControllerTest {
 	}
 
 	@Test
-	void test() {
+	void test() throws IOException {
 		t.memberReport();
 		assertEquals("Compiled Member Report", outputStreamCaptor.toString().trim());
 	}
