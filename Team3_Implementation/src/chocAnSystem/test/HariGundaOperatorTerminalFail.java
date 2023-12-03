@@ -5,20 +5,22 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import chocAnSystem.OperatorTerminal;
+import chocAnSystem.ManagerTerminal;
 
 
-class HariGundaOperatorPasswordCheck {
-	private ManagerTerminal t;
-	
+class HariGundaOperatorTerminalFail {
+	private OperatorTerminal t;
+
+
 	@BeforeEach
 	void setUp() throws Exception {
-		t = new ManagerTerminal();
+		t = new OperatorTerminal();
+
 	}
 
 	@Test
 	void test() {
-		t.isPasswordRight("222222222", 1);
-		assertTrue(true);
+		t.isPasswordRight("Wrong", 0);
+		assertFalse(false);
 	}
 }
