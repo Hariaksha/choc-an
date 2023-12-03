@@ -33,7 +33,7 @@ class Member
 
 public class UpdateMember
 { 
-    ArrayList <Member> memberList = new ArrayList<>();
+    public ArrayList <Member> memberList = new ArrayList<>();
     Scanner scan = new Scanner(System.in); 
 
     public void readMemberList()
@@ -95,7 +95,7 @@ public class UpdateMember
         newMember.number = n; 
         
         memberList.add(newMember);  
-        System.out.println(newMember.name + "was successfully added." ); 
+        System.out.println(newMember.name + " was successfully added." ); 
 
         System.out.println("Would you like to continue to add another member? YES or NO"); 
         boolean cont  = false; 
@@ -221,7 +221,7 @@ public class UpdateMember
             }
             else 
             { 
-                System.out.println("Enter valid function");
+                error(); 
                 System.out.println("To update member name type NAME"); 
                 System.out.println("To update member address type ADDRESS"); 
             }
@@ -245,7 +245,7 @@ public class UpdateMember
             }
             else 
             { 
-                System.out.println("Enter valid function");
+            	error(); 
                 System.out.println("You you like to continue to update member list? YES or NO"); 
             }
         } 
@@ -326,10 +326,15 @@ public class UpdateMember
             }
             else 
             { 
-                System.out.println("Enter valid function");
+                error(); 
                 System.out.println("You you like to continue to update member list? YES or NO"); 
             }
         } 
         
+    }
+    
+    public void error() 
+    { 
+    	System.out.println("Enter valid function");
     }
 }
