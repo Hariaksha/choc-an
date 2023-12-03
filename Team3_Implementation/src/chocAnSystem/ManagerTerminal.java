@@ -33,7 +33,7 @@ public class ManagerTerminal {
 	  // Check if username is valid and return its index in username array. Return -1 if not found
 	  int isUsernameValid = isStrInUsernameArr(username);
 	  boolean loggedIn; // Create loggedIn boolean variable to continue prompting user for login info through while loop
-	  int tries = 0; // To create limited try count
+	  int tries = 1; // To create limited try count
 	  while(true) {
 		  if(tries > 3) {
 			  System.out.println("Failed too many times. You will be logged out.");
