@@ -1,11 +1,9 @@
+/** @author Adam Howard*/
 package chocAnSystem;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Scanner;
-import java.util.Vector;
 import java.util.ArrayList;
 import java.util.Random; 
 import java.io.FileWriter;
@@ -33,7 +31,7 @@ class Member
     public Member(){}
 }
 
-class UpdateMember
+public class UpdateMember
 { 
     ArrayList <Member> memberList = new ArrayList<>();
     Scanner scan = new Scanner(System.in); 
