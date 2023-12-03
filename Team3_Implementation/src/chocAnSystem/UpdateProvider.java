@@ -10,28 +10,6 @@ import java.io.FileWriter;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 
-class Provider
-{  
-    String name; 
-    int number; 
-    String street; 
-    String city; 
-    String state; 
-    String zip; 
-
-    public Provider(String name, int number, String street, String city, String state, String zip) 
-    {
-        this.name = name;
-        this.number = number;
-        this.street = street;
-        this.city = city;
-        this.state = state;
-        this.zip = zip;
-    } 
-    public Provider(){}
-}
-
-//////////////////////////////////////////////////////////////////////////
 public class UpdateProvider
 { 
     ArrayList <Provider> providerList = new ArrayList<>();
