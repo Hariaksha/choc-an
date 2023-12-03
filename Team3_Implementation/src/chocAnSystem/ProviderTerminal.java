@@ -1,32 +1,33 @@
 /** @author Ryan McCulley*/
 package chocAnSystem;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-/** This declares the class attributes. */
+/** This class calls the ProviderController class so that a provider can perform different actions.*/
 public class ProviderTerminal {
-  private String providerUsername;
-  private String providerPassword;
-  private String passwordArr[];
-  private String usernameArr[];
+  private static String providerUsername;
+  private static String providerPassword;
+  ArrayList<String> usernames = new ArrayList<String>();
+  ArrayList<String> passwords = new ArrayList<String>();
   public Scanner sc = new Scanner(System.in);
   public String pID;
   int counter = 0;
 
-  // This is a Default Constructor
+  /** This is a default constructor.*/
   public ProviderTerminal() {
 	providerUsername = "Meowy";
 	providerPassword = "meowPass";
   }
 
-  // This is the Primary Constructor with parameters
+  /**This is the Primary Constructor with parameters.*/
   public ProviderTerminal(String pass, String name) {
 	providerUsername = name;
     providerPassword = pass;
     }
 
-  // This method allows the provider to login
+  /** This method allows the provider to login.*/
   public void providerLogin() {
 	  // Prompt user for username
 	  System.out.println("Enter username and click Enter: ");
@@ -55,6 +56,8 @@ public class ProviderTerminal {
 		  }
 		  else if(loggedIn) {
 			  System.out.println("Successful login.");
+			  providerPassword = password;
+			  providerUsername = username;
 			  break;
 		  }
 		  // Reprompt user for login credentials if loop does not break
@@ -66,9 +69,17 @@ public class ProviderTerminal {
 	  }
   }
   
+ public static String getPID() {
+	 return providerPassword;
+ }
+ 
+ public static String getPName() {
+	 return providerUsername;
+ }
+  
   // This method allows a provider to choose an action. */
   public void chooseAction() {
-    ProviderController pc = new ProviderController(); // Creates a ProviderController
+    //ProviderController pc = new ProviderController(); // Creates a ProviderController
 	System.out.println("Choose Action: Bill Choc An, Verify Member, Request Directory"); // Prompt user to choose an action between bill chocAn, Verify Member, and Request Directory
 	String response = sc.nextLine();
 	
@@ -81,24 +92,24 @@ public class ProviderTerminal {
 	}
 	
 	if (response.equals("Bill Choc An")) {
-		pc.billChocAn(); // Runs Bill Choc An
+		ProviderController.billChocAn(); // Runs Bill Choc An
 	}
 	else if (response.equals("Verify Member")) {
-		System.out.println("Enter Provider ID: ");
+		System.out.println("Enter member ID: ");
 		pID = sc.nextLine();
 		while(pID.length() != 9) {
-			System.out.println("You entered: " + pID + ", please enter a valid Provider ID:");
+			System.out.println("You entered: " + pID + ", please enter a valid member ID:");
 			pID = sc.nextLine();
 		}
-		pc.verifyMember(pID); // Runs Verify Member
+		ProviderController.verifyMember(pID); // Runs Verify Member
 	}
 	else if (response.equals("Request Directory")) {
-		pc.requestDirectory(); // Runs Request Directory
+		ProviderController.requestDirectory(); // Runs Request Directory
 	}
 	return;
   }
   
-  //This method checks to see if the username entered is a valid username. It returns -1 if not valid and the index of the username in the username array if it is valid.
+  /**This method checks to see if the username entered is a valid username. It returns -1 if not valid and the index of the username in the username array if it is valid.*/
   public int isStrInUsernameArr(String str) {
 	  File pFile = new File("providerData.txt");
 	  try {
@@ -107,7 +118,6 @@ public class ProviderTerminal {
 		  String data = "";
 		  String lines;
 		  counter = 0;
-		  int meow = 0;
 		  
 		  while(reader.hasNextLine()) {
 			  
@@ -118,8 +128,7 @@ public class ProviderTerminal {
 				  
 			  }
 			  
-			  usernameArr[meow] = data;
-			  meow++;
+			  usernames.add(data);
 			  data = "";
 			  counter = 0;
 			  
@@ -131,9 +140,10 @@ public class ProviderTerminal {
 			e.printStackTrace();
 		}
 	  
+	  System.out.println(usernames);
 	  
-	  for (int i = 0; i < usernameArr.length; i++) { // Use for loop to iterate through string
-		  if (str.equals(usernameArr[i])) { // If entered username equals current element in array
+	  for (int i = 0; i < usernames.size(); i++) { // Use for loop to iterate through string
+		  if (str.equals(usernames.get(i))) { // If entered username equals current element in array
 			  return i; // Return index found
 		  }
 	  }
@@ -150,7 +160,6 @@ public class ProviderTerminal {
 		  String data = "";
 		  String lines;
 		  counter = 0;
-		  int meow = 0;
 		  
 		  while(reader.hasNextLine()) {
 			  
@@ -158,12 +167,11 @@ public class ProviderTerminal {
 			  while(lines.charAt(counter) != ',') {
 				  counter++;
 			  }
-			  counter++;
+			  //counter++;
 			  while(lines.charAt(counter) != ',') {
 				  counter++;
 			  }
-			  passwordArr[meow] = data;
-			  meow++;
+			  passwords.add(data);
 			  data = "";
 			  counter = 0;	  
 		  }
@@ -173,9 +181,11 @@ public class ProviderTerminal {
 	  } catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+	  
+	  System.out.println(passwords);
 
 	  
-	  if (str.equals(passwordArr[index])) { // Use str.equals() method to see if password matches username
+	  if (str.equals(passwords.get(index))) { // Use str.equals() method to see if password matches username
 		  return true; // Return true if password is right
 	  }
 	  return false; // Return false if password is wrong

@@ -3,6 +3,7 @@ package chocAnSystem;
 
 import java.io.IOException;
 
+/** The Manager class illustrates how the manager interacts with the manager terminal.*/
 public class Manager {
 
     /** This constructor creates instances of the Manager class.*/

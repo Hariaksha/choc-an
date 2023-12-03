@@ -31,6 +31,7 @@ class Member
     public Member(){}
 }
 
+/** Performs the actions of adding, deleting, and updating members.*/
 public class UpdateMember
 { 
     public ArrayList <Member> memberList = new ArrayList<>();
@@ -65,7 +66,7 @@ public class UpdateMember
         }
     }
 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /** Adds a member to the member list.*/
     public void addMember() 
     { 
         Member newMember = new Member(); 
@@ -119,7 +120,7 @@ public class UpdateMember
         } 
     } 
 
-    /////////////////////////////////////////////////////////////////////////////////  
+    /** Deletes a member from the member list.*/
     public void deleteMember() 
     { 
         System.out.println("Enter Member ID Number: ");
@@ -166,7 +167,7 @@ public class UpdateMember
         } 
     }
 
-    //////////////////////////////////////////////////////////////////////////////////////
+    /** This updates the member records of existing members.*/
     public void updateMemberRecords() 
     { 
         System.out.println("Enter Member ID Number: "); 
@@ -251,7 +252,7 @@ public class UpdateMember
         } 
     } 
 
-    //////////////////////////////////////////////////////////////////////////////////////
+    /** This updates the data in the member list.*/
     public void updateMemberList() 
     {
         try{
@@ -271,7 +272,7 @@ public class UpdateMember
         }
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////
+    /** This calls the other methods so that the operator can perform the necessary actions.*/
     public void startMemberUpdate()
     { 
         readMemberList();

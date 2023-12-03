@@ -3,14 +3,20 @@
 package chocAnSystem;
 import java.util.Scanner;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
+/** Performs all the actions of the manager and runs the main accounting procedure.*/
 public class ReportController {
 	/** Constructor.*/
 	public ReportController() {}
+	
+	private static void debug(String text) {
+		System.out.println(text);
+	}
 	
 	/** Stand-in for EFT Report Compiler.*/
 	public void eftReport(){		
@@ -24,28 +30,82 @@ public class ReportController {
 	
 	/** Reads data from text file and prints it to Console.*/
 	public void memberReport()throws IOException{		
-		//System.out.println("Compiled Member Report");
-		try {
-			BufferedReader r = new BufferedReader( new FileReader("memberData.txt") );
-			String s = "", line = null;
-			while ((line = r.readLine()) != null) {
-				s += line;
-				s += "\n";
-			}
-			System.out.print(s);
-			r.close();
-		}
+		System.out.println("Compiling Member Report");
 		
-        catch (IOException e) 
-        { 
-            e.printStackTrace();
-        }
+		//loop thru each member.
+		//for each member, add their info to the doc
+		//check all files generated with the member's memberID in the name
+		//get relevant info from those files
+		
+		try {
+		      File memberData = new File("memberData.txt");
+		      debug("Connected. Verifying member...");
+		      Scanner reader = new Scanner(memberData);
+		      
+		      File folder = new File("System_Logs/");
+		      File[] listOfFiles = folder.listFiles();
+		      
+		      while (reader.hasNextLine()) {
+		        String data = reader.nextLine();
+		        if (data.equals("")) continue;
+		        
+		        
+		        String curID = data.substring(data.indexOf(',') + 2, data.indexOf(',', data.indexOf(',') + 1));
+		        
+		        //File memFile = new File();
+		        FileWriter memFile = new FileWriter("MemberReports/" + curID + "_Report.txt");
+		        
+		        String memFileText = curID + "\nAll services provided:\n";
+		        
+		        for(int i = 0; i < listOfFiles.length; i++) {
+		        	if (listOfFiles[i].getName().contains(curID)) {
+		        		Scanner curFile = new Scanner(listOfFiles[i]);
+		        		 while (curFile.hasNextLine()) {
+		        			 String curData = reader.nextLine();
+		        			 if (curData.contains("Date of Service:") || curData.contains("Provider Name:") || curData.contains("Service Name:")) {
+		        				 memFileText += curData + "\n";
+		        			 }
+		        		 }
+		        		 curFile.close();
+		        	  }
+		        	
+		        }
+		        memFile.write(memFileText);
+		        memFile.close();
+		        
+		        
+		      }
+		      reader.close();
+
+		    } catch (FileNotFoundException e) {
+		      debug("Member database not found, please try again later.");
+		      e.printStackTrace();
+		    }
+		
+		
+		
+		
+//		try {
+//			BufferedReader r = new BufferedReader( new FileReader("memberData.txt") );
+//			String s = "", line = null;
+//			while ((line = r.readLine()) != null) {
+//				s += line;
+//				s += "\n";
+//			}
+//			System.out.print(s);
+//			r.close();
+//		}
+//		
+//        catch (IOException e) 
+//        { 
+//            e.printStackTrace();
+//        }
 	}
 	
 	
 	/** Stand-in for Provider Report Compiler.*/
 	public void providerReport(){
-		//System.out.println("Compiled Provider Report");
+		System.out.println("Compiling Provider Report");
 		try {
 			BufferedReader r = new BufferedReader( new FileReader("providerData.txt") );
 			String s = "", line = null;

@@ -1,4 +1,4 @@
-/** @author Robert Read*/
+/** @author Robert Read**/
 package chocAnSystem;
 
 import java.util.Scanner;
@@ -8,13 +8,14 @@ import java.io.FileWriter;
 import java.util.*;
 import java.text.SimpleDateFormat;
 
+/** This performs all the actions that a Provider can do. */
 public class ProviderController {
 	public ProviderController() {
 	}
 	
 	private static Scanner sc = new Scanner(System.in);
 	
-	//Replacement for system.out.println because I'm lazy.
+	/** A print statement called multiple time.*/
 	private static void debug(String text) {
 		System.out.println(text);
 	}
@@ -31,11 +32,12 @@ public class ProviderController {
 		
 		//all relevant variables
 		String userInput;
-		String curTime, serviceTime, providerID, serviceCode, comments;
+		String curTime, serviceTime, providerID, serviceCode, comments, providerName;
 		double servicePrice;
 		
 		
-		providerID = "3";
+		providerID = ProviderTerminal.getPID();
+		providerName = ProviderTerminal.getPName();
 		
 		
 		
@@ -88,6 +90,7 @@ public class ProviderController {
 			comments = userInput;
 			
 			servicePrice = ProviderDirectory.getPrice(serviceCode);
+			String serviceName = ProviderDirectory.getName(serviceCode);
 			debug("Price of service: " + servicePrice);
 			
 			
@@ -96,7 +99,7 @@ public class ProviderController {
 		    Date date = new Date();  
 		    curTime = formatter.format(date);  
 		    debug("Attempting to write to file");
-		    String filename = serviceTime + "_" + serviceCode + "_" + memberID + ".txt";
+		    String filename = "Service_Logs/" + providerID + "_" + serviceTime + "_" + serviceCode + "_" + memberID + ".txt";
 			try {
 				debug("filename: " + filename);
 				FileWriter fw = new FileWriter(filename);
@@ -104,8 +107,10 @@ public class ProviderController {
 				fw.write("Current Time: " + curTime + 
 						 "\nDate of Service: " + serviceTime + 
 						 "\nProvider ID: " + providerID + 
+						 "\nProvider Name: " + providerName +
 						 "\nMember ID: " + memberID + 
 						 "\nService Code: " + serviceCode + 
+						 "\nService Name: " + serviceName + 
 						 "\nPrice: " + servicePrice + 
 						 "\nComments: " + comments);
 				fw.close();
