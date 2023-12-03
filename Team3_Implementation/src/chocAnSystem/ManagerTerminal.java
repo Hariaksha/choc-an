@@ -37,7 +37,7 @@ public class ManagerTerminal {
 	  while(true) {
 		  if(tries > 3) {
 			  System.out.println("Failed too many times. You will be logged out.");
-			  System.exit(0);
+			  System.exit(1);
 		  }
 		  if (isUsernameValid == -1) { // If username is wrong, user is not logged in
 			  loggedIn = false;
