@@ -39,13 +39,26 @@ public class ReportController {
         { 
             e.printStackTrace();
         }
-		
-}
+	}
 	
 	
 	/** Stand-in for Provider Report Compiler.*/
 	public void providerReport(){
 		//System.out.println("Compiled Provider Report");
+		try {
+			BufferedReader r = new BufferedReader( new FileReader("providerData.txt") );
+			String s = "", line = null;
+			while ((line = r.readLine()) != null) {
+				s += line;
+			}
+			System.out.print(s);
+			r.close();
+		}
+		
+        catch (IOException e) 
+        { 
+            e.printStackTrace();
+        }
 	}
 	
 	/** Called by Timer, runs all compilers.*/
