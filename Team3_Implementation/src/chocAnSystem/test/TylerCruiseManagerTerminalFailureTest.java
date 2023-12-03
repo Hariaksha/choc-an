@@ -2,6 +2,7 @@ package chocAnSystem.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,12 +13,11 @@ class TylerCruiseManagerTerminalFailureTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		
 	}
 
 	@Test
 	void test() {
-		fail("Not yet implemented");
+		Assertions.assertThrows(NumberFormatException.class,()->new ManagerTerminal());
 	}
 
 }

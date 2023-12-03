@@ -37,9 +37,8 @@ public class ManagerTerminal {
 	  int tries = 1; // To create limited try count
 	  while(true) {
 		  if(tries > 3) {
-			  errorCode = "Failed too many times. You will be logged out.";
 			  System.out.println("Failed too many times. You will be logged out.");
-			  System.exit(1);
+			  throw new NumberFormatException("Failed too many times. You will be logged out.");
 		  }
 		  if (isUsernameValid == -1) { // If username is wrong, user is not logged in
 			  loggedIn = false;
