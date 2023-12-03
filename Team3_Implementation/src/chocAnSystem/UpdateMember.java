@@ -99,8 +99,7 @@ class UpdateMember
         int n = 100000000 + random.nextInt(900000000);
         newMember.number = n; 
 
-        memberList.add(newMember); 
-        updateMemberList(); 
+        memberList.add(newMember);  
 
         System.out.println("You you like to continue to add another member? YES or NO"); 
         boolean cont  = false; 
@@ -111,7 +110,6 @@ class UpdateMember
             if(input.equalsIgnoreCase("YES"))
             { 
                 addMember();
-                return; 
             } 
             else if(input.equalsIgnoreCase("NO"))
             { 
@@ -149,7 +147,6 @@ class UpdateMember
             return; 
         }
 
-        updateMemberList();
 
         System.out.println("You you like to delete other members? YES or NO"); 
         boolean cont  = false; 
@@ -160,7 +157,6 @@ class UpdateMember
             if(input.equalsIgnoreCase("YES"))
             { 
                 deleteMember();
-                return; 
             } 
             else if(input.equalsIgnoreCase("NO"))
             { 
@@ -235,7 +231,6 @@ class UpdateMember
             }
         }
 
-        updateMemberList();
 
         System.out.println("You you like to continue to update other member records? YES or NO"); 
         boolean cont  = false; 
@@ -246,7 +241,6 @@ class UpdateMember
             if(input.equalsIgnoreCase("YES"))
             { 
                 updateMemberRecords();
-                return; 
             } 
             else if(input.equalsIgnoreCase("NO"))
             { 
@@ -324,11 +318,13 @@ class UpdateMember
             input = scan.nextLine(); 
             if(input.equalsIgnoreCase("YES"))
             { 
-                startMemberUpdate();
-                return; 
+                updateMemberList(); 
+                memberList.clear(); 
+            	startMemberUpdate();
             } 
             else if(input.equalsIgnoreCase("NO"))
             { 
+            	updateMemberList(); 
                 return;  
             }
             else 
@@ -339,7 +335,4 @@ class UpdateMember
         } 
         
     }
-
 } 
-
-//oops
