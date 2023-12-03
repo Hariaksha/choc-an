@@ -40,6 +40,7 @@ public class ReportController {
 			String s = "", line = null;
 			while ((line = r.readLine()) != null) {
 				s += line;
+				s += "\n";
 			}
 			System.out.print(s);
 			r.close();
@@ -60,6 +61,7 @@ public class ReportController {
 			String s = "", line = null;
 			while ((line = r.readLine()) != null) {
 				s += line;
+				s += "\n";
 			}
 			System.out.print(s);
 			r.close();
