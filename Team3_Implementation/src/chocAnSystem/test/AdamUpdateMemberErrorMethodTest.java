@@ -2,16 +2,14 @@ package chocAnSystem.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import chocAnSystem.UpdateMember; 
+import org.junit.Before;
+import org.junit.After;
+import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import chocAnSystem.UpdateMember;
-
-class AdamHowardUpdateMemberTestSetTrueTest {
+class AdamUpdateMemberErrorMethodTest {
 	
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
@@ -34,10 +32,12 @@ class AdamHowardUpdateMemberTestSetTrueTest {
        
         UpdateMember updateMember = new UpdateMember();
 
-        updateMember.memberNotFound();
+        updateMember.error();
         
         System.setOut(originalOut);
 
-        assertFalse(outContent.toString().contains("Member found"));
+        assertTrue(outContent.toString().contains("Enter valid function"));
     }
+    
 }
+
