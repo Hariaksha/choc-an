@@ -68,6 +68,7 @@ public class ProviderTerminal {
 		  else if(loggedIn) {
 			  System.out.println("Successful login.");
 			  providerPassword = password;
+			  providerUsername = username;
 			  break;
 		  }
 		  
@@ -82,6 +83,10 @@ public class ProviderTerminal {
   
  public static String getPID() {
 	 return providerPassword;
+ }
+ 
+ public static String getPName() {
+	 return providerUsername;
  }
   
   // This method allows a provider to choose an action. */

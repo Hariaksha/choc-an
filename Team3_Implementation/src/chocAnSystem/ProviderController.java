@@ -32,11 +32,12 @@ public class ProviderController {
 		
 		//all relevant variables
 		String userInput;
-		String curTime, serviceTime, providerID, serviceCode, comments;
+		String curTime, serviceTime, providerID, serviceCode, comments, providerName;
 		double servicePrice;
 		
 		
-		providerID = "3";
+		providerID = ProviderTerminal.getPID();
+		providerName = ProviderTerminal.getPName();
 		
 		
 		
@@ -106,6 +107,7 @@ public class ProviderController {
 				fw.write("Current Time: " + curTime + 
 						 "\nDate of Service: " + serviceTime + 
 						 "\nProvider ID: " + providerID + 
+						 "\nProvider Name: " + providerName +
 						 "\nMember ID: " + memberID + 
 						 "\nService Code: " + serviceCode + 
 						 "\nService Name: " + serviceName + 

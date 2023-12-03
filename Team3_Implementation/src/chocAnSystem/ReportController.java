@@ -61,13 +61,11 @@ public class ReportController {
 		        		Scanner curFile = new Scanner(memberData);
 		        		 while (curFile.hasNextLine()) {
 		        			 String curData = reader.nextLine();
-		        			 if (curData.contains("Date of Service:")) {
+		        			 if (curData.contains("Date of Service:") || curData.contains("Provider Name:") || curData.contains("Service Name:")) {
 		        				 memFileText += curData + "\n";
 		        			 }
-		        			 else if (curData.contains("Date of Service:") {
-		        				 
-		        			 }
 		        		 }
+		        		 curFile.close();
 		        	  }
 		        }
 		      }
