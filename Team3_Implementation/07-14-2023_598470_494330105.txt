@@ -1,7 +1,0 @@
-Current Time: 12/03/2023 13:44:04
-Date of Service: 07-14-2023
-Provider ID: 3
-Member ID: 494330105
-Service Code: 598470
-Price: 125.73
-Comments: test
