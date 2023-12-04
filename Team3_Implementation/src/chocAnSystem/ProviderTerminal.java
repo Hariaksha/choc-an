@@ -7,8 +7,8 @@ import java.io.FileNotFoundException;
 
 /** This class calls the methods within the ProviderController so the provider can perform certain actions. */
 public class ProviderTerminal {
-  private static String providerUsername;
-  private static String providerPassword;
+  private static String providerUsername = "";
+  private static String providerPassword = "";
   ArrayList<String> usernames = new ArrayList<String>();
   ArrayList<String> passwords = new ArrayList<String>();
   public Scanner sc = new Scanner(System.in);
