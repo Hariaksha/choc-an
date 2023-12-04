@@ -144,6 +144,8 @@ public class ProviderTerminal {
 			  counter = 0;
 			  
 		  }
+		  
+		  System.out.println(usernames);
 		
 		  reader.close();
 	  
@@ -186,6 +188,8 @@ public class ProviderTerminal {
 			  counter = 0;	  
 		  }
 		
+		  System.out.println(passwords);
+		  
 		  reader.close();
 	  
 	  } catch (FileNotFoundException e) {
