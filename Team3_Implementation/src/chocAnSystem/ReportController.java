@@ -49,7 +49,7 @@ public class ReportController {
 					}
 					if(curData.contains("Total fee to be paid:")) {
 						summaryText += "\n" + curData;
-						totalFee += Double.parseDouble(curData.substring(curData.indexOf(" ")));
+						totalFee += Double.parseDouble(curData.substring(curData.indexOf(" ") + 1));
 					}
 				}
 				curFile.close();
