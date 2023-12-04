@@ -24,7 +24,51 @@ public class ReportController {
 	}
 	
 	/** Stand-in for Summary Report Compiler.*/
-	public void summaryReport(){		
+	public void summaryReport(){	
+		
+		try {
+			File providerReports = new File("ProviderReports/");	//load the full folder of service logs
+			File[] providerFolderList = providerReports.listFiles();
+			
+			File summaryFile = new File("Summary Report.txt");
+			FileWriter summaryWriter = new FileWriter(summaryFile);
+			String summaryText = "";
+			int totalConsultations = 0;
+			int totalFee = 0;
+			for(int i = 0; i < providerFolderList.length; i++) {	//For every file in the service log folder,
+				summaryText += "Provider: " + providerFolderList[i].getName().substring(0, providerFolderList[i].getName().indexOf('.'));
+				
+				Scanner curFile = new Scanner(providerFolderList[i]);	//start a scanner to look at that log.
+        		String curData;
+				while(curFile.hasNextLine()) {
+					curData = curFile.nextLine();
+					if(curData.contains("Total number of consultations:")) {
+						summaryText += "\n" + curData;
+						totalConsultations += Double.parseDouble(curData.substring(curData.indexOf(" ")));
+						
+					}
+					if(curData.contains("Total fee to be paid:")) {
+						summaryText += "\n" + curData;
+						totalFee += Double.parseDouble(curData.substring(curData.indexOf(" ")));
+					}
+				}
+			}
+			summaryText += "\nTotal number of active providers this week: " + providerFolderList.length;
+			summaryText += "\nTotal number of consultations: " + totalConsultations;
+			summaryText += "\nTotal fee for all providers: " + totalFee;
+			summaryWriter.write(summaryText);
+			
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
+				
+		
+		
+		
+		
+		
+		
 		System.out.println("Compiled Summary Report");
 	}
 	
