@@ -68,8 +68,6 @@ public class ReportController {
 	}
 	
 	
-	
-	
 	/** Reads data from text file and prints it to Console.*/
 	public void memberReport()throws IOException{		
 		//System.out.println("Compiling Member Report");

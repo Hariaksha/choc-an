@@ -24,6 +24,12 @@ public class ProviderController {
 	 * This is the method for when the provider wants to bill ChocAn. It prompts the provider for all of the relevant info,
 	 * does all of the verification steps, etc.
 	 */
+	private static String getProviderID() {
+		String providerID;
+		if (!ProviderTerminal.getPID().isEmpty()) providerID = ProviderTerminal.getPID();
+		else providerID = "000000000";
+		return providerID;
+	}
 	
 	public static void billChocAn() {
 
@@ -33,13 +39,12 @@ public class ProviderController {
 		
 		//all relevant variables
 		String userInput;
-		String curTime, serviceTime, providerID, serviceCode, comments, providerName;
+		String curTime, serviceTime, providerID, serviceCode, comments;
 		double servicePrice;
 		
 		
-		//providerID = ProviderTerminal.getPID();
-		//providerName = ProviderTerminal.getPName();
-		providerID = "123123123";
+		
+		//providerID = "123123123";
 		
 		
 		
