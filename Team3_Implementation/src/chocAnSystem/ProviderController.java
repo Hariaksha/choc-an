@@ -40,7 +40,6 @@ public class ProviderController {
 		//providerID = ProviderTerminal.getPID();
 		//providerName = ProviderTerminal.getPName();
 		providerID = "343";
-		providerName = "Jon Doe";
 		
 		
 		
@@ -110,7 +109,6 @@ public class ProviderController {
 				fw.write("Current Time: " + curTime + 
 						 "\nDate of Service: " + serviceTime + 
 						 "\nProvider ID: " + providerID + 
-						 "\nProvider Name: " + providerName +
 						 "\nMember ID: " + memberID + 
 						 "\nService Code: " + serviceCode + 
 						 "\nService Name: " + serviceName + 
