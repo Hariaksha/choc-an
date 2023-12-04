@@ -1,0 +1,11 @@
+Jimmy White, 123456789, 14050 Yorktown De, r, IL, 60462
+All services provided:
+
+Service:
+Time service entered in computer: 12/04/2023 01:47:07
+Date of Service: 12-12-1212
+James
+53819803
+Price: 143.89
+Total number of consultations: 1
+Total fee to be paid: 143.89
