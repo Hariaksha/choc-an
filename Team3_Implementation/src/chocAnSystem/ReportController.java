@@ -23,7 +23,7 @@ public class ReportController {
 		System.out.println("Compiled EFT Report");
 	}
 	
-	/** Stand-in for Summary Report Compiler.*/
+	/** Compiles data into Text file for the Summary Report.*/
 	public void summaryReport(){	
 		
 		try {
@@ -70,7 +70,7 @@ public class ReportController {
 	}
 	
 	
-	/** Reads data from text file and prints it to Console.*/
+	/** Compiles data into Text file for the Member Report.*/
 	public void memberReport()throws IOException{		
 		//System.out.println("Compiling Member Report");
 		
@@ -145,7 +145,7 @@ public class ReportController {
 	}
 	
 	
-	/** Stand-in for Provider Report Compiler.*/
+	/** Compiles data into Text file for the Provider Report.*/
 	public void providerReport(){
 		
 		try {
@@ -308,15 +308,15 @@ public class ReportController {
 	}
 	
 	
-	private void formatReport(String fileName) {
-		try {
-			FileWriter fw = new FileWriter("src/chocAnSystem/" + fileName + ".txt");
-			fw.write("This is a test");
-			fw.close();
-		}
-		catch(Exception e){
-			System.out.println(e);
+	//private void formatReport(String fileName) {
+		//try {
+			//FileWriter fw = new FileWriter("src/chocAnSystem/" + fileName + ".txt");
+			//fw.write("This is a test");
+			//fw.close();
+		//}
+		//catch(Exception e){
+			//System.out.println(e);
 		
-	}
-   }
+	//}
+   //}
 }
