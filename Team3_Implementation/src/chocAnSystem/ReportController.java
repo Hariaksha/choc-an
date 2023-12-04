@@ -186,25 +186,6 @@ public class ReportController {
 				e.printStackTrace();
 			}
 		
-		
-		
-		
-//		System.out.println("Compiling Provider Report");
-//		try {
-//			BufferedReader r = new BufferedReader( new FileReader("providerData.txt") );
-//			String s = "", line = null;
-//			while ((line = r.readLine()) != null) {
-//				s += line;
-//				s += "\n";
-//			}
-//			System.out.print(s);
-//			r.close();
-//		}
-//		
-//        catch (IOException e) 
-//        { 
-//            e.printStackTrace();
-//        }
 	}
 	
 	/** Called by Timer, runs all compilers.*/
