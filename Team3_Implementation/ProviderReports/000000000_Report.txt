@@ -1,0 +1,11 @@
+Test Provider, 000000000, 1234 Test street, Fake City, NY, 54545
+All services provided:
+
+Service:
+Time service entered in computer: 12/04/2023 01:37:22
+Date of Service: 12-04-2023
+Adam
+90785772
+Price: 125.73
+Total number of consultations: 1
+Total fee to be paid: 125.73
