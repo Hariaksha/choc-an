@@ -44,7 +44,7 @@ public class ReportController {
 					curData = curFile.nextLine();
 					if(curData.contains("Total number of consultations:")) {
 						summaryText += "\n" + curData;
-						totalConsultations += Double.parseDouble(curData.substring(curData.indexOf(" ")));
+						totalConsultations += Double.parseDouble(curData.substring(curData.indexOf(" ") + 1));
 						
 					}
 					if(curData.contains("Total fee to be paid:")) {
