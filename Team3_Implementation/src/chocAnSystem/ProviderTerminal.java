@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-/** This declares the class attributes. */
+/** This class calls the methods within the ProviderController so the provider can perform certain actions. */
 public class ProviderTerminal {
   private static String providerUsername;
   private static String providerPassword;
