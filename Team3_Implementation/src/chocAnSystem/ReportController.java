@@ -44,12 +44,12 @@ public class ReportController {
 					curData = curFile.nextLine();
 					if(curData.contains("Total number of consultations:")) {
 						summaryText += "\n" + curData;
-						totalConsultations += Double.parseDouble(curData.substring(curData.indexOf(" ") + 1));
+						totalConsultations += Double.parseDouble(curData.substring(curData.lastIndexOf(" ") + 1));
 						
 					}
 					if(curData.contains("Total fee to be paid:")) {
 						summaryText += "\n" + curData;
-						totalFee += Double.parseDouble(curData.substring(curData.indexOf(" ") + 1));
+						totalFee += Double.parseDouble(curData.substring(curData.lastIndexOf(" ") + 1));
 					}
 				}
 				curFile.close();
