@@ -2,7 +2,10 @@ Trina, 429803689, t, t, t, t
 All services provided:
 Service:
 Date of Service: 07-14-2023
+<<<<<<< HEAD
 James Black
+=======
+>>>>>>> branch 'master' of https://rjread173@bitbucket.org/tklocklear/fall2023team3.git
 Service Name: dietitianAppt
 Service:
 Date of Service: 07-14-2023
