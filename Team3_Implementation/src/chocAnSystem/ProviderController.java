@@ -44,7 +44,8 @@ public class ProviderController {
 		
 		
 		
-		providerID = getProviderID();
+		debug("Enter provider ID");
+		providerID = getInput();
 		
 		
 		

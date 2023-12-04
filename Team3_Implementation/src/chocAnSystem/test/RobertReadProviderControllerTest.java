@@ -28,7 +28,7 @@ class RobertReadProviderControllerTest {
 
 	@Test
 	void testBillChocAn() {
-		String input = "429803689\n07-14-2023\n883948\ny\ntest service\n";
+		String input = "429803689\n000000000\n07-14-2023\n883948\ny\ntest service\n";
 		ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
 		System.setIn(in);
 		ProviderController.billChocAn();
