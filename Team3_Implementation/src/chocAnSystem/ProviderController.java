@@ -26,7 +26,7 @@ public class ProviderController {
 	 */
 	private static String getProviderID() {
 		String providerID;
-		if (!ProviderTerminal.getPID().isEmpty()) providerID = ProviderTerminal.getPID();
+		if (!ProviderTerminal.getPID().equals(null)) providerID = ProviderTerminal.getPID();
 		else providerID = "000000000";
 		return providerID;
 	}
