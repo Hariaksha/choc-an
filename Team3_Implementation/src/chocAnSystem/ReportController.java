@@ -125,7 +125,7 @@ public class ReportController {
 		        			 if (curData.contains("Current Time: ")) memFileText += "Time service entered in computer: " + curData.substring(14) + "\n";
 		        			 if (curData.contains("Date of Service:")) {
 		        				 memFileText += curData + "\n";
-		        				 memFileText += 
+		        				 memFileText +=
 		        			 }
 		        			 if (curData.contains("Provider Name:")) memFileText += curData + "\n";
 		        			 if (curData.contains("Service Name:")) memFileText += curData + "\n";
