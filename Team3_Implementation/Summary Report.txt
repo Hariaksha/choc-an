@@ -1,6 +1,6 @@
-Provider: 123123123_Report
+Provider: 123123123
 Total number of consultations: 4
 Total fee to be paid: 521.0799999999999
 Total number of active providers this week: 1
 Total number of consultations: 4
-Total fee for all providers: 521
+Total fee for all providers: 521.0799999999999

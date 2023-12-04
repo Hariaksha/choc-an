@@ -34,9 +34,9 @@ public class ReportController {
 			FileWriter summaryWriter = new FileWriter(summaryFile);
 			String summaryText = "";
 			int totalConsultations = 0;
-			int totalFee = 0;
+			double totalFee = 0;
 			for(int i = 0; i < providerFolderList.length; i++) {	//For every file in the service log folder,
-				summaryText += "Provider: " + providerFolderList[i].getName().substring(0, providerFolderList[i].getName().indexOf('.'));
+				summaryText += "Provider: " + providerFolderList[i].getName().substring(0, providerFolderList[i].getName().indexOf('_'));
 				
 				Scanner curFile = new Scanner(providerFolderList[i]);	//start a scanner to look at that log.
         		String curData;
