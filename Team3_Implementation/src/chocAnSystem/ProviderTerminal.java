@@ -17,8 +17,8 @@ public class ProviderTerminal {
 
   // This is a Default Constructor
   public ProviderTerminal() {
-	providerUsername = "Meowy";
-	providerPassword = "meowPass";
+	//providerUsername = "Meowy";
+	//providerPassword = "meowPass";
   }
 
   // This is the Primary Constructor with parameters

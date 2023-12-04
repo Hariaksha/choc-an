@@ -1,4 +1,4 @@
-/** @author Tyler Cruise*/
+/** @author Tyler Cruise and Robert Read*/
 
 package chocAnSystem;
 import java.util.Scanner;
