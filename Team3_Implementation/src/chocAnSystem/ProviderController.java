@@ -44,7 +44,7 @@ public class ProviderController {
 		
 		
 		
-		//providerID = "123123123";
+		providerID = getProviderID();
 		
 		
 		
