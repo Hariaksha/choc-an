@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import chocAnSystem.OperatorTerminal; 
 
-class AdamHowardOperatorTerminalTest {
+class AdamHowardOperatorTerminalisStrInUsernameArrTest {
 
 	OperatorTerminal opterm; 
 	

@@ -114,7 +114,7 @@ public class UpdateMember
             }
             else 
             { 
-                System.out.println("Enter valid function");
+                error(); 
                 System.out.println("Would you like to continue to update member list? YES or NO"); 
             }
         } 
@@ -139,7 +139,7 @@ public class UpdateMember
 
         if(!found)
         { 
-            System.out.println("Member not found");
+            memberNotFound(); 
             deleteMember(); 
             return; 
         }
@@ -161,7 +161,7 @@ public class UpdateMember
             }
             else 
             { 
-                System.out.println("Enter valid function");
+                error(); 
                 System.out.println("You you like to continue to update member list? YES or NO"); 
             }
         } 
@@ -188,7 +188,7 @@ public class UpdateMember
 
         if(!found)
         { 
-            System.out.println("Member not found");
+            memberNotFound(); 
             updateMemberRecords();
             return; 
         }
@@ -302,7 +302,7 @@ public class UpdateMember
             }
             else 
             { 
-                System.out.println("Enter valid function");
+                error(); 
                 System.out.println("To add member type ADD"); 
                 System.out.println("To delete member type DELETE"); 
                 System.out.println("To update member records type UPDATE"); 
@@ -340,4 +340,9 @@ public class UpdateMember
     	System.out.println("Enter valid function");
     }
     
+    /** Prints if member is not found */
+    public void memberNotFound()  
+    { 
+    	System.out.println("Member not found"); 
+    }
 }
