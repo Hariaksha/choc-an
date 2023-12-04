@@ -83,7 +83,7 @@ public class ReportController {
 		        
 		        
 		      }
-		      reader.close();
+		      memberData.close();
 
 		    } catch (FileNotFoundException e) {
 		      debug("Member database not found, please try again later.");
