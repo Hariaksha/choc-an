@@ -52,11 +52,13 @@ public class ReportController {
 						totalFee += Double.parseDouble(curData.substring(curData.indexOf(" ")));
 					}
 				}
+				curFile.close();
 			}
 			summaryText += "\nTotal number of active providers this week: " + providerFolderList.length;
 			summaryText += "\nTotal number of consultations: " + totalConsultations;
 			summaryText += "\nTotal fee for all providers: " + totalFee;
 			summaryWriter.write(summaryText);
+			summaryWriter.close();
 			
 		}
 		catch(IOException e) {
