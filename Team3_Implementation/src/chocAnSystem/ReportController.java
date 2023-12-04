@@ -40,6 +40,8 @@ public class ReportController {
 		try {
 		      File memberFile = new File("memberData.txt");	//load member data
 		      Scanner memberData = new Scanner(memberFile);
+
+			  
 		      
 		      File folder = new File("Service_Logs/");	//load the full folder of service logs
 		      File[] ServiceLogList = folder.listFiles();
@@ -61,19 +63,27 @@ public class ReportController {
 		        		String curData;
 		        		memFileText += "Service:\n";
 		        		
-		        		String filename = ServiceLogList[i].getName();
+		        		File providerFile = new File("providerData.txt");	//load member data
+		  		      	Scanner providerData = new Scanner(providerFile);
 		        		
+		        		String filename = ServiceLogList[i].getName();
+		        		String providerID = filename.substring(0,filename.indexOf('_'));	//Get the ID of the provider of this service
+						 String providerName = "";
+
+						while (providerData.hasNextLine()) {	//while there is still text in the providerData file,
+		        			String providerLine = providerData.nextLine();	//store that line.
+		        			if (providerLine.contains(providerID)) providerName = providerLine.substring(0, providerLine.indexOf(','));	//If the line contains the ID of the provider in question, get the name of the Provider.
+						}
 		        		
 		        		 while (curFile.hasNextLine()) {					//While the current log has text,
 		        			 curData = curFile.nextLine();					//store that next line.
 		        			 if (curData.contains("Date of Service:")) {	//If the line contains 'Date of Service:',
-		        				 memFileText += curData + "\n";				//add it to what needs to be written to the report.
-		        				 
-		        				 
-		        				 
+							 	memFileText += curData + "\n";				//add it to what needs to be written to the report.
+								memFileText += providerName + "\n";			//Additionally, add the provider name to the report.
 		        			 }
 		        			 if (curData.contains("Service Name:")) memFileText += curData + "\n";
 		        		 }
+		        		 providerData.close();
 		        		 curFile.close();
 		        	  }
 		        	
@@ -83,8 +93,8 @@ public class ReportController {
 		        
 		        
 		      }
-		      reader.close();
-
+		      memberData.close();
+			  
 		    } catch (FileNotFoundException e) {
 		      debug("Member database not found, please try again later.");
 		      e.printStackTrace();
@@ -96,50 +106,77 @@ public class ReportController {
 	public void providerReport(){
 		
 		try {
-		      File ProviderData = new File("ProviderData.txt");
-		      Scanner reader = new Scanner(ProviderData);
+
+			  File providerFile = new File("providerData.txt");	//load member data
+		      Scanner providerData = new Scanner(providerFile);
 		      
-		      File folder = new File("Service_Logs/");
-		      File[] listOfFiles = folder.listFiles();
+		      File folder = new File("Service_Logs/");	//load the full folder of service logs
+		      File[] serviceLogList = folder.listFiles();
 		      
-		      while (reader.hasNextLine()) {
-		        String data = reader.nextLine();
-		        if (data.equals("")) continue;
+		      while (providerData.hasNextLine()) {
+		        String data = providerData.nextLine();
+		        if (providerData.equals("")) continue;
 		        
+				double totalFee = 0;
+				int numConsultations = 0;
 		        
-		        String curID = data.substring(data.indexOf(',') + 2, data.indexOf(',', data.indexOf(',') + 1));
+		        String providerID = data.substring(data.indexOf(',') + 2, data.indexOf(',', data.indexOf(',') + 1));
 		        
 		        //File memFile = new File();
-		        FileWriter memProvFile = new FileWriter("ProviderReports/" + curID + "_Report.txt");
+		        FileWriter memProvFile = new FileWriter("ProviderReports/" + providerID + "_Report.txt");
 		        
-		        String memFileText = data + "\nAll services provided:\n";
+		        String proFileText = data + "\nAll services provided:\n";
 		        
-		        for(int i = 0; i < listOfFiles.length; i++) {
-		        	if (listOfFiles[i].getName().contains(curID)) {
-		        		Scanner curFile = new Scanner(listOfFiles[i]);
+		        for(int i = 0; i < serviceLogList.length; i++) {
+		        	if (serviceLogList[i].getName().contains(providerID)) {
+						numConsultations++;
+		        		Scanner curFile = new Scanner(serviceLogList[i]);
 		        		String curData;
-		        		memFileText += "Service:\n";
+						
+						
+						String memberName = "";
+						String filename = serviceLogList[i].getName();
+		        		String memberID = filename.substring(filename.lastIndexOf('_')+1, filename.lastIndexOf('.') -1);	//Get the ID of the member
+		        		
+		        		File memberFile = new File("memberData.txt");	//load member data
+		        		Scanner memberData = new Scanner(memberFile);
+
+
+						while (memberData.hasNextLine()) {	//while there is still text in the memberData file,
+		        			String memberLine = memberData.nextLine();	//store that line.
+		        			if (memberLine.contains(memberID)) memberName = memberLine.substring(0, memberLine.indexOf(','));	//If the line contains the ID of the provider in question, get the name of the Provider.
+						}
+
+
+		        		proFileText += "\nService:\n";
 		        		 while (curFile.hasNextLine()) {
 		        			 curData = curFile.nextLine();
-		        			 //if (curData.contains("Date of Service:") || curData.contains("Provider Name:") || curData.contains("Service Name:")) memFileText += curData + "\n";
-		        			 if (curData.contains("Current Time: ")) memFileText += "Time service entered in computer: " + curData.substring(14) + "\n";
+
+		        			 if (curData.contains("Current Time: ")) proFileText += "Time service entered in computer: " + curData.substring(14) + "\n";
 		        			 if (curData.contains("Date of Service:")) {
-		        				 memFileText += curData + "\n";
-		        				 memFileText += 
+		        				 proFileText += curData + "\n";
+		        				 proFileText += memberName + "\n" + memberID + "\n";
 		        			 }
-		        			 if (curData.contains("Provider Name:")) memFileText += curData + "\n";
-		        			 if (curData.contains("Service Name:")) memFileText += curData + "\n";
+		        			 if (curData.contains("Service code:")) proFileText += curData + "\n";
+							 if (curData.contains("Price:")){
+								totalFee += Double.valueOf(curData.substring(6));
+								proFileText += curData + "\n";
+							 }
+								
 		        		 }
+		        		 memberData.close();
 		        		 curFile.close();
 		        	  }
 		        	
 		        }
-		        memProvFile.write(memFileText);
+				proFileText += "Total number of consultations: " + numConsultations + "\n";
+				proFileText += "Total fee to be paid: " + totalFee;
+		        memProvFile.write(proFileText);
 		        memProvFile.close();
 		        
 		        
 		      }
-		      reader.close();
+		      providerData.close();
 
 		    } catch (FileNotFoundException e) {
 		      debug("Member database not found, please try again later.");
