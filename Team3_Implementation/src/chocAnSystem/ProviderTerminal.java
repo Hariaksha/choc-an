@@ -15,19 +15,19 @@ public class ProviderTerminal {
   public String pID;
   int counter = 0;
 
-  // This is a Default Constructor
+  /** This is the Default Constructor */
   public ProviderTerminal() {
 	//providerUsername = "Meowy";
 	//providerPassword = "meowPass";
   }
 
-  // This is the Primary Constructor with parameters
+  /** This is the Primary Constructor with parameters */
   public ProviderTerminal(String pass, String name) {
 	providerUsername = name;
     providerPassword = pass;
     }
 
-  // This method allows the provider to login
+  /** This method allows the provider to login */
   public void providerLogin() {
 	  // Prompt user for username
 	  System.out.println("Enter username and click Enter: ");
@@ -80,15 +80,17 @@ public class ProviderTerminal {
 	  }
   }
 
+ /** This gets the ID for provider Controller */
  public static String getPID() {
 	 return providerPassword;
  }
  
+ /** This gets the username for provider Controller */
  public static String getPName() {
 	 return providerUsername;
  }
   
-  // This method allows a provider to choose an action. */
+  /** This method allows a provider to choose an action. */
   public void chooseAction() {
     ProviderController pc = new ProviderController(); // Creates a ProviderController
 	System.out.println("Choose Action: Bill Choc An, Verify Member, Request Directory"); // Prompt user to choose an action between bill chocAn, Verify Member, and Request Directory
@@ -120,7 +122,7 @@ public class ProviderTerminal {
 	return;
   }
   
-  //This method checks to see if the username entered is a valid username. It returns -1 if not valid and the index of the username in the username array if it is valid.
+  /** This method checks to see if the username entered is a valid username. It returns -1 if not valid and the index of the username in the username array if it is valid. */
   public int isStrInUsernameArr(String str) {
 	  File pFile = new File("providerData.txt");
 	  try {
@@ -159,7 +161,7 @@ public class ProviderTerminal {
 	  return -1; // Return -1 if username does not exist.
   }
   
-  /**This method checks to see if the password is correct. It is only called if the username is valid, and it checks that the password entered is the password found at the index of the correct username in the password array.*/
+  /** This method checks to see if the password is correct. It is only called if the username is valid, and it checks that the password entered is the password found at the index of the correct username in the password array.*/
   public boolean isPasswordRight(String str, int index) {
 	  
 	  File pFile = new File("providerData.txt");
