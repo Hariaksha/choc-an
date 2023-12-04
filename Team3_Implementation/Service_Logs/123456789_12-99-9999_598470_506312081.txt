@@ -1,0 +1,8 @@
+Current Time: 12/04/2023 09:53:28
+Date of Service: 12-99-9999
+Provider ID: 123456789
+Member ID: 506312081
+Service Code: 598470
+Service Name: dietitianAppt
+Price: 125.73
+Comments: Well done
