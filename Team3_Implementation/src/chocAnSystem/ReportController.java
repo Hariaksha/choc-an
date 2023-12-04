@@ -62,15 +62,13 @@ public class ReportController {
 		catch(IOException e) {
 			e.printStackTrace();
 		}
-				
-		
-		
-		
-		
 		
 		
 		System.out.println("Compiled Summary Report");
 	}
+	
+	
+	
 	
 	/** Reads data from text file and prints it to Console.*/
 	public void memberReport()throws IOException{		
