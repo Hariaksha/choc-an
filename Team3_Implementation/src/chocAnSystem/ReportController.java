@@ -49,16 +49,17 @@ public class ReportController {
 		      while (memberData.hasNextLine()) {	//while there is still text in the memberData file,
 		        String data = memberData.nextLine();	//store that line.
 		        if (data.equals("")) continue;	//if there's a blank line, skip.
-		        
+		        int numServices = 0;
 		        
 		        String curID = data.substring(data.indexOf(',') + 2, data.indexOf(',', data.indexOf(',') + 1));	//Get the member ID of the current member.
-		        
-		        FileWriter memFile = new FileWriter("MemberReports/" + curID + "_Report.txt");
+		        File memFileFile = new File("MemberReports/" + curID + "_Report.txt");
+		        FileWriter memFile = new FileWriter(memFileFile);
 		        
 		        String memFileText = data + "\nAll services provided:\n";
 		        
 		        for(int i = 0; i < ServiceLogList.length; i++) {			//For every file in the service log folder,
 		        	if (ServiceLogList[i].getName().contains(curID)) {		//if the log's name contains the current member's ID,
+		        		numServices++;
 		        		Scanner curFile = new Scanner(ServiceLogList[i]);	//start a scanner to look at that log.
 		        		String curData;
 		        		memFileText += "Service:\n";
@@ -90,7 +91,7 @@ public class ReportController {
 		        }
 		        memFile.write(memFileText);
 		        memFile.close();
-		        
+		        if(numServices == 0) memFileFile.delete();
 		        
 		      }
 		      memberData.close();
@@ -122,8 +123,8 @@ public class ReportController {
 		        
 		        String providerID = data.substring(data.indexOf(',') + 2, data.indexOf(',', data.indexOf(',') + 1));
 		        
-		        //File memFile = new File();
-		        FileWriter memProvFile = new FileWriter("ProviderReports/" + providerID + "_Report.txt");
+		        File provFile = new File("ProviderReports/" + providerID + "_Report.txt");
+		        FileWriter memProvFile = new FileWriter(provFile);
 		        
 		        String proFileText = data + "\nAll services provided:\n";
 		        
@@ -173,7 +174,7 @@ public class ReportController {
 				proFileText += "Total fee to be paid: " + totalFee;
 		        memProvFile.write(proFileText);
 		        memProvFile.close();
-		        
+		        if(numConsultations == 0) provFile.delete();
 		        
 		      }
 		      providerData.close();
