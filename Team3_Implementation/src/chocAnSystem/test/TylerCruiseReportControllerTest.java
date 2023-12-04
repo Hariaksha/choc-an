@@ -30,7 +30,7 @@ class TylerCruiseReportControllerTest {
 	@Test
 	void test() throws IOException {
 		t.memberReport();
-		File file = new File("MemberReports/392109854_Report.txt");
+		File file = new File("MemberReports/429803689_Report.txt");
 		assertTrue(file.exists());
 	}
 	//2
