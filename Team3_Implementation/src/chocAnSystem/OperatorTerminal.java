@@ -102,6 +102,7 @@ public class OperatorTerminal {
 				updateProvider.startProviderUpdate();
 			}
 			else if(response.equals("N")) {
+				System.out.println("You have selected no. You will be logged out");
 				return;
 			}
 			else {
@@ -123,6 +124,7 @@ public class OperatorTerminal {
 					updateMember.startMemberUpdate();
 				}
 				else if(response.equals("N")) {
+					System.out.println("You have selected no. You will be logged out");
 					return;
 				}
 				else {
@@ -152,5 +154,5 @@ public class OperatorTerminal {
 		  return false;
 	  }
 }
-	//oopsssss
+
 	
