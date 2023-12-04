@@ -39,7 +39,7 @@ public class ProviderController {
 		
 		//providerID = ProviderTerminal.getPID();
 		//providerName = ProviderTerminal.getPName();
-		providerID = "343";
+		providerID = "123123123";
 		
 		
 		
