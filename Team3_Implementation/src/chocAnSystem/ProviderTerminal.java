@@ -106,7 +106,25 @@ public class ProviderTerminal {
 	
 	if (response.equals("Bill Choc An")) {
 		pc.billChocAn(); // Runs Bill Choc An
+		System.out.println("Would you like to perform another action? Enter Y for yes and N for no.");
+		response = sc.nextLine();
+		while(true) {
+			if(response.equals("Y")) {
+				chooseAction();
+			}
+			else if(response.equals("N")) {
+				System.out.println("You will now be logged out.");
+				System.exit(0);
+			}
+			else {
+				System.out.println("Invalid response. Please try again");
+				response = sc.nextLine();
+			}
+			
+		  }
+		
 	}
+	
 	else if (response.equals("Verify Member")) {
 		System.out.println("Enter Member ID: ");
 		pID = sc.nextLine();
@@ -115,9 +133,43 @@ public class ProviderTerminal {
 			pID = sc.nextLine();
 		}
 		pc.verifyMember(pID); // Runs Verify Member
+		System.out.println("Would you like to perform another action? Enter Y for yes and N for no.");
+		response = sc.nextLine();
+		while(true) {
+			if(response.equals("Y")) {
+				chooseAction();
+			}
+			else if(response.equals("N")) {
+				System.out.println("You will now be logged out.");
+				System.exit(0);
+			}
+			else {
+				System.out.println("Invalid response. Please try again");
+				response = sc.nextLine();
+			}
+			
+		  }
 	}
+	
 	else if (response.equals("Request Directory")) {
 		pc.requestDirectory(); // Runs Request Directory
+		System.out.println("Would you like to perform another action? Enter Y for yes and N for no.");
+		response = sc.nextLine();
+		while(true) {
+			if(response.equals("Y")) {
+				chooseAction();
+			}
+			else if(response.equals("N")) {
+				System.out.println("You will now be logged out.");
+				System.exit(0);
+			}
+			else {
+				System.out.println("Invalid response. Please try again");
+				response = sc.nextLine();
+			}
+			
+		  }
+		
 	}
 	return;
   }
