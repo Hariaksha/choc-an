@@ -1,10 +1,10 @@
-Provider: 000000000
-Total number of consultations: 1
-Total fee to be paid: 125.73Provider: 123123123
+Provider: 0
+Total number of consultations: 7
+Total fee to be paid: 916.43Provider: 123123123
 Total number of consultations: 4
 Total fee to be paid: 521.0799999999999Provider: 123456789
-Total number of consultations: 1
-Total fee to be paid: 143.89
+Total number of consultations: 2
+Total fee to be paid: 269.62
 Total number of active providers this week: 3
-Total number of consultations: 6
-Total fee for all providers: 790.6999999999999
+Total number of consultations: 13
+Total fee for all providers: 1707.1299999999997

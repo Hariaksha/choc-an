@@ -82,8 +82,10 @@ public class ReportController {
 		try {
 		      File memberFile = new File("memberData.txt");	//load member data
 		      Scanner memberData = new Scanner(memberFile);
-
-			  
+		      
+		      String fullReport = "";
+		      File fullReportFile = new File("MemberReports/FullMemberReports.txt");
+		      FileWriter ReportFile = new FileWriter(fullReportFile);
 		      
 		      File folder = new File("Service_Logs/");	//load the full folder of service logs
 		      File[] ServiceLogList = folder.listFiles();
@@ -131,13 +133,15 @@ public class ReportController {
 		        	  }
 		        	
 		        }
+		        fullReport += memFileText;
 		        memFile.write(memFileText);
 		        memFile.close();
 		        if(numServices == 0) memFileFile.delete();
 		        
 		      }
 		      memberData.close();
-			  
+			  ReportFile.write(fullReport);
+			  ReportFile.close();
 		    } catch (FileNotFoundException e) {
 		      debug("Member database not found, please try again later.");
 		      e.printStackTrace();

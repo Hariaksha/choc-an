@@ -2,6 +2,10 @@ Trina, 429803689, t, t, t, t
 All services provided:
 Service:
 Date of Service: 07-14-2023
+
+Service Name: aerobicsSession
+Service:
+Date of Service: 07-14-2023
 James Black
 Service Name: dietitianAppt
 Service:

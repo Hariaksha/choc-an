@@ -7,5 +7,12 @@ Date of Service: 12-12-1212
 James
 53819803
 Price: 143.89
-Total number of consultations: 1
-Total fee to be paid: 143.89
+
+Service:
+Time service entered in computer: 12/04/2023 09:53:28
+Date of Service: 12-99-9999
+Ethan
+50631208
+Price: 125.73
+Total number of consultations: 2
+Total fee to be paid: 269.62

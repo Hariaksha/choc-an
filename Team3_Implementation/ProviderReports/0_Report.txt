@@ -1,0 +1,53 @@
+Test Provider, 0, 1234 Test street, Fake City, NY, 54545
+All services provided:
+
+Service:
+Time service entered in computer: 12/04/2023 01:37:22
+Date of Service: 12-04-2023
+Adam
+90785772
+Price: 125.73
+
+Service:
+Time service entered in computer: 12/03/2023 21:07:58
+Date of Service: 07-14-2023
+Trina
+42980368
+Price: 125.73
+
+Service:
+Time service entered in computer: 12/03/2023 21:17:55
+Date of Service: 07-14-2023
+Ethan
+51539209
+Price: 125.73
+
+Service:
+Time service entered in computer: 12/03/2023 21:17:42
+Date of Service: 07-14-2023
+John
+75581016
+Price: 125.73
+
+Service:
+Time service entered in computer: 12/03/2023 21:23:20
+Date of Service: 07-14-2023
+Trina
+42980368
+Price: 143.89
+
+Service:
+Time service entered in computer: 12/04/2023 01:47:07
+Date of Service: 12-12-1212
+James
+53819803
+Price: 143.89
+
+Service:
+Time service entered in computer: 12/04/2023 09:53:28
+Date of Service: 12-99-9999
+Ethan
+50631208
+Price: 125.73
+Total number of consultations: 7
+Total fee to be paid: 916.43
